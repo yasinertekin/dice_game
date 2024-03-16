@@ -1,0 +1,48 @@
+name: dice_game
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+
+  # Router
+  go_router: ^13.2.1
+  auto_route: ^7.9.0
+  auto_route_generator: ^7.3.2
+
+  # State Management
+  flutter_bloc: ^8.1.4
+
+  # Core
+  equatable: ^2.0.5
+
+  # UI
+  lottie: ^3.1.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Lint
+  very_good_analysis: ^5.1.0
+
+  # Code Generator
+  build_runner: ^2.4.8
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+   - assets/image/
+   - assets/icon/
+   - assets/lottie/
+   - assets/data/
