@@ -28,6 +28,9 @@ dependencies:
   # Google
   google_fonts: ^6.2.1
 
+  # Utils
+  flutter_svg: ^2.0.10+1
+
 
 dev_dependencies:
   flutter_test:
@@ -48,4 +51,3 @@ flutter:
    - assets/icon/
    - assets/lottie/
    - assets/data/
-    - assets/fonts/

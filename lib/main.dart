@@ -1,5 +1,6 @@
 import 'package:dice_game/product/router/router_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   runApp(const _DiceApp());
@@ -15,15 +16,7 @@ final class _DiceApp extends StatelessWidget {
       routerConfig: RouterManager.routes,
       title: 'Flutter Demo',
       theme: ThemeData(
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(
-            color: Colors.black,
-            fontFamily: 'MadimiOne',
-          ),
-          bodyMedium: TextStyle(
-            color: Colors.black,
-          ),
-        ),
+        textTheme: GoogleFonts.aDLaMDisplayTextTheme(),
         bottomAppBarTheme: const BottomAppBarTheme(
           color: Colors.transparent,
           surfaceTintColor: Colors.transparent,

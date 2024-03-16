@@ -1,7 +1,9 @@
+import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/router/route_paths.dart';
 import 'package:dice_game/product/router/router_manager.dart';
+import 'package:dice_game/product/widget/custom_svg.dart';
 import 'package:flutter/material.dart';
 
 part 'widget/bottom_bar.dart';

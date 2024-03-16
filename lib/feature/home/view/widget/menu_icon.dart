@@ -6,10 +6,8 @@ final class _MenuIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: Icon(
-        Icons.menu,
-        size: 50,
-        color: ProjectColor.black.color,
+      icon: CustomSvg(
+        assetPath: ProjectAssets.menu.toSvg,
       ),
       onPressed: () {},
     );
