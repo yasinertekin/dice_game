@@ -1,9 +1,11 @@
+import 'package:dice_game/product/router/route_paths.dart';
+import 'package:dice_game/product/router/router_manager.dart';
 import 'package:flutter/material.dart';
 
 final class UserDicePage extends StatelessWidget {
   const UserDicePage({required this.myParameter, super.key});
 
-  final dynamic myParameter;
+  final String myParameter;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,14 @@ final class _UserDiceView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('User Dice'),
         actions: const [],
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            RouterManager.routes.go(
+              RoutePaths.home.path,
+            );
+          },
+        ),
       ),
       body: Column(
         children: [

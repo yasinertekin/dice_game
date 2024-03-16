@@ -11,7 +11,7 @@ final class _UserDiceCard extends StatelessWidget {
       child: InkWell(
         onTap: () => RouterManager.routes.go(
           RoutePaths.userDice.path,
-          extra: 'My Parameter',
+          extra: 'My Parameters',
         ),
         child: Card(
           shape: _CardShape(context),

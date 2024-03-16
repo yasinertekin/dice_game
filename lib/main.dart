@@ -15,6 +15,15 @@ final class _DiceApp extends StatelessWidget {
       routerConfig: RouterManager.routes,
       title: 'Flutter Demo',
       theme: ThemeData(
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(
+            color: Colors.black,
+            fontFamily: 'MadimiOne',
+          ),
+          bodyMedium: TextStyle(
+            color: Colors.black,
+          ),
+        ),
         bottomAppBarTheme: const BottomAppBarTheme(
           color: Colors.transparent,
           surfaceTintColor: Colors.transparent,

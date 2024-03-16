@@ -31,10 +31,10 @@ final class RouterManager {
       GoRoute(
         path: RoutePaths.userDice.path,
         pageBuilder: (context, state) {
-          final myParameter = state;
+          final myParameter = state.extra!;
 
           return AdaptivePageBuilder.builder<void>(
-            child: UserDicePage(myParameter: myParameter),
+            child: UserDicePage(myParameter: myParameter.toString()),
           );
         },
       ),
