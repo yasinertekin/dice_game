@@ -10,7 +10,7 @@ final class _CustomDivider extends StatelessWidget {
       child: Divider(
         height: 0,
         thickness: 3,
-        color: ProjectColor.black.color,
+        color: ProjectColor.black.toColor,
       ),
     );
   }

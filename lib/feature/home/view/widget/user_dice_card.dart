@@ -15,7 +15,7 @@ final class _UserDiceCard extends StatelessWidget {
         ),
         child: Card(
           shape: _CardShape(context),
-          color: ProjectColor.buzzIn.color,
+          color: ProjectColor.buzzIn.toColor,
           child: const _CardTitle(),
         ),
       ),
@@ -32,7 +32,7 @@ final class _CardTitle extends StatelessWidget {
       child: Text(
         'Senin Zarların',
         style: context.textTheme.titleLarge?.copyWith(
-          color: ProjectColor.black.color,
+          color: ProjectColor.black.toColor,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -45,7 +45,7 @@ final class _CardShape extends RoundedRectangleBorder {
       : super(
           borderRadius: context.borderRadiusLow,
           side: BorderSide(
-            color: ProjectColor.white.color,
+            color: ProjectColor.white.toColor,
             width: 4,
           ),
         );

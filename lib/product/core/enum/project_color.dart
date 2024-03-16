@@ -3,21 +3,25 @@ import 'package:flutter/material.dart';
 /// ProjectColor
 enum ProjectColor {
   /// White Color
-  white(Color(0xFFFFFFFF)),
+  white('FFFFFF'),
 
   /// Silky White Color is the color of the background
-  silkyWhite(Color(0xFFEFEBE2)),
+  silkyWhite('EFEBE2'),
 
   /// Black Color
-  black(Color(0xFF000000)),
+  black('000000'),
 
   /// Buzz-in color is the color of the splash screen
-  buzzIn(Color(0xFFFFD752));
+  buzzIn('FFD752'),
+
+  /// Transparent Color
+  transparent('00000000');
+
+  final String _color;
+
+  // ignore: sort_constructors_first
+  const ProjectColor(this._color);
 
   /// Color
-  final Color color;
-
-  /// Constructor
-  // ignore: sort_constructors_first
-  const ProjectColor(this.color);
+  Color get toColor => Color(int.parse('0xFF$_color'));
 }

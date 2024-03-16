@@ -6,7 +6,7 @@ final class _HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: ProjectColor.silkyWhite.color,
+      backgroundColor: ProjectColor.silkyWhite.toColor,
       title: const Text('Home Page'),
       centerTitle: true,
       bottom: const _AppbarBottom(),

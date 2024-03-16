@@ -8,7 +8,7 @@ final class _HomeTitle extends StatelessWidget {
     return Text(
       'Kategoriler',
       style: context.textTheme.bodyLarge?.copyWith(
-        color: ProjectColor.black.color,
+        color: ProjectColor.black.toColor,
         fontWeight: FontWeight.bold,
         fontSize: 50,
       ),

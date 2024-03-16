@@ -31,7 +31,7 @@ final class _HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ProjectColor.silkyWhite.color,
+      backgroundColor: ProjectColor.silkyWhite.toColor,
       appBar: const _HomeAppBar(),
       body: const Center(
         child: Column(
