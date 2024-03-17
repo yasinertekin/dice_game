@@ -15,7 +15,10 @@ enum ProjectColor {
   buzzIn('FFD752'),
 
   /// Transparent Color
-  transparent('00000000');
+  transparent('00000000'),
+
+  /// Food And Drink Color
+  red('B81C1C');
 
   final String _color;
 
