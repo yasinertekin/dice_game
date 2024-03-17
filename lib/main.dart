@@ -3,7 +3,10 @@ import 'package:dice_game/product/router/router_manager.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  runApp(const _DiceApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    const _DiceApp(),
+  );
 }
 
 final class _DiceApp extends StatelessWidget {
