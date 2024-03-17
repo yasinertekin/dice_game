@@ -8,6 +8,7 @@ final class _HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: ProjectColor.silkyWhite.toColor,
       title: const Text('Home Page'),
+      scrolledUnderElevation: 0,
       centerTitle: true,
       bottom: const _AppbarBottom(),
     );
