@@ -27,6 +27,7 @@ dependencies:
 
   # Google
   google_fonts: ^6.2.1
+  json_annotation: ^4.8.1
 
   # Utils
   flutter_svg: ^2.0.10+1
@@ -41,6 +42,7 @@ dev_dependencies:
 
   # Code Generator
   build_runner: ^2.4.8
+  json_serializable: ^6.7.1
 
 flutter:
 
