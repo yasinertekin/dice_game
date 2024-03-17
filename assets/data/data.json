@@ -2,7 +2,7 @@
     "dice_categories": [
         {
             "category_name": "Food and Drink",
-            "category_color":"#B81C1C",
+            "category_color":"B81C1C",
             "category_icon":"",
             
             "dice_list": [
@@ -201,7 +201,7 @@
         },
         {
             "category_name": "Game Dice",
-            "category_color":"#1F628E",
+            "category_color":"1F628E",
             "category_icon":"",
             "dice_list": [
                 {
@@ -394,7 +394,7 @@
         },
         {
             "category_name": "Hobby - Activity Dice",
-            "category_color":"##1F628E",
+            "category_color":"1F628E",
             "dice_list": [
                 {
                     "dice_name": "Film Dice",
@@ -617,7 +617,7 @@
         },
         {
             "category_name": "Relationship Dice",
-            "category_color":"#7C09A4",
+            "category_color":"7C09A4",
             "dice_list": [
                 {
                     "dice_name": "Film Dice",
@@ -658,7 +658,7 @@
         },
         {
             "category_name": "Travel Dice",
-            "category_color":"#7C09A4",
+            "category_color":"7C09A4",
             "dice_list": [
                 {
                     "dice_name": "Film Dice",
