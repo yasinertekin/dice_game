@@ -7,7 +7,7 @@ part 'dice_model.g.dart';
 
 @JsonSerializable()
 @immutable
-class DiceModel with EquatableMixin {
+final class DiceModel with EquatableMixin {
   DiceModel({
     this.diceCategories,
   });
