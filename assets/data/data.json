@@ -2,92 +2,875 @@
     "dice_categories": [
         {
             "category_name": "Food and Drink",
+            "category_color":"#B81C1C",
             "dice_list": [
-                {
+
+              {
                     "dice_name": "Gourmet Dice",
-                    "icon": "Icon"
+                    "icon": "assets/icon",
+                    "isPremium":false,
+                    "sub_dice": [
+                        {
+                            "name": "Pişirme Yöntemi",
+                            "options": ["Fırınlama", "Haşlama", "Izgara", "Kızartma", "Sote", "Kavurma"]
+                        },
+                        {
+                            "name": "Protein",
+                            "options": ["Dana", "Kuzu", "Hindi", "Kıyma", "Tavuk", "Deniz Ürünleri"]
+                        },
+                        {
+                            "name": "Karbonhidrat",
+                            "options": ["Bulgur", "Pirinç", "Patates", "Kinoa", "Makarna", "Noodle"]
+                        },
+                        {
+                            "name": "Sebzeler",
+                            "options": ["Brokoli", "Havuç", "Ispanak", "Domates", "Patlıcan", "Bezelye"]
+                        },
+                        {
+                            "name": "Baharatlar",
+                            "options": ["Fesleğen", "Kekik", "Kişniş", "Yenibahar", "Kimyon", "Sumak"]
+                        },
+                        {
+                            "name": "Bonus",
+                            "options": ["Mantar, Fıstık, Ceviz, Soğan, Sarımsak, Limon"]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "What Should I Eat?",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_dice": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "Explore New Flavors",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+
+                    "sub_dice": [
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "What Should I Drink?",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_dice": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "What Should I Drink? (High Alcohol)",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_dice": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "Coffee Dice",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_dice": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 }
             ]
         },
         {
             "category_name": "Game Dice",
+            "category_color":"#1F628E",
             "dice_list": [
                 {
                     "dice_name": "Team Dice (Football)",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "Table Adventure Dice",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "Game Dice (Free Games)",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "Game Dice (Computer)",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "Game Dice (Console)",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "NBA Dice",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 }
             ]
         },
         {
             "category_name": "Hobby - Activity Dice",
+            "category_color":"##1F628E",
             "dice_list": [
                 {
                     "dice_name": "Film Dice",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "General Hobby Activity Dice",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "Series Dice",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "Sports Dice",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "What Genre of Music Should You Listen to?",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "Podcast Dice",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 },
                 {
                     "dice_name": "Which DIY Project Should You Try?",
-                    "icon": "Icon"
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "category_name": "Relationship Dice",
+            "category_color":"#7C09A4",
+            "dice_list": [
+                {
+                    "dice_name": "Film Dice",
+                    "icon": "Icon",
+                    "sub_types": []
+                },
+                {
+                    "dice_name": "General Hobby Activity Dice",
+                    "icon": "Icon",
+                    "sub_types": []
+                },
+                {
+                    "dice_name": "Series Dice",
+                    "icon": "Icon",
+                    "sub_types": []
+                },
+                {
+                    "dice_name": "Sports Dice",
+                    "icon": "Icon",
+                    "sub_types": []
+                },
+                {
+                    "dice_name": "What Genre of Music Should You Listen to?",
+                    "icon": "Icon",
+                    "sub_types": []
+                },
+                {
+                    "dice_name": "Podcast Dice",
+                    "icon": "Icon",
+                    "sub_types": []
+                },
+                {
+                    "dice_name": "Which DIY Project Should You Try?",
+                    "icon": "Icon",
+                    "sub_types": []
+                }
+            ]
+        },
+        {
+            "category_name": "Travel Dice",
+            "category_color":"#7C09A4",
+            "dice_list": [
+                {
+                    "dice_name": "Film Dice",
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
+                },
+                {
+                    "dice_name": "General Hobby Activity Dice",
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
+                },
+                {
+                    "dice_name": "Series Dice",
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
+                },
+                {
+                    "dice_name": "Sports Dice",
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
+                },
+                {
+                    "dice_name": "What Genre of Music Should You Listen to?",
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
+                },
+                {
+                    "dice_name": "Podcast Dice",
+                    "icon": "Icon",
+                    "isPremium":false,
+
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
+                },
+                {
+                    "dice_name": "Which DIY Project Should You Try?",
+                    "icon": "Icon",
+                    "isPremium":false,
+                    "sub_types": [
+                          {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": []
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        },
+                        {
+                            "name": "",
+                            "options": [""]
+                        }
+                    ]
                 }
             ]
         }
