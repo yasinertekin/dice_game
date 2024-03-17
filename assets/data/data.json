@@ -6,7 +6,6 @@
             "category_icon":"",
             
             "dice_list": [
-
               {
                     "dice_name": "Gourmet Dice",
                     "icon": "assets/icon",
@@ -76,6 +75,8 @@
                     "dice_name": "Explore New Flavors",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
+
 
                     "sub_types": [
                         {
@@ -108,6 +109,7 @@
                     "dice_name": "What Should I Drink?",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -139,6 +141,7 @@
                     "dice_name": "What Should I Drink? (High Alcohol)",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -170,6 +173,7 @@
                     "dice_name": "Coffee Dice",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -203,6 +207,8 @@
             "category_name": "Game Dice",
             "category_color":"1F628E",
             "category_icon":"",
+            "description":" ",
+            
             "dice_list": [
                 {
                     "dice_name": "Team Dice (Football)",
@@ -239,6 +245,7 @@
                     "dice_name": "Table Adventure Dice",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -270,6 +277,7 @@
                     "dice_name": "Game Dice (Free Games)",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -301,6 +309,7 @@
                     "dice_name": "Game Dice (Computer)",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -332,6 +341,7 @@
                     "dice_name": "Game Dice (Console)",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -363,6 +373,7 @@
                     "dice_name": "NBA Dice",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -395,6 +406,8 @@
         {
             "category_name": "Hobby - Activity Dice",
             "category_color":"1F628E",
+            "category_icon":"",
+            "description":" ",
             "dice_list": [
                 {
                     "dice_name": "Film Dice",
@@ -431,6 +444,7 @@
                     "dice_name": "General Hobby Activity Dice",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -462,6 +476,7 @@
                     "dice_name": "Series Dice",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -493,6 +508,7 @@
                     "dice_name": "Sports Dice",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -524,6 +540,7 @@
                     "dice_name": "What Genre of Music Should You Listen to?",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -555,6 +572,7 @@
                     "dice_name": "Podcast Dice",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -586,6 +604,7 @@
                     "dice_name": "Which DIY Project Should You Try?",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -618,6 +637,8 @@
         {
             "category_name": "Relationship Dice",
             "category_color":"7C09A4",
+            "category_icon":"",
+            "description":"",
             "dice_list": [
                 {
                     "dice_name": "Film Dice",
@@ -659,6 +680,8 @@
         {
             "category_name": "Travel Dice",
             "category_color":"7C09A4",
+            "category_icon":"",
+            "description":"",
             "dice_list": [
                 {
                     "dice_name": "Film Dice",
@@ -695,6 +718,7 @@
                     "dice_name": "General Hobby Activity Dice",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -726,6 +750,7 @@
                     "dice_name": "Series Dice",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -757,6 +782,7 @@
                     "dice_name": "Sports Dice",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -788,6 +814,7 @@
                     "dice_name": "What Genre of Music Should You Listen to?",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",
@@ -819,7 +846,8 @@
                     "dice_name": "Podcast Dice",
                     "icon": "Icon",
                     "isPremium":false,
-
+                    "description:":"",
+                
                     "sub_types": [
                           {
                             "name": "",
@@ -851,6 +879,7 @@
                     "dice_name": "Which DIY Project Should You Try?",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_types": [
                           {
                             "name": "",

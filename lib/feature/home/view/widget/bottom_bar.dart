@@ -5,18 +5,20 @@ final class _BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        _CustomDivider(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _FavoriteIcon(),
-            _MenuIcon(),
-          ],
-        ),
-      ],
+    return const SafeArea(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _CustomDivider(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _FavoriteIcon(),
+              _MenuIcon(),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

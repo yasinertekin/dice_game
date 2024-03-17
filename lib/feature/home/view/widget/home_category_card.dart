@@ -13,23 +13,32 @@ final class _HomeCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: context.paddingAllLow,
-      child: Card(
-        margin: const EdgeInsets.all(15),
-        color: dice?.categoryColor != null
-            ? _CardColor(dice!.categoryColor.toString())
-            : ProjectColor.buzzIn.toColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: context.borderRadiusLow,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              textAlign: TextAlign.center,
-              dice?.categoryName ?? '',
-              style: context.textTheme.titleLarge,
+      child: InkWell(
+        onTap: () {
+          context.router.push(
+            CategoryDetailRoute(
+              diceCategories: dice,
             ),
-          ],
+          );
+        },
+        child: Card(
+          margin: const EdgeInsets.all(15),
+          color: dice?.categoryColor != null
+              ? _CardColor(dice!.categoryColor.toString())
+              : ProjectColor.buzzIn.toColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: context.borderRadiusLow,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                textAlign: TextAlign.center,
+                dice?.categoryName ?? '',
+                style: context.textTheme.titleLarge,
+              ),
+            ],
+          ),
         ),
       ),
     );

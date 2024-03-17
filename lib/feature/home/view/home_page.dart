@@ -11,6 +11,7 @@ import 'package:dice_game/product/service/json_service.dart';
 import 'package:dice_game/product/widget/custom_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kartal/kartal.dart';
 
 part 'widget/bottom_bar.dart';
 part 'widget/custom_divider.dart';
@@ -46,14 +47,15 @@ final class _HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: ProjectColor.silkyWhite.toColor,
       appBar: const _HomeAppBar(),
-      body: const Center(
+      body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _HomeTitle(),
-              _DiceGategoryList(),
-              _UserDiceCard(),
+              const _HomeTitle(),
+              const _DiceGategoryList(),
+              const _UserDiceCard(),
+              context.sized.emptySizedHeightBoxNormal,
             ],
           ),
         ),
@@ -99,7 +101,7 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.dynamicHeight(0.9),
+      height: context.dynamicHeight(0.7),
       child: GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -110,42 +112,11 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
         itemCount: diceModel.diceCategories?.length ?? 0,
         itemBuilder: (context, index) {
           final dice = diceModel.diceCategories?[index];
-          return _CategoryCard(dice: dice);
+          return _HomeCategoryCard(
+            dice: dice,
+            index: index,
+          );
         },
-      ),
-    );
-  }
-}
-
-final class _CategoryCard extends StatelessWidget {
-  const _CategoryCard({
-    required this.dice,
-  });
-
-  final DiceCategories? dice;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: context.paddingAllLow,
-      child: Card(
-        margin: const EdgeInsets.all(15),
-        color: dice?.categoryColor != null
-            ? Color(int.parse('0xFF${dice?.categoryColor}'))
-            : ProjectColor.buzzIn.toColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: context.borderRadiusLow,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              textAlign: TextAlign.center,
-              dice?.categoryName ?? '',
-              style: context.textTheme.titleLarge,
-            ),
-          ],
-        ),
       ),
     );
   }

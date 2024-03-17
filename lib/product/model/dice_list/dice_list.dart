@@ -13,6 +13,7 @@ final class DiceList with EquatableMixin {
     this.icon,
     this.isPremium,
     this.subDice,
+    this.description,
   });
 
   factory DiceList.fromJson(Map<String, dynamic> json) =>
@@ -25,6 +26,8 @@ final class DiceList with EquatableMixin {
   final bool? isPremium;
   @JsonKey(name: 'sub_dice')
   final List<SubDice>? subDice;
+  @JsonKey(name: 'description')
+  final String? description;
 
   Map<String, dynamic> toJson() => _$DiceListToJson(this);
 
@@ -36,12 +39,14 @@ final class DiceList with EquatableMixin {
     String? icon,
     bool? isPremium,
     List<SubDice>? subDice,
+    String? description,
   }) {
     return DiceList(
       diceName: diceName ?? this.diceName,
       icon: icon ?? this.icon,
       isPremium: isPremium ?? this.isPremium,
       subDice: subDice ?? this.subDice,
+      description: description ?? this.description,
     );
   }
 }

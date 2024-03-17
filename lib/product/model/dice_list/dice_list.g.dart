@@ -13,6 +13,7 @@ DiceList _$DiceListFromJson(Map<String, dynamic> json) => DiceList(
       subDice: (json['sub_dice'] as List<dynamic>?)
           ?.map((e) => SubDice.fromJson(e as Map<String, dynamic>))
           .toList(),
+      description: json['description'] as String?,
     );
 
 Map<String, dynamic> _$DiceListToJson(DiceList instance) => <String, dynamic>{
@@ -20,4 +21,5 @@ Map<String, dynamic> _$DiceListToJson(DiceList instance) => <String, dynamic>{
       'icon': instance.icon,
       'isPremium': instance.isPremium,
       'sub_dice': instance.subDice,
+      'description': instance.description,
     };
