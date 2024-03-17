@@ -7,13 +7,11 @@ part of 'dice_model.dart';
 // **************************************************************************
 
 DiceModel _$DiceModelFromJson(Map<String, dynamic> json) => DiceModel(
-      id: json['id'] as String?,
-      name: json['name'] as String?,
-      stringUrl: json['stringUrl'] as String?,
+      diceCategories: (json['dice_categories'] as List<dynamic>?)
+          ?.map((e) => DiceCategories.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$DiceModelToJson(DiceModel instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'stringUrl': instance.stringUrl,
+      'dice_categories': instance.diceCategories,
     };
