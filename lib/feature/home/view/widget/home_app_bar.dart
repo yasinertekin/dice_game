@@ -10,6 +10,7 @@ final class _HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: const Text('Home Page'),
       scrolledUnderElevation: 0,
       centerTitle: true,
+      automaticallyImplyLeading: false,
       bottom: const _AppbarBottom(),
     );
   }

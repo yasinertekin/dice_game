@@ -12,7 +12,7 @@
                     "icon": "assets/icon",
                     "isPremium":false,
                     "description:":"",
-                    "sub_dice": [
+                    "sub_types": [
                         {
                             "name": "Pişirme Yöntemi",
                             "options": ["Fırınlama", "Haşlama", "Izgara", "Kızartma", "Sote", "Kavurma"]
@@ -45,7 +45,7 @@
                     "isPremium":false,
                     "description:":"",
 
-                    "sub_dice": [
+                    "sub_types": [
                           {
                             "name": "",
                             "options": []
@@ -77,7 +77,7 @@
                     "icon": "Icon",
                     "isPremium":false,
 
-                    "sub_dice": [
+                    "sub_types": [
                         {
                             "name": "",
                             "options": []
@@ -108,7 +108,7 @@
                     "dice_name": "What Should I Drink?",
                     "icon": "Icon",
                     "isPremium":false,
-                    "sub_dice": [
+                    "sub_types": [
                           {
                             "name": "",
                             "options": []
@@ -139,7 +139,7 @@
                     "dice_name": "What Should I Drink? (High Alcohol)",
                     "icon": "Icon",
                     "isPremium":false,
-                    "sub_dice": [
+                    "sub_types": [
                           {
                             "name": "",
                             "options": []
@@ -170,7 +170,7 @@
                     "dice_name": "Coffee Dice",
                     "icon": "Icon",
                     "isPremium":false,
-                    "sub_dice": [
+                    "sub_types": [
                           {
                             "name": "",
                             "options": []

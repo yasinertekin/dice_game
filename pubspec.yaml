@@ -14,6 +14,8 @@ dependencies:
 
   # Router
   go_router: ^13.2.1
+  auto_route: ^7.9.0
+  auto_route_generator: ^7.3.2
 
 
   # State Management
@@ -39,6 +41,7 @@ dev_dependencies:
 
   # Lint
   very_good_analysis: ^5.1.0
+  
 
   # Code Generator
   build_runner: ^2.4.8

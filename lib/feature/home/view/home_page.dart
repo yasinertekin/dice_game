@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/home/cubit/home_cubit.dart';
 import 'package:dice_game/feature/home/cubit/state/home_state.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
@@ -5,8 +6,7 @@ import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/model/dice_categories/dice_categories.dart';
 import 'package:dice_game/product/model/dice_model/dice_model.dart';
-import 'package:dice_game/product/router/route_paths.dart';
-import 'package:dice_game/product/router/router_manager.dart';
+import 'package:dice_game/product/router/app_router.gr.dart';
 import 'package:dice_game/product/service/json_service.dart';
 import 'package:dice_game/product/widget/custom_svg.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +22,7 @@ part 'widget/menu_icon.dart';
 part 'widget/user_dice_card.dart';
 
 /// HomePage
+@RoutePage()
 final class HomePage extends StatelessWidget {
   /// HomePage constructor
   const HomePage({super.key});
@@ -46,13 +47,15 @@ final class _HomeView extends StatelessWidget {
       backgroundColor: ProjectColor.silkyWhite.toColor,
       appBar: const _HomeAppBar(),
       body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _HomeTitle(),
-            _DiceGategoryList(),
-            _UserDiceCard(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _HomeTitle(),
+              _DiceGategoryList(),
+              _UserDiceCard(),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: const _BottomBar(),
@@ -95,8 +98,10 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: context.dynamicHeight(0.9),
       child: GridView.builder(
+        physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
@@ -125,7 +130,9 @@ final class _CategoryCard extends StatelessWidget {
       padding: context.paddingAllLow,
       child: Card(
         margin: const EdgeInsets.all(15),
-        color: ProjectColor.buzzIn.toColor,
+        color: dice?.categoryColor != null
+            ? Color(int.parse('0xFF${dice?.categoryColor}'))
+            : ProjectColor.buzzIn.toColor,
         shape: RoundedRectangleBorder(
           borderRadius: context.borderRadiusLow,
         ),

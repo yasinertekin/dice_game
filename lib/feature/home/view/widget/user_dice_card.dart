@@ -9,10 +9,11 @@ final class _UserDiceCard extends StatelessWidget {
       width: context.dynamicWidth(0.8),
       height: context.dynamicHeight(0.2),
       child: InkWell(
-        onTap: () => RouterManager.routes.go(
-          RoutePaths.userDice.path,
-          extra: 'My Parameters',
-        ),
+        onTap: () {
+          context.router.push(
+            UserDiceRoute(myParameter: 'My Parameter'),
+          );
+        },
         child: Card(
           shape: _CardShape(context),
           color: ProjectColor.buzzIn.toColor,

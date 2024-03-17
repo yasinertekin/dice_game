@@ -1,8 +1,9 @@
-import 'package:dice_game/product/router/route_paths.dart';
-import 'package:dice_game/product/router/router_manager.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:dice_game/product/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
 /// Splash Page
+@RoutePage()
 final class SplashPage extends StatelessWidget {
   /// Constructor
   const SplashPage({super.key});
@@ -28,7 +29,9 @@ final class _SplashView extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              RouterManager.routes.go(RoutePaths.home.path);
+              context.router.push(
+                const HomeRoute(),
+              );
             },
             child: const Text('Next Page'),
           ),

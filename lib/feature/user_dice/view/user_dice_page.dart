@@ -1,7 +1,7 @@
-import 'package:dice_game/product/router/route_paths.dart';
-import 'package:dice_game/product/router/router_manager.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 final class UserDicePage extends StatelessWidget {
   const UserDicePage({required this.myParameter, super.key});
 
@@ -28,14 +28,6 @@ final class _UserDiceView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('User Dice'),
         actions: const [],
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            RouterManager.routes.go(
-              RoutePaths.home.path,
-            );
-          },
-        ),
       ),
       body: Column(
         children: [
