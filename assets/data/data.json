@@ -1,0 +1,95 @@
+{
+    "dice_categories": [
+        {
+            "category_name": "Food and Drink",
+            "dice_list": [
+                {
+                    "dice_name": "Gourmet Dice",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "What Should I Eat?",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "Explore New Flavors",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "What Should I Drink?",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "What Should I Drink? (High Alcohol)",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "Coffee Dice",
+                    "icon": "Icon"
+                }
+            ]
+        },
+        {
+            "category_name": "Game Dice",
+            "dice_list": [
+                {
+                    "dice_name": "Team Dice (Football)",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "Table Adventure Dice",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "Game Dice (Free Games)",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "Game Dice (Computer)",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "Game Dice (Console)",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "NBA Dice",
+                    "icon": "Icon"
+                }
+            ]
+        },
+        {
+            "category_name": "Hobby - Activity Dice",
+            "dice_list": [
+                {
+                    "dice_name": "Film Dice",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "General Hobby Activity Dice",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "Series Dice",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "Sports Dice",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "What Genre of Music Should You Listen to?",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "Podcast Dice",
+                    "icon": "Icon"
+                },
+                {
+                    "dice_name": "Which DIY Project Should You Try?",
+                    "icon": "Icon"
+                }
+            ]
+        }
+    ]
+}
