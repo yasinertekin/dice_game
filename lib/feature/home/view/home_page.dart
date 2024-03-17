@@ -16,6 +16,7 @@ part 'widget/bottom_bar.dart';
 part 'widget/custom_divider.dart';
 part 'widget/favorite_icon.dart';
 part 'widget/home_app_bar.dart';
+part 'widget/home_category_card.dart';
 part 'widget/home_title.dart';
 part 'widget/menu_icon.dart';
 part 'widget/user_dice_card.dart';
