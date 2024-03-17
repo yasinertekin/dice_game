@@ -3,12 +3,15 @@
         {
             "category_name": "Food and Drink",
             "category_color":"#B81C1C",
+            "category_icon":"",
+            
             "dice_list": [
 
               {
                     "dice_name": "Gourmet Dice",
                     "icon": "assets/icon",
                     "isPremium":false,
+                    "description:":"",
                     "sub_dice": [
                         {
                             "name": "Pişirme Yöntemi",
@@ -40,6 +43,8 @@
                     "dice_name": "What Should I Eat?",
                     "icon": "Icon",
                     "isPremium":false,
+                    "description:":"",
+
                     "sub_dice": [
                           {
                             "name": "",
@@ -197,6 +202,7 @@
         {
             "category_name": "Game Dice",
             "category_color":"#1F628E",
+            "category_icon":"",
             "dice_list": [
                 {
                     "dice_name": "Team Dice (Football)",

@@ -123,6 +123,7 @@ final class _CategoryCard extends StatelessWidget {
     return Padding(
       padding: context.paddingAllLow,
       child: Card(
+        margin: const EdgeInsets.all(15),
         color: ProjectColor.buzzIn.toColor,
         shape: RoundedRectangleBorder(
           borderRadius: context.borderRadiusLow,
