@@ -22,13 +22,10 @@ final class _HomeCategoryCard extends StatelessWidget {
           );
         },
         child: Card(
-          margin: const EdgeInsets.all(15),
+          margin: const EdgeInsets.all(10),
           color: dice?.categoryColor != null
               ? _CardColor(dice!.categoryColor.toString())
               : ProjectColor.buzzIn.toColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: context.borderRadiusLow,
-          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
