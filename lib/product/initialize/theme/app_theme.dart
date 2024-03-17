@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// AppTheme
 abstract interface class AppTheme {
   /// ThemeData
   ThemeData get themeData;
@@ -9,4 +10,10 @@ abstract interface class AppTheme {
 
   /// BottomAppBarTheme
   BottomAppBarTheme get bottomAppBarTheme;
+
+  /// AppBarTheme
+  AppBarTheme get appBarTheme;
+
+  /// CardTheme
+  CardTheme get cardTheme;
 }
