@@ -11,6 +11,8 @@ final class CustomTheme implements AppTheme {
         bottomAppBarTheme: bottomAppBarTheme,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        appBarTheme: appBarTheme,
+        cardTheme: cardTheme,
       );
   @override
   TextTheme get textTheme => GoogleFonts.aDLaMDisplayTextTheme();
@@ -20,5 +22,29 @@ final class CustomTheme implements AppTheme {
         color: ProjectColor.transparent.toColor,
         surfaceTintColor: ProjectColor.transparent.toColor,
         elevation: 0,
+      );
+
+  @override
+  AppBarTheme get appBarTheme => AppBarTheme(
+        backgroundColor: ProjectColor.transparent.toColor,
+        elevation: 0,
+        centerTitle: true,
+        scrolledUnderElevation: 0,
+        iconTheme: IconThemeData(
+          color: ProjectColor.white.toColor,
+        ),
+      );
+
+  @override
+  CardTheme get cardTheme => CardTheme(
+        color: ProjectColor.transparent.toColor,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: BorderSide(
+            color: ProjectColor.white.toColor,
+            width: 4,
+          ),
+        ),
       );
 }
