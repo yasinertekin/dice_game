@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
-import 'package:dice_game/product/model/dice_categories/dice_categories.dart';
-import 'package:dice_game/product/model/dice_list/dice_list.dart';
+import 'package:dice_game/product/model/categories/categories.dart';
+import 'package:dice_game/product/model/category_dices/category_dices.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/custom_svg.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ final class CategoryDetailPage extends StatelessWidget {
   });
 
   /// DiceCategories
-  final DiceCategories? diceCategories;
+  final Categories? diceCategories;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ final class _CategoryDetailView extends StatelessWidget {
     required this.diceCategories,
   });
 
-  final DiceCategories? diceCategories;
+  final Categories? diceCategories;
 
   @override
   Widget build(BuildContext context) {
@@ -54,15 +54,15 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
     required this.diceCategories,
   });
 
-  final DiceCategories? diceCategories;
+  final Categories? diceCategories;
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       gridDelegate: const _SliverGridDelegate(),
-      itemCount: diceCategories?.diceList?.length ?? 0,
+      itemCount: diceCategories?.categoryDices?.length ?? 0,
       itemBuilder: (context, index) {
-        final diceList = diceCategories?.diceList;
+        final diceList = diceCategories?.categoryDices;
         return _CategoryDetailCard(
           diceList: diceList,
           index: index,

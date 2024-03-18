@@ -6,7 +6,7 @@ final class _CategoryDetailAppBar extends StatelessWidget
     required this.diceCategories,
   });
 
-  final DiceCategories? diceCategories;
+  final Categories? diceCategories;
 
   @override
   Widget build(BuildContext context) {
