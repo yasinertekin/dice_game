@@ -11,7 +11,7 @@ final class _UserDiceCard extends StatelessWidget {
       child: InkWell(
         onTap: () {
           context.router.push(
-            UserDiceRoute(myParameter: 'My Parameter'),
+            const UserDiceRoute(),
           );
         },
         child: Card(
