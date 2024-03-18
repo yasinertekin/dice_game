@@ -11,7 +11,12 @@ final class _CategoryDetailAppBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(diceCategories?.categoryName ?? ''),
+      title: Text(
+        diceCategories?.categoryName ?? '',
+        style: context.textTheme.titleLarge!.copyWith(
+          color: ProjectColor.white.toColor,
+        ),
+      ),
       backgroundColor: ProjectColor.transparent.toColor,
       leading: const CustomBackButton(),
     );
