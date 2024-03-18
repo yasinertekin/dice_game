@@ -5,7 +5,7 @@
             "category_color":"B81C1C",
             "category_icon":"",
             
-            "dice_list": [
+            "dice": [
               {
                     "dice_name": "Gourmet Dice",
                     "icon": "assets/icon",
@@ -209,7 +209,7 @@
             "category_icon":"",
             "description":" ",
             
-            "dice_list": [
+            "dice": [
                 {
                     "dice_name": "Team Dice (Football)",
                     "icon": "Icon",
@@ -408,7 +408,7 @@
             "category_color":"1F628E",
             "category_icon":"",
             "description":" ",
-            "dice_list": [
+            "dice": [
                 {
                     "dice_name": "Film Dice",
                     "icon": "Icon",
@@ -639,7 +639,7 @@
             "category_color":"7C09A4",
             "category_icon":"",
             "description":"",
-            "dice_list": [
+            "dice": [
                 {
                     "dice_name": "Film Dice",
                     "icon": "Icon",
@@ -682,7 +682,7 @@
             "category_color":"7C09A4",
             "category_icon":"",
             "description":"",
-            "dice_list": [
+            "dice": [
                 {
                     "dice_name": "Film Dice",
                     "icon": "Icon",
@@ -818,15 +818,20 @@
                     "sub_types": [
                           {
                             "name": "",
-                            "options": []
+                            "options": [],
+                            "dice_name":"What Genre of Music Should You Listen to?"
                         },
                         {
                             "name": "",
-                            "options": []
+                            "options": [],
+                            "dice_name":"What Genre of Music Should You Listen to?"
+
                         },
                         {
                             "name": "",
-                            "options": []
+                            "options": [],
+                           "dice_name":"What Genre of Music Should You Listen to?"
+
                         },
                         {
                             "name": "",
