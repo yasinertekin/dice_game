@@ -44,26 +44,23 @@ final class _HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      canPop: false,
-      child: Scaffold(
-        backgroundColor: ProjectColor.silkyWhite.toColor,
-        appBar: const _HomeAppBar(),
-        body: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const _HomeTitle(),
-                const _DiceGategoryList(),
-                const _UserDiceCard(),
-                context.sized.emptySizedHeightBoxNormal,
-              ],
-            ),
+    return Scaffold(
+      backgroundColor: ProjectColor.silkyWhite.toColor,
+      appBar: const _HomeAppBar(),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const _HomeTitle(),
+              const _DiceGategoryList(),
+              const _UserDiceCard(),
+              context.sized.emptySizedHeightBoxNormal,
+            ],
           ),
         ),
-        bottomNavigationBar: const _BottomBar(),
       ),
+      bottomNavigationBar: const _BottomBar(),
     );
   }
 }
