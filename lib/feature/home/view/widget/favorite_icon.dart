@@ -7,7 +7,7 @@ final class _FavoriteIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: CustomSvg(
-        assetPath: ProjectAssets.heard.toSvg,
+        assetPath: ProjectAssets.icHeard.toSvg,
       ),
       onPressed: () {},
     );
