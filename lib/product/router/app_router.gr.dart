@@ -12,11 +12,12 @@ import 'package:auto_route/auto_route.dart' as _i6;
 import 'package:dice_game/feature/category_detail/view/catergory_detail_page.dart'
     as _i1;
 import 'package:dice_game/feature/home/view/home_page.dart' as _i2;
-import 'package:dice_game/feature/splash/view/splash_page.dart' as _i3;
-import 'package:dice_game/feature/sub_dices/view/sub_dices_page.dart' as _i4;
+import 'package:dice_game/feature/roll_dice/view/roll_dice_page.dart' as _i3;
+import 'package:dice_game/feature/splash/view/splash_page.dart' as _i4;
 import 'package:dice_game/feature/user_dice/view/user_dice_page.dart' as _i5;
 import 'package:dice_game/product/model/categories/categories.dart' as _i7;
-import 'package:dice_game/product/model/options/options.dart' as _i9;
+import 'package:dice_game/product/model/category_dices/category_dices.dart'
+    as _i9;
 import 'package:flutter/material.dart' as _i8;
 
 abstract class $AppRouter extends _i6.RootStackRouter {
@@ -40,20 +41,20 @@ abstract class $AppRouter extends _i6.RootStackRouter {
         child: const _i2.HomePage(),
       );
     },
+    RollDiceRoute.name: (routeData) {
+      final args = routeData.argsAs<RollDiceRouteArgs>();
+      return _i6.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i3.RollDicePage(
+          categoryDices: args.categoryDices,
+          key: args.key,
+        ),
+      );
+    },
     SplashRoute.name: (routeData) {
       return _i6.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.SplashPage(),
-      );
-    },
-    SubDicesRoute.name: (routeData) {
-      final args = routeData.argsAs<SubDicesRouteArgs>();
-      return _i6.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i4.SubDicesPage(
-          categoryOptions: args.categoryOptions,
-          key: args.key,
-        ),
+        child: const _i4.SplashPage(),
       );
     },
     UserDiceRoute.name: (routeData) {
@@ -118,7 +119,45 @@ class HomeRoute extends _i6.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.SplashPage]
+/// [_i3.RollDicePage]
+class RollDiceRoute extends _i6.PageRouteInfo<RollDiceRouteArgs> {
+  RollDiceRoute({
+    required _i9.CategoryDices categoryDices,
+    _i8.Key? key,
+    List<_i6.PageRouteInfo>? children,
+  }) : super(
+          RollDiceRoute.name,
+          args: RollDiceRouteArgs(
+            categoryDices: categoryDices,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'RollDiceRoute';
+
+  static const _i6.PageInfo<RollDiceRouteArgs> page =
+      _i6.PageInfo<RollDiceRouteArgs>(name);
+}
+
+class RollDiceRouteArgs {
+  const RollDiceRouteArgs({
+    required this.categoryDices,
+    this.key,
+  });
+
+  final _i9.CategoryDices categoryDices;
+
+  final _i8.Key? key;
+
+  @override
+  String toString() {
+    return 'RollDiceRouteArgs{categoryDices: $categoryDices, key: $key}';
+  }
+}
+
+/// generated route for
+/// [_i4.SplashPage]
 class SplashRoute extends _i6.PageRouteInfo<void> {
   const SplashRoute({List<_i6.PageRouteInfo>? children})
       : super(
@@ -129,44 +168,6 @@ class SplashRoute extends _i6.PageRouteInfo<void> {
   static const String name = 'SplashRoute';
 
   static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i4.SubDicesPage]
-class SubDicesRoute extends _i6.PageRouteInfo<SubDicesRouteArgs> {
-  SubDicesRoute({
-    required List<_i9.Options> categoryOptions,
-    _i8.Key? key,
-    List<_i6.PageRouteInfo>? children,
-  }) : super(
-          SubDicesRoute.name,
-          args: SubDicesRouteArgs(
-            categoryOptions: categoryOptions,
-            key: key,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'SubDicesRoute';
-
-  static const _i6.PageInfo<SubDicesRouteArgs> page =
-      _i6.PageInfo<SubDicesRouteArgs>(name);
-}
-
-class SubDicesRouteArgs {
-  const SubDicesRouteArgs({
-    required this.categoryOptions,
-    this.key,
-  });
-
-  final List<_i9.Options> categoryOptions;
-
-  final _i8.Key? key;
-
-  @override
-  String toString() {
-    return 'SubDicesRouteArgs{categoryOptions: $categoryOptions, key: $key}';
-  }
 }
 
 /// generated route for

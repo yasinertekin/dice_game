@@ -15,6 +15,6 @@ final class AppRouter extends $AppRouter {
         AdaptiveRoute(page: HomeRoute.page),
         AdaptiveRoute(page: UserDiceRoute.page),
         AdaptiveRoute(page: CategoryDetailRoute.page),
-        AdaptiveRoute(page: SubDicesRoute.page),
+        AdaptiveRoute(page: RollDiceRoute.page),
       ];
 }

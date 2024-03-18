@@ -14,8 +14,8 @@ final class _CategoryDetailCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         context.router.push(
-          SubDicesRoute(
-            categoryOptions: diceList![index].subDices?.first.options ?? [],
+          RollDiceRoute(
+            categoryDices: diceList![index],
           ),
         );
       },
