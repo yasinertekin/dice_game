@@ -14,8 +14,7 @@ import 'package:dice_game/feature/category_detail/view/catergory_detail_page.dar
 import 'package:dice_game/feature/home/view/home_page.dart' as _i2;
 import 'package:dice_game/feature/splash/view/splash_page.dart' as _i3;
 import 'package:dice_game/feature/user_dice/view/user_dice_page.dart' as _i4;
-import 'package:dice_game/product/model/dice_categories/dice_categories.dart'
-    as _i6;
+import 'package:dice_game/product/model/categories/categories.dart' as _i6;
 import 'package:flutter/material.dart' as _i7;
 
 abstract class $AppRouter extends _i5.RootStackRouter {
@@ -46,13 +45,9 @@ abstract class $AppRouter extends _i5.RootStackRouter {
       );
     },
     UserDiceRoute.name: (routeData) {
-      final args = routeData.argsAs<UserDiceRouteArgs>();
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i4.UserDicePage(
-          myParameter: args.myParameter,
-          key: args.key,
-        ),
+        child: const _i4.UserDicePage(),
       );
     },
   };
@@ -62,7 +57,7 @@ abstract class $AppRouter extends _i5.RootStackRouter {
 /// [_i1.CategoryDetailPage]
 class CategoryDetailRoute extends _i5.PageRouteInfo<CategoryDetailRouteArgs> {
   CategoryDetailRoute({
-    required _i6.DiceCategories? diceCategories,
+    required _i6.Categories? diceCategories,
     _i7.Key? key,
     List<_i5.PageRouteInfo>? children,
   }) : super(
@@ -86,7 +81,7 @@ class CategoryDetailRouteArgs {
     this.key,
   });
 
-  final _i6.DiceCategories? diceCategories;
+  final _i6.Categories? diceCategories;
 
   final _i7.Key? key;
 
@@ -126,38 +121,14 @@ class SplashRoute extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.UserDicePage]
-class UserDiceRoute extends _i5.PageRouteInfo<UserDiceRouteArgs> {
-  UserDiceRoute({
-    required String myParameter,
-    _i7.Key? key,
-    List<_i5.PageRouteInfo>? children,
-  }) : super(
+class UserDiceRoute extends _i5.PageRouteInfo<void> {
+  const UserDiceRoute({List<_i5.PageRouteInfo>? children})
+      : super(
           UserDiceRoute.name,
-          args: UserDiceRouteArgs(
-            myParameter: myParameter,
-            key: key,
-          ),
           initialChildren: children,
         );
 
   static const String name = 'UserDiceRoute';
 
-  static const _i5.PageInfo<UserDiceRouteArgs> page =
-      _i5.PageInfo<UserDiceRouteArgs>(name);
-}
-
-class UserDiceRouteArgs {
-  const UserDiceRouteArgs({
-    required this.myParameter,
-    this.key,
-  });
-
-  final String myParameter;
-
-  final _i7.Key? key;
-
-  @override
-  String toString() {
-    return 'UserDiceRouteArgs{myParameter: $myParameter, key: $key}';
-  }
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }
