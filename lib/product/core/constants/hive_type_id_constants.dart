@@ -9,5 +9,6 @@ final class HiveTypeIdConstants {
   /// The Hive type id for the category dices
   static const int categoryDicesId = 0;
 
+  /// The Hive type id for the sub dices
   static const int subDicesId = 1;
 }

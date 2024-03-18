@@ -1,12 +1,11 @@
+import 'package:dice_game/product/initialize/app_initialize.dart';
 import 'package:dice_game/product/initialize/state_initialize.dart';
 import 'package:dice_game/product/initialize/theme/custom_theme.dart';
 import 'package:dice_game/product/router/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
+  await AppInitialize.initialize();
   runApp(
     StateInitialize(child: _DiceApp()),
   );
@@ -22,6 +21,8 @@ final class _DiceApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter Demo',
+
+      /// This is the theme of the app
       theme: CustomTheme().themeData,
 
       /// This is the router of the app
