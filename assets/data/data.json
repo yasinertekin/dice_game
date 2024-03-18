@@ -1,51 +1,648 @@
 {
-  "categories": [
-    {
-      "categoryName": "Kategori 1",
-      "categoryIcon": "icon1.png",
-      "categoryColor": "FF5733",
-      "categoryDices": [
+    "categories": [
         {
-          "dice_name": "Kahve",
-          "icon": "assets/icon",
-          "id": "1",
-          "isPremium": false,
-          "isAdultContent": false,
-          "description": "",
-          "sub_dices": [
-            {"name": "Kahve", "options": [{"id": "1", "name": "a"}, {"id": "2", "name": "b"}, {"id": "3", "name": "c"}, {"id": "4", "name": "d"}, {"id": "5", "name": "e"}, {"id": "6", "name": "f"}]}
-          ]
+            "categoryName": "Yiyecek ve İçecek Zarları",
+            "categoryIcon": "icon1.png",
+            "categoryColor": "B81C1C",
+            "categoryDices": [
+                {
+                    "id": "1",
+                    "dice_name": "Gurme Zarı",
+                    "dice_image": "assets/image",
+                    "icon": "assets/icon/dice_icon/gourmet_icon.svg",
+                    "isPremium": false,
+                    "adultContent": false,
+                    "description": "Lezzetli yemekler pişirmek ve keyifli bir zaman geçirmek için fikirler mi arıyorsunuz?",
+                    "sub_dices": [
+                        {
+                            "name": "Pişirme Yöntemi",
+                            "options": [
+                                {
+                                    "id": "1",
+                                    "name": "Fırınlama"
+                                },
+                                {
+                                    "id": "2",
+                                    "name": "Haşlama"
+                                },
+                                {
+                                    "id": "3",
+                                    "name": "Izgara"
+                                },
+                                {
+                                    "id": "4",
+                                    "name": "Kızartma"
+                                },
+                                {
+                                    "id": "5",
+                                    "name": "Sote"
+                                },
+                                {
+                                    "id": "6",
+                                    "name": "Kavurma"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Protein",
+                            "options": [
+                                {
+                                    "id": "1",
+                                    "name": "Dana"
+                                },
+                                {
+                                    "id": "2",
+                                    "name": "Kuzu"
+                                },
+                                {
+                                    "id": "3",
+                                    "name": "Hindi"
+                                },
+                                {
+                                    "id": "4",
+                                    "name": "Kıyma"
+                                },
+                                {
+                                    "id": "5",
+                                    "name": "Tavuk"
+                                },
+                                {
+                                    "id": "6",
+                                    "name": "Deniz Ürünleri"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Karbonhidrat",
+                            "options": [
+                                {
+                                    "id": "1",
+                                    "name": "Bulgur"
+                                },
+                                {
+                                    "id": "2",
+                                    "name": "Pirinç"
+                                },
+                                {
+                                    "id": "3",
+                                    "name": "Patates"
+                                },
+                                {
+                                    "id": "4",
+                                    "name": "Kinoa"
+                                },
+                                {
+                                    "id": "5",
+                                    "name": "Makarna"
+                                },
+                                {
+                                    "id": "6",
+                                    "name": "Noodle"
+                                },
+                                {
+                                    "name": "Sebzeler",
+                                    "options": [
+                                        {
+                                            "id": "1",
+                                            "name": "Brokoli"
+                                        },
+                                        {
+                                            "id": "2",
+                                            "name": "Havuç"
+                                        },
+                                        {
+                                            "id": "3",
+                                            "name": "Ispanak"
+                                        },
+                                        {
+                                            "id": "4",
+                                            "name": "Domates"
+                                        },
+                                        {
+                                            "id": "5",
+                                            "name": "Patlıcan"
+                                        },
+                                        {
+                                            "id": "6",
+                                            "name": "Bezelye"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Baharatlar",
+                                    "options": [
+                                        {
+                                            "id": "1",
+                                            "name": "Fesleğen"
+                                        },
+                                        {
+                                            "id": "2",
+                                            "name": "Kekik"
+                                        },
+                                        {
+                                            "id": "3",
+                                            "name": "Kişniş"
+                                        },
+                                        {
+                                            "id": "4",
+                                            "name": "Yenibahar"
+                                        },
+                                        {
+                                            "id": "5",
+                                            "name": "Kimyon"
+                                        },
+                                        {
+                                            "id": "6",
+                                            "name": "Sumak"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Bonus",
+                                    "options": [
+                                        {
+                                            "id": "1",
+                                            "name": "Mantar"
+                                        },
+                                        {
+                                            "id": "2",
+                                            "name": "Fıstık"
+                                        },
+                                        {
+                                            "id": "3",
+                                            "name": "Ceviz"
+                                        },
+                                        {
+                                            "id": "4",
+                                            "name": "Soğan"
+                                        },
+                                        {
+                                            "id": "5",
+                                            "name": "Sarımsak"
+                                        },
+                                        {
+                                            "id": "6",
+                                            "name": "Limon"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dice_name": "Ne Yemeliyim ?",
+                    "icon": "assets/icon/dice_icon/what_should_i_eat_icon.svg",
+                    "id": "2",
+                    "isPremium": false,
+                    "isAdultContent": false,
+                    "description": "Acıktın ve ne yemek istediğine bir türlü karar veremiyor musun? O zamanbu zar tam sana göre. Afiyet Olsun!",
+                    "sub_dices": [
+                        {
+                            "name": "Ne Yemeliyim ?",
+                            "options": [
+                                {
+                                    "id": "1",
+                                    "name": "Pizza"
+                                },
+                                {
+                                    "id": "2",
+                                    "name": "Hamburger"
+                                },
+                                {
+                                    "id": "3",
+                                    "name": "Makarna"
+                                },
+                                {
+                                    "id": "4",
+                                    "name": "Tavuk"
+                                },
+                                {
+                                    "id": "5",
+                                    "name": "Çorba"
+                                },
+                                {
+                                    "id": "6",
+                                    "name": "Salata"
+                                }
+                                ,
+                                {
+                                    "id": "7",
+                                    "name": "Sushi"
+                                }
+                                ,
+                                {
+                                    "id": "8",
+                                    "name": "Kebap"
+                                }
+                                ,
+                                {
+                                    "id": "9",
+                                    "name": "Taco"
+                                }
+                                ,
+                                {
+                                    "id": "10",
+                                    "name": "Çin Yemeği"
+                                }
+                                ,
+                                {
+                                    "id": "11",
+                                    "name": "Deniz Mahsulleri"
+                                }
+                                ,
+                                {
+                                    "id": "12",
+                                    "name": "Mantı"
+                                }
+                                ,
+                                {
+                                    "id": "13",
+                                    "name": "Yumurta"
+                                }
+                                ,
+                                {
+                                    "id": "14",
+                                    "name": "Kuru Fasulye ve Pilav"
+                                }
+                                ,
+                                {
+                                    "id": "15",
+                                    "name": "Balık"
+                                }
+                                ,
+                                {
+                                    "id": "16",
+                                    "name": "Tavuk Dürüm"
+                                }
+                                ,
+                                {
+                                    "id": "17",
+                                    "name": "Köfte"
+                                }
+                                ,
+                                {
+                                    "id": "18",
+                                    "name": "Çiğ Köfte"
+                                }
+                                ,
+                                {
+                                    "id": "19",
+                                    "name": "Waffle"
+                                }
+                                ,
+                                {
+                                    "id": "20",
+                                    "name": "Tost"
+                                }
+                                ,
+                                {
+                                    "id": "21",
+                                    "name": "Patates Kızartması"
+                                }
+                            ]
+                        }
+                    ]
+                },{
+                    "dice_name": "Yeni Lezzetlere Yelken Aç",
+                    "icon": "assets/icon/dice_icon/sail_to_new_tastes_icon.svg",
+                    "id": "3",
+                    "isPremium": false,
+                    "isAdultContent": false,
+                    "description": "Her gün aynı şeyleri yemekten sıkıldın mı? Bu zarı kullanarakişini şansa bırak ve daha önce denemediğin bir yemek fikri al. Hint Mutfağından BrezilyaMutfağına lezzetli yemekler seni bekliyor.",
+                    "sub_dices": [{
+                        "name": "Yeni Lezzetlere Yelken Aç",
+                        "options": [{
+                                "id": "1",
+                                "name": "Ispanaklı Rulo"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Salata Sarması"
+                            },
+                            {
+                                "id": "3",
+                                "name": "Fırında Kozalak Mantı"
+                            },
+                            {
+                                "id": "4",
+                                "name": "Humus"
+                            },
+                            {
+                                "id": "5",
+                                "name": "Patates Borani"
+                            },
+                            {
+                                "id": "6",
+                                "name": "Tavuk Dolma (İç Pilavlı)"
+                            },
+                            {
+                                "id": "7",
+                                "name": "Zeytinyağlı Enginar"
+                            },
+                            {
+                                "id": "8",
+                                "name": "Hamsili Pilav"
+                            },
+                            {
+                                "id": "9",
+                                "name": "Feijoda (Brezilya Mutfağı)"
+                            },
+                            {
+                                "id": "10",
+                                "name": "Hindistan Cevizi Sütlü Nohutlu Bal Kabağı"
+                            },
+                            {
+                                "id": "11",
+                                "name": "Murgh Makani (Hint Mutfağı)"
+                            },
+                            {
+                                "id": "12",
+                                "name": "Sebzeli Karri (Hint Mutfağı)"
+                            },
+                            {
+                                "id": "13",
+                                "name": "Gnocchi (İtalyan Mutfağı)"
+                            },
+                            {
+                                "id": "14",
+                                "name": "Suam Na Mais (Hint Mutfağı)"
+                            },
+                            {
+                                "id": "15",
+                                "name": "Quesadilla (Meksika Mutfağı)"
+                            },
+                            {
+                                "id": "16",
+                                "name": "Beef Stroganoff (Rus Mutfağı)"
+                            },
+                            {
+                                "id": "17",
+                                "name": "Mısır Tempura (Japon Mutfağı)"
+                            },
+                            {
+                                "id": "18",
+                                "name": "Pelmeni (Rus Mutfağı)"
+                            },
+                            {
+                                "id": "19",
+                                "name": "Buritto (Meksika Mutfağı)"
+                            },
+                            {
+                                "id": "20",
+                                "name": "Dim Sum (Çin Mutfağı)"
+                            },
+                            {
+                                "id": "21",
+                                "name": "Bibimbap (Kore Mutfağı)"
+                            },
+                            {
+                                "id": "22",
+                                "name": "Miso Çorbası (Japon Mutfağı)"
+                            },
+                            {
+                                "id": "23",
+                                "name": "Gulaş (Macar Mutfağı)"
+                            }
+                        ]
+                    }]
+                },{
+                    "dice_name": "Ne İçmeliyim ?",
+                    "icon": "assets/icon/dice_icon/what_should_i_drink_icon.svg",
+                    "id": "4",
+                    "isPremium": false,
+                    "isAdultContent": false,
+                    "description": "Ne içmek istediğine karar veremiyorsan bunu kesinlikle denemelisin.",
+                    "sub_dices": [{
+                            "name": "Ne İçmeliyim ?",
+                            "options": [{
+                                    "id": "1",
+                                    "name": "Kola"
+                                },
+                                {
+                                    "id": "2",
+                                    "name": "Fanta"
+                                },
+                                {
+                                    "id": "3",
+                                    "name": "Sprite"
+                                },
+                                {
+                                    "id": "4",
+                                    "name": "Soğuk Çay"
+                                },
+                                {
+                                    "id": "5",
+                                    "name": "Çay"
+                                },
+                                {
+                                    "id": "6",
+                                    "name": "Bitki Çayı"
+                                },
+                                {
+                                    "id": "7",
+                                    "name": "Churchill"
+                                },
+                                {
+                                    "id": "8",
+                                    "name": "Meyveli Soda"
+                                },
+                                {
+                                    "id": "9",
+                                    "name": "Milkshake"
+                                },
+                                {
+                                    "id": "10",
+                                    "name": "Limonata"
+                                },
+                                {
+                                    "id": "11",
+                                    "name": "Gazoz"
+                                },
+                                {
+                                    "id": "12",
+                                    "name": "Meyve Suyu"
+                                },
+                                {
+                                    "id": "13",
+                                    "name": "Şalgam"
+                                },
+                                {
+                                    "id": "14",
+                                    "name": "Süt"
+                                },
+                                {
+                                    "id": "15",
+                                    "name": "Ayran"
+                                },
+                                {
+                                    "id": "16",
+                                    "name": "Enerji İçeceği"
+                                },
+                                {
+                                    "id": "17",
+                                    "name": "Su"
+                                },
+                                {
+                                    "id": "18",
+                                    "name": "Frozen"
+                                },
+                                {
+                                    "id": "19",
+                                    "name": "Muzlu Süt"
+                                },
+                                {
+                                    "id": "20",
+                                    "name": "Sahlep"
+                                },
+                                {
+                                    "id": "21",
+                                    "name": "Sıcak Çikolata"
+                                },
+                                {
+                                    "id": "22",
+                                    "name": "Oralet"
+                                },{
+                                    "dice_name": "Ne İçmeliyim (Yüksek Promil)?",
+                                    "icon": "assets/icon/dice_icon/what_should_i_drink_high_promil_icon.svg",
+                                    "id": "5",
+                                    "isPremium": false,
+                                    "isAdultContent": false,
+                                    "description": "Aynısının daha eğlencelisi :)",
+                                    "sub_dices": [
+                                        {
+                                            "name": "Ne İçmeliyim?",
+                                            "options": [
+                                                {"id": "1", "name": "Bira"},
+                                                {"id": "2", "name": "Şarap"},
+                                                {"id": "3", "name": "Votka"},
+                                                {"id": "4", "name": "Rakı"},
+                                                {"id": "5", "name": "Rom"},
+                                                {"id": "6", "name": "Cin"},
+                                                {"id": "7", "name": "Tekila"},
+                                                {"id": "8", "name": "Viski"},
+                                                {"id": "9", "name": "Likör"},
+                                                {"id": "10", "name": "Şampanya"},
+                                                {"id": "11", "name": "Martini"},
+                                                {"id": "12", "name": "Sake"},
+                                                {"id": "13", "name": "Margarita"},
+                                                {"id": "14", "name": "Bloody Mary"},
+                                                {"id": "15", "name": "Mojito"},
+                                                {"id": "16", "name": "Gin Tonic"},
+                                                {"id": "17", "name": "White Russian"},
+                                                {"id": "18", "name": "Daiquiri"},
+                                                {"id": "19", "name": "Caipirinha"},
+                                                {"id": "20", "name": "Pina Colada"},
+                                                {"id": "21", "name": "Cosmopolitan"},
+                                                {"id": "22", "name": "Espresso Martini"},
+                                                {"id": "23", "name": "Mai Tai"}
+                                            ]
+                                        },{
+                                            "dice_name": "Kahve Zarı",
+                                            "icon": "assets/icon/dice_icon/coffee_icon.svg",
+                                            "id": "6",
+                                            "isPremium": false,
+                                            "isAdultContent": false,
+                                            "description": "Onlarca çeşit kahve arasında kayboluyor musun? Belki de farklı bir şeylerarıyorsun. Çok düşünmene gerek yok. Kahveni şansa bırakmanın zamanı!",
+                                            "sub_dices": [
+                                                {
+                                                    "name": "Kahve Zarı",
+                                                    "options": [
+                                                        {"id": "1", "name": "Espresso"},
+                                                        {"id": "2", "name": "Americano"},
+                                                        {"id": "3", "name": "Latte"},
+                                                        {"id": "4", "name": "Cappuccino"},
+                                                        {"id": "5", "name": "Macchiato"},
+                                                        {"id": "6", "name": "Mocha"},
+                                                        {"id": "7", "name": "Flat White"},
+                                                        {"id": "8", "name": "Affogato"},
+                                                        {"id": "9", "name": "Turkish Coffee (Türk Kahvesi)"},
+                                                        {"id": "10", "name": "Frappe"},
+                                                        {"id": "11", "name": "Ristretto"},
+                                                        {"id": "12", "name": "Lungo"},
+                                                        {"id": "13", "name": "Cortado"},
+                                                        {"id": "14", "name": "Piccolo"},
+                                                        {"id": "15", "name": "Irish Coffee (İrlanda Kahvesi)"},
+                                                        {"id": "16", "name": "Viennese Coffee (Viyana Kahvesi)"},
+                                                        {"id": "17", "name": "Gibraltar"},
+                                                        {"id": "18", "name": "Red Eye"},
+                                                        {"id": "19", "name": "Black Eye"},
+                                                        {"id": "20", "name": "Green Eye"},
+                                                        {"id": "21", "name": "Filtre Kahve"},
+                                                        {"id": "22", "name": "Iced Latte"},
+                                                        {"id": "23", "name": "Iced Americano"},
+                                                        {"id": "24", "name": "Caramel Macchiato"},
+                                                        {"id": "25", "name": "Iced Caramel Macchiato"},
+                                                        {"id": "26", "name": "White Chocolate Mocha"},
+                                                        {"id": "27", "name": "Iced Cappuccino"},
+                                                        {"id": "28", "name": "Chai Tea Latte"},
+                                                        {"id": "29", "name": "Cold Brew"},
+                                                        {"id": "30", "name": "Oat Latte"},
+                                                        {"id": "31", "name": "Vanilla Latte"},
+                                                        {"id": "32", "name": "Iced Mocha"}
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                        
+                                    ]
+                                }
+                                
+                            ]
+                        
+                        
+                            
+                        }
+                    ]
+                }
+                
+            ]
         },
         {
-          "dice_name": "Çay",
-          "icon": "assets/icon",
-          "id": "2",
-          "isPremium": true,
-          "isAdultContent": false,
-          "description": "",
-          "sub_dices": [
-            {"name": "Çay", "options": [{"id": "1", "name": "a"}, {"id": "2", "name": "b"}, {"id": "3", "name": "c"}, {"id": "4", "name": "d"}, {"id": "5", "name": "e"}, {"id": "6", "name": "f"}]}
-          ]
+            "categoryName": "Kategori 2",
+            "categoryIcon": "icon2.png",
+            "categoryColor": "3366FF",
+            "categoryDices": [
+                {
+                    "dice_name": "Meyve Suyu",
+                    "icon": "assets/icon",
+                    "id": "3",
+                    "isPremium": false,
+                    "adultContent": true,
+                    "description": "",
+                    "sub_dices": [
+                        {
+                            "name": "Meyve Suyu",
+                            "options": [
+                                {
+                                    "id": "1",
+                                    "name": "a"
+                                },
+                                {
+                                    "id": "2",
+                                    "name": "b"
+                                },
+                                {
+                                    "id": "3",
+                                    "name": "c"
+                                },
+                                {
+                                    "id": "4",
+                                    "name": "d"
+                                },
+                                {
+                                    "id": "5",
+                                    "name": "e"
+                                },
+                                {
+                                    "id": "6",
+                                    "name": "f"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    },
-    {
-      "categoryName": "Kategori 2",
-      "categoryIcon": "icon2.png",
-      "categoryColor": "3366FF",
-      "categoryDices": [
-        {
-          "dice_name": "Meyve Suyu",
-          "icon": "assets/icon",
-          "id": "3",
-          "isPremium": false,
-          "isAdultContent": true,
-          "description": "",
-          "sub_dices": [
-            {"name": "Meyve Suyu", "options": [{"id": "1", "name": "a"}, {"id": "2", "name": "b"}, {"id": "3", "name": "c"}, {"id": "4", "name": "d"}, {"id": "5", "name": "e"}, {"id": "6", "name": "f"}]}
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }
