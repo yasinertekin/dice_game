@@ -17,6 +17,9 @@ enum ProjectColor {
   /// Transparent Color
   transparent('00000000'),
 
+  /// White Side Walk Color
+  concreteSideWalk('8D8983'),
+
   /// Food And Drink Color
   red('B81C1C');
 
