@@ -11,39 +11,48 @@ final class _CategoryDetailCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: ProjectColor.red.toColor,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Spacer(
-            flex: 2,
+    return InkWell(
+      onTap: () {
+        context.router.push(
+          SubDicesRoute(
+            categoryOptions: diceList![index].subDices?.first.options ?? [],
           ),
-          FittedBox(
-            child: SizedBox(
-              width: context.dynamicWidth(0.7),
-              child: Padding(
-                padding: context.paddingAllLow,
-                child: Text(
-                  diceList?[index].diceName ?? '',
-                  textAlign: TextAlign.center,
-                  style: context.textTheme.headlineLarge?.copyWith(
-                    color: ProjectColor.white.toColor,
-                    fontWeight: FontWeight.bold,
+        );
+      },
+      child: Card(
+        color: ProjectColor.red.toColor,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Spacer(
+              flex: 2,
+            ),
+            FittedBox(
+              child: SizedBox(
+                width: context.dynamicWidth(0.7),
+                child: Padding(
+                  padding: context.paddingAllLow,
+                  child: Text(
+                    diceList?[index].diceName ?? '',
+                    textAlign: TextAlign.center,
+                    style: context.textTheme.headlineLarge?.copyWith(
+                      color: ProjectColor.white.toColor,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          const Spacer(
-            flex: 5,
-          ),
-          CustomSvg(
-            assetPath: ProjectAssets.heard.toSvg,
-            height: context.dynamicHeight(0.1),
-          ),
-          const Spacer(),
-        ],
+            const Spacer(
+              flex: 5,
+            ),
+            CustomSvg(
+              assetPath: ProjectAssets.icHeard.toSvg,
+              height: context.dynamicHeight(0.1),
+            ),
+            const Spacer(),
+          ],
+        ),
       ),
     );
   }
