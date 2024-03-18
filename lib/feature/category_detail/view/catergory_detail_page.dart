@@ -4,6 +4,7 @@ import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/model/categories/categories.dart';
 import 'package:dice_game/product/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/custom_svg.dart';
 import 'package:flutter/material.dart';
@@ -42,9 +43,12 @@ final class _CategoryDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ProjectColor.silkyWhite.toColor,
+      backgroundColor: ProjectColor.concreteSideWalk.toColor,
       appBar: _CategoryDetailAppBar(diceCategories: diceCategories),
-      body: _CategoryGridViewBuilder(diceCategories: diceCategories),
+      body: Container(
+        decoration: _CustomBoxDecoration(),
+        child: _CategoryGridViewBuilder(diceCategories: diceCategories),
+      ),
     );
   }
 }
@@ -78,5 +82,19 @@ final class _SliverGridDelegate
       : super(
           crossAxisCount: 2,
           crossAxisSpacing: 15,
+        );
+}
+
+final class _CustomBoxDecoration extends BoxDecoration {
+  _CustomBoxDecoration()
+      : super(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              ProjectColor.concreteSideWalk.toColor,
+              ProjectColor.silkyWhite.toColor,
+            ],
+          ),
         );
 }
