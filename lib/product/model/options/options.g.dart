@@ -1,18 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sub_dice.dart';
+part of 'options.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SubDice _$SubDiceFromJson(Map<String, dynamic> json) => SubDice(
+Options _$OptionsFromJson(Map<String, dynamic> json) => Options(
+      id: json['id'] as String?,
       name: json['name'] as String?,
-      options:
-          (json['options'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$SubDiceToJson(SubDice instance) => <String, dynamic>{
+Map<String, dynamic> _$OptionsToJson(Options instance) => <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
-      'options': instance.options,
     };
