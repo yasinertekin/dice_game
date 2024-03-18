@@ -16,5 +16,5 @@ enum ProjectAssets {
   String get toPng => 'assets/image/img_$value.png';
 
   /// The path to the SVG file
-  String get toSvg => 'assets/icon/ic_$value.svg';
+  String get toSvg => 'assets/icon/project_icon/ic_$value.svg';
 }
