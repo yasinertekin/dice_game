@@ -4,8 +4,8 @@ import 'package:dice_game/feature/home/cubit/state/home_state.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
-import 'package:dice_game/product/model/dice_categories/dice_categories.dart';
-import 'package:dice_game/product/model/dice_model/dice_model.dart';
+import 'package:dice_game/product/model/categories/categories.dart';
+import 'package:dice_game/product/model/category/category.dart';
 import 'package:dice_game/product/router/app_router.gr.dart';
 import 'package:dice_game/product/service/json_service.dart';
 import 'package:dice_game/product/widget/custom_svg.dart';
@@ -44,23 +44,26 @@ final class _HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ProjectColor.silkyWhite.toColor,
-      appBar: const _HomeAppBar(),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const _HomeTitle(),
-              const _DiceGategoryList(),
-              const _UserDiceCard(),
-              context.sized.emptySizedHeightBoxNormal,
-            ],
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        backgroundColor: ProjectColor.silkyWhite.toColor,
+        appBar: const _HomeAppBar(),
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const _HomeTitle(),
+                const _DiceGategoryList(),
+                const _UserDiceCard(),
+                context.sized.emptySizedHeightBoxNormal,
+              ],
+            ),
           ),
         ),
+        bottomNavigationBar: const _BottomBar(),
       ),
-      bottomNavigationBar: const _BottomBar(),
     );
   }
 }
@@ -79,7 +82,7 @@ final class _DiceGategoryList extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           case HomeStatus.loaded:
             return _CategoryGridViewBuilder(
-              state.diceModel ?? DiceModel(),
+              state.diceModel ?? Category(),
             );
           case HomeStatus.error:
             return Text(
@@ -96,7 +99,7 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
     this.diceModel,
   );
 
-  final DiceModel diceModel;
+  final Category diceModel;
 
   @override
   Widget build(BuildContext context) {
@@ -109,9 +112,9 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
         ),
-        itemCount: diceModel.diceCategories?.length ?? 0,
+        itemCount: diceModel.categories?.length ?? 0,
         itemBuilder: (context, index) {
-          final dice = diceModel.diceCategories?[index];
+          final dice = diceModel.categories?[index];
           return _HomeCategoryCard(
             dice: dice,
             index: index,
