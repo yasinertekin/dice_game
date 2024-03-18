@@ -6,7 +6,7 @@ final class _HomeCategoryCard extends StatelessWidget {
     required this.index,
   });
 
-  final DiceCategories? dice;
+  final Categories? dice;
   final int index;
 
   @override
