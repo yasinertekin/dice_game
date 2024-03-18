@@ -7,9 +7,14 @@ import 'package:dice_game/product/router/app_router.gr.dart';
 final class AppRouter extends $AppRouter {
   @override
   List<AdaptiveRoute> get routes => [
-        AdaptiveRoute(page: SplashRoute.page, initial: true),
+        AdaptiveRoute(
+          page: SplashRoute.page,
+          initial: true,
+          keepHistory: false,
+        ),
         AdaptiveRoute(page: HomeRoute.page),
         AdaptiveRoute(page: UserDiceRoute.page),
         AdaptiveRoute(page: CategoryDetailRoute.page),
+        AdaptiveRoute(page: SubDicesRoute.page),
       ];
 }
