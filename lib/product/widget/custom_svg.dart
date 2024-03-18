@@ -64,7 +64,7 @@ final class _DefaultIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
-      ProjectAssets.heard.toSvg,
+      ProjectAssets.icHeard.toSvg,
       height: height,
       fit: fit,
     );
