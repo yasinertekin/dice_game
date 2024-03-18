@@ -1,4 +1,4 @@
-import 'package:dice_game/product/model/dice_model/dice_model.dart';
+import 'package:dice_game/product/model/category/category.dart';
 import 'package:equatable/equatable.dart';
 
 final class HomeState extends Equatable {
@@ -7,11 +7,11 @@ final class HomeState extends Equatable {
     this.status = HomeStatus.initial,
   });
 
-  final DiceModel? diceModel;
+  final Category? diceModel;
   final HomeStatus status;
 
   HomeState copyWith({
-    DiceModel? diceModel,
+    Category? diceModel,
     HomeStatus? status,
   }) {
     return HomeState(
