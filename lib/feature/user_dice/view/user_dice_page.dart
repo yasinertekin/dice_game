@@ -1,8 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:dice_game/feature/user_dice/cubit/state/user_dice_state.dart';
 import 'package:dice_game/feature/user_dice/cubit/user_dice_cubit.dart';
-import 'package:dice_game/product/core/cache/cache_manager.dart';
-import 'package:dice_game/product/core/enum/hive_key.dart';
 import 'package:dice_game/product/model/category_dices/category_dices.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,12 +14,7 @@ final class UserDicePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<UserDiceCubit>(
-      create: (context) => UserDiceCubit(
-        CategoryDicesCacheManager(HiveKey.categoryDicesManagerKey.value),
-      )..fetchUserDice(),
-      child: const _UserDiceView(),
-    );
+    return const _UserDiceView();
   }
 }
 

@@ -1,3 +1,4 @@
+import 'package:dice_game/product/initialize/state_initialize.dart';
 import 'package:dice_game/product/initialize/theme/custom_theme.dart';
 import 'package:dice_game/product/router/app_router.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   runApp(
-    _DiceApp(),
+    StateInitialize(child: _DiceApp()),
   );
 }
 
