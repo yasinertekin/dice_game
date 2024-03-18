@@ -6,7 +6,7 @@ part of 'dice_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DiceList _$DiceListFromJson(Map<String, dynamic> json) => DiceList(
+Dice _$DiceFromJson(Map<String, dynamic> json) => Dice(
       diceName: json['dice_name'] as String?,
       icon: json['icon'] as String?,
       isPremium: json['isPremium'] as bool?,
@@ -16,7 +16,7 @@ DiceList _$DiceListFromJson(Map<String, dynamic> json) => DiceList(
       description: json['description'] as String?,
     );
 
-Map<String, dynamic> _$DiceListToJson(DiceList instance) => <String, dynamic>{
+Map<String, dynamic> _$DiceToJson(Dice instance) => <String, dynamic>{
       'dice_name': instance.diceName,
       'icon': instance.icon,
       'isPremium': instance.isPremium,

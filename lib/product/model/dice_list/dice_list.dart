@@ -7,8 +7,8 @@ part 'dice_list.g.dart';
 
 @JsonSerializable()
 @immutable
-final class DiceList with EquatableMixin {
-  DiceList({
+final class Dice with EquatableMixin {
+  Dice({
     this.diceName,
     this.icon,
     this.isPremium,
@@ -16,8 +16,7 @@ final class DiceList with EquatableMixin {
     this.description,
   });
 
-  factory DiceList.fromJson(Map<String, dynamic> json) =>
-      _$DiceListFromJson(json);
+  factory Dice.fromJson(Map<String, dynamic> json) => _$DiceFromJson(json);
   @JsonKey(name: 'dice_name')
   final String? diceName;
   @JsonKey(name: 'icon')
@@ -29,19 +28,19 @@ final class DiceList with EquatableMixin {
   @JsonKey(name: 'description')
   final String? description;
 
-  Map<String, dynamic> toJson() => _$DiceListToJson(this);
+  Map<String, dynamic> toJson() => _$DiceToJson(this);
 
   @override
   List<Object?> get props => [diceName, icon, isPremium, subDice];
 
-  DiceList copyWith({
+  Dice copyWith({
     String? diceName,
     String? icon,
     bool? isPremium,
     List<SubDice>? subDice,
     String? description,
   }) {
-    return DiceList(
+    return Dice(
       diceName: diceName ?? this.diceName,
       icon: icon ?? this.icon,
       isPremium: isPremium ?? this.isPremium,

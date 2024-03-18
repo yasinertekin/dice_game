@@ -11,7 +11,7 @@ DiceCategories _$DiceCategoriesFromJson(Map<String, dynamic> json) =>
       categoryName: json['category_name'] as String?,
       categoryColor: json['category_color'] as String?,
       diceList: (json['dice_list'] as List<dynamic>?)
-          ?.map((e) => DiceList.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Dice.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

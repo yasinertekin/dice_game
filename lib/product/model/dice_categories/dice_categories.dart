@@ -21,7 +21,7 @@ final class DiceCategories with EquatableMixin {
   @JsonKey(name: 'category_color')
   final String? categoryColor;
   @JsonKey(name: 'dice_list')
-  final List<DiceList>? diceList;
+  final List<Dice>? diceList;
 
   Map<String, dynamic> toJson() => _$DiceCategoriesToJson(this);
 
@@ -31,7 +31,7 @@ final class DiceCategories with EquatableMixin {
   DiceCategories copyWith({
     String? categoryName,
     String? categoryColor,
-    List<DiceList>? diceList,
+    List<Dice>? diceList,
   }) {
     return DiceCategories(
       categoryName: categoryName ?? this.categoryName,

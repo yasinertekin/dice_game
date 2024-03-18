@@ -6,7 +6,7 @@ final class _CategoryDetailCard extends StatelessWidget {
     required this.index,
   });
 
-  final List<DiceList>? diceList;
+  final List<Dice>? diceList;
   final int index;
 
   @override
