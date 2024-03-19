@@ -15,8 +15,8 @@ import 'package:dice_game/feature/home/view/home_page.dart' as _i2;
 import 'package:dice_game/feature/roll_dice/view/roll_dice_page.dart' as _i3;
 import 'package:dice_game/feature/splash/view/splash_page.dart' as _i4;
 import 'package:dice_game/feature/user_dice/view/user_dice_page.dart' as _i5;
-import 'package:dice_game/product/model/categories/categories.dart' as _i7;
-import 'package:dice_game/product/model/category_dices/category_dices.dart'
+import 'package:dice_game/product/core/model/categories/categories.dart' as _i7;
+import 'package:dice_game/product/core/model/category_dices/category_dices.dart'
     as _i9;
 import 'package:flutter/material.dart' as _i8;
 

@@ -1,4 +1,4 @@
-import 'package:dice_game/product/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 

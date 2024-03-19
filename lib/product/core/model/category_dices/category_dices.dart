@@ -1,5 +1,5 @@
 import 'package:dice_game/product/core/constants/hive_type_id_constants.dart';
-import 'package:dice_game/product/model/sub_dices/sub_dices.dart';
+import 'package:dice_game/product/core/model/sub_dices/sub_dices.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';

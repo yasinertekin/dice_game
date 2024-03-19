@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:dice_game/product/model/category/category.dart';
+import 'package:dice_game/product/core/model/category/category.dart';
 import 'package:flutter/services.dart';
 
 // ignore: one_member_abstracts

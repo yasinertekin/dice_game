@@ -1,5 +1,5 @@
 import 'package:dice_game/product/core/constants/hive_type_id_constants.dart';
-import 'package:dice_game/product/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:hive/hive.dart';
 
 /// Represents a cache manager.
