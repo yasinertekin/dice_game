@@ -1,4 +1,4 @@
-import 'package:dice_game/product/model/category/category.dart';
+import 'package:dice_game/product/core/model/category/category.dart';
 import 'package:equatable/equatable.dart';
 
 final class HomeState extends Equatable {

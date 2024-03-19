@@ -1,7 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:dice_game/feature/user_dice/cubit/state/user_dice_state.dart';
 import 'package:dice_game/feature/user_dice/cubit/user_dice_cubit.dart';
-import 'package:dice_game/product/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -2,11 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
-import 'package:dice_game/product/model/categories/categories.dart';
-import 'package:dice_game/product/model/category_dices/category_dices.dart';
-import 'package:dice_game/product/router/app_router.gr.dart';
+import 'package:dice_game/product/core/model/categories/categories.dart';
+import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
-import 'package:dice_game/product/widget/custom_svg.dart';
+import 'package:dice_game/product/widget/image/custom_svg.dart';
 import 'package:flutter/material.dart';
 
 part 'widget/category_detail_app_bar.dart';

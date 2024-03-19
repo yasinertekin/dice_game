@@ -1,5 +1,5 @@
 import 'package:dice_game/feature/home/cubit/state/home_state.dart';
-import 'package:dice_game/product/service/json_service.dart';
+import 'package:dice_game/product/core/service/json_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 final class HomeCubit extends Cubit<HomeState> {

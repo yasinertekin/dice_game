@@ -1,7 +1,7 @@
-import 'package:dice_game/product/initialize/app_initialize.dart';
-import 'package:dice_game/product/initialize/state_initialize.dart';
-import 'package:dice_game/product/initialize/theme/custom_theme.dart';
-import 'package:dice_game/product/router/app_router.dart';
+import 'package:dice_game/product/core/initialize/app_initialize.dart';
+import 'package:dice_game/product/core/initialize/state_initialize.dart';
+import 'package:dice_game/product/utils/router/app_router.dart';
+import 'package:dice_game/product/utils/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() async {

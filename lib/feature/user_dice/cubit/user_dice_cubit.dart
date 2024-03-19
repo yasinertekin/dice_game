@@ -1,6 +1,6 @@
 import 'package:dice_game/feature/user_dice/cubit/state/user_dice_state.dart';
-import 'package:dice_game/product/core/cache/cache_manager.dart';
-import 'package:dice_game/product/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/utils/cache/cache_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// A cubit that manages the user dice state

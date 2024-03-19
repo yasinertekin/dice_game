@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:dice_game/product/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
