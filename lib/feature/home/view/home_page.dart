@@ -9,6 +9,7 @@ import 'package:dice_game/product/core/model/category/category.dart';
 import 'package:dice_game/product/core/service/json_service.dart';
 import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/image/custom_svg.dart';
+import 'package:dice_game/product/widget/loading/custom_circular_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
@@ -74,9 +75,9 @@ final class _DiceGategoryList extends StatelessWidget {
       builder: (context, state) {
         switch (state.status) {
           case HomeStatus.initial:
-            return const Center(child: CircularProgressIndicator());
+            return const CustomCircularProgressIndicator();
           case HomeStatus.loading:
-            return const Center(child: CircularProgressIndicator());
+            return const CustomCircularProgressIndicator();
           case HomeStatus.loaded:
             return _CategoryGridViewBuilder(
               state.diceModel ?? Category(),
@@ -101,7 +102,7 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.dynamicHeight(0.7),
+      height: context.dynamicHeight(0.85),
       child: GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
