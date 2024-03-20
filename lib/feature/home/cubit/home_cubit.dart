@@ -16,6 +16,7 @@ final class HomeCubit extends Cubit<HomeState> {
       emit(HomeState(diceModel: diceModel, status: HomeStatus.loaded));
     } catch (e) {
       emit(const HomeState(status: HomeStatus.error));
+      print(e);
     }
   }
 }
