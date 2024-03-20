@@ -1,16 +1,13 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/model/categories/categories.dart';
-import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
-import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
-import 'package:dice_game/product/widget/image/custom_svg.dart';
+import 'package:dice_game/product/widget/container/custom_gradient_container.dart';
+import 'package:dice_game/product/widget/grid_list/dice_category_grid_view.dart';
 import 'package:flutter/material.dart';
 
 part 'widget/category_detail_app_bar.dart';
-part 'widget/category_detail_card.dart';
 
 @RoutePage()
 
@@ -45,56 +42,11 @@ final class _CategoryDetailView extends StatelessWidget {
     return Scaffold(
       backgroundColor: ProjectColor.concreteSideWalk.toColor,
       appBar: _CategoryDetailAppBar(diceCategories: diceCategories),
-      body: Container(
-        decoration: _CustomBoxDecoration(),
-        child: _CategoryGridViewBuilder(diceCategories: diceCategories),
+      body: CustomGradientContainer(
+        child: DiceCategoryGridView(
+          diceList: diceCategories?.categoryDices,
+        ),
       ),
     );
   }
-}
-
-final class _CategoryGridViewBuilder extends StatelessWidget {
-  const _CategoryGridViewBuilder({
-    required this.diceCategories,
-  });
-
-  final Categories? diceCategories;
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: const _SliverGridDelegate(),
-      itemCount: diceCategories?.categoryDices?.length ?? 0,
-      itemBuilder: (context, index) {
-        final diceList = diceCategories?.categoryDices;
-        return _CategoryDetailCard(
-          diceList: diceList,
-          index: index,
-        );
-      },
-    );
-  }
-}
-
-final class _SliverGridDelegate
-    extends SliverGridDelegateWithFixedCrossAxisCount {
-  const _SliverGridDelegate()
-      : super(
-          crossAxisCount: 2,
-          crossAxisSpacing: 15,
-        );
-}
-
-final class _CustomBoxDecoration extends BoxDecoration {
-  _CustomBoxDecoration()
-      : super(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              ProjectColor.concreteSideWalk.toColor,
-              ProjectColor.silkyWhite.toColor,
-            ],
-          ),
-        );
 }
