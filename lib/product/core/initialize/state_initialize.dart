@@ -1,3 +1,4 @@
+import 'package:dice_game/feature/favorite/cubit/favorite_cubit.dart';
 import 'package:dice_game/feature/user_dice/cubit/user_dice_cubit.dart';
 import 'package:dice_game/product/core/enum/hive_key.dart';
 import 'package:dice_game/product/utils/cache/cache_manager.dart';
@@ -21,6 +22,11 @@ final class StateInitialize extends StatelessWidget {
           create: (context) => UserDiceCubit(
             CategoryDicesCacheManager(HiveKey.categoryDicesManagerKey.value),
           )..fetchUserDice(),
+        ),
+        BlocProvider<FavoriteCubit>(
+          create: (context) => FavoriteCubit(
+            FavoriteCacheManager(),
+          )..fetchFavorite(),
         ),
       ],
       child: child,
