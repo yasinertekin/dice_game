@@ -1,9 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
-import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/image/custom_svg.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +11,7 @@ final class CategoryDetailCard extends StatelessWidget {
   const CategoryDetailCard({
     required this.diceList,
     required this.index,
+    this.onLongPress,
     super.key,
   });
 
@@ -22,16 +21,13 @@ final class CategoryDetailCard extends StatelessWidget {
   /// Index
   final int index;
 
+  final VoidCallback? onLongPress;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        context.router.push(
-          DiceDescriptionRoute(
-            categoryDices: diceList![index],
-          ),
-        );
-      },
+      onLongPress: onLongPress,
+      onTap: () {},
       child: Padding(
         padding: context.paddingAllLow,
         child: Card(

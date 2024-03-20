@@ -14,12 +14,12 @@ final class CategoryDices with EquatableMixin {
   CategoryDices({
     this.diceName,
     this.icon,
-    this.id,
+    String? id,
     this.isPremium,
     this.isadultContent,
     this.description,
     this.subDices,
-  });
+  }) : id = id ?? UniqueKey().toString();
 
   factory CategoryDices.fromJson(Map<String, dynamic> json) =>
       _$CategoryDicesFromJson(json);

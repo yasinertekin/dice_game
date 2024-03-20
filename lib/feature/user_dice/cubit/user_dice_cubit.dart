@@ -44,4 +44,54 @@ final class UserDiceCubit extends Cubit<UserDiceState> {
       emit(state.copyWith(isLoading: false, error: e.toString()));
     }
   }
+
+  /// Delete user dice
+  Future<void> deleteUserDice(CategoryDices categoryDices) async {
+    emit(state.copyWith(isLoading: true));
+    try {
+      // Delete the categoryDices from the repository
+      await _userDiceRepository.removeItem(
+        categoryDices.id.toString(),
+      );
+
+      // Retrieve the categoryDices from the repository
+      final retrievedCategoryDices = _userDiceRepository.getValues();
+
+      // Update the state with the retrieved categoryDices
+      emit(
+        state.copyWith(
+          isLoading: false,
+          categoryDices: retrievedCategoryDices,
+        ),
+      );
+      print(retrievedCategoryDices.length);
+    } catch (e) {
+      // If an exception occurs, update the state with the error message
+      emit(state.copyWith(isLoading: false, error: e.toString()));
+      print(e);
+    }
+  }
+
+  /// Delete all user dice
+  Future<void> deleteAllUserDice() async {
+    emit(state.copyWith(isLoading: true));
+    try {
+      // Delete all categoryDices from the repository
+      await _userDiceRepository.clearAll();
+
+      // Retrieve the categoryDices from the repository
+      final retrievedCategoryDices = _userDiceRepository.getValues();
+
+      // Update the state with the retrieved categoryDices
+      emit(
+        state.copyWith(
+          isLoading: false,
+          categoryDices: retrievedCategoryDices,
+        ),
+      );
+    } catch (e) {
+      // If an exception occurs, update the state with the error message
+      emit(state.copyWith(isLoading: false, error: e.toString()));
+    }
+  }
 }

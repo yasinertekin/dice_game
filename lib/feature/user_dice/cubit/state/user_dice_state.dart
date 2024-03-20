@@ -17,7 +17,7 @@ final class UserDiceState extends Equatable {
   final String? error;
 
   /// The category dices
-  final List<CategoryDices> categoryDices;
+  final List<CategoryDices>? categoryDices;
 
   /// A method to copy the current instance of the UserDiceState
   UserDiceState copyWith({
