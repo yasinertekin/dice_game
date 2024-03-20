@@ -1,7 +1,10 @@
 /// Hive key enum
 enum HiveKey {
   /// The key for the category dices
-  categoryDicesManagerKey('categoryDices');
+  categoryDicesManagerKey('categoryDices'),
+
+  /// Favorite Dices key
+  favoriteDicesKey('favoriteDices');
 
   /// The key for the sub dices
   final String value;
