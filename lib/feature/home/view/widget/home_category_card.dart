@@ -29,10 +29,13 @@ final class _HomeCategoryCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                textAlign: TextAlign.center,
-                dice?.categoryName ?? '',
-                style: context.textTheme.titleLarge,
+              Padding(
+                padding: context.paddingAllLow,
+                child: Text(
+                  textAlign: TextAlign.center,
+                  dice?.categoryName ?? '',
+                  style: context.textTheme.titleLarge,
+                ),
               ),
             ],
           ),
