@@ -8,26 +8,28 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i6;
+import 'package:auto_route/auto_route.dart' as _i7;
 import 'package:dice_game/feature/category_detail/view/catergory_detail_page.dart'
     as _i1;
-import 'package:dice_game/feature/home/view/home_page.dart' as _i2;
-import 'package:dice_game/feature/roll_dice/view/roll_dice_page.dart' as _i3;
-import 'package:dice_game/feature/splash/view/splash_page.dart' as _i4;
-import 'package:dice_game/feature/user_dice/view/user_dice_page.dart' as _i5;
-import 'package:dice_game/product/core/model/categories/categories.dart' as _i7;
+import 'package:dice_game/feature/dice_description/view/dice_description_page.dart'
+    as _i2;
+import 'package:dice_game/feature/favorite/view/favorite_page.dart' as _i3;
+import 'package:dice_game/feature/home/view/home_page.dart' as _i4;
+import 'package:dice_game/feature/splash/view/splash_page.dart' as _i5;
+import 'package:dice_game/feature/user_dice/view/user_dice_page.dart' as _i6;
+import 'package:dice_game/product/core/model/categories/categories.dart' as _i8;
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart'
-    as _i9;
-import 'package:flutter/material.dart' as _i8;
+    as _i10;
+import 'package:flutter/material.dart' as _i9;
 
-abstract class $AppRouter extends _i6.RootStackRouter {
+abstract class $AppRouter extends _i7.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i6.PageFactory> pagesMap = {
+  final Map<String, _i7.PageFactory> pagesMap = {
     CategoryDetailRoute.name: (routeData) {
       final args = routeData.argsAs<CategoryDetailRouteArgs>();
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i1.CategoryDetailPage(
           diceCategories: args.diceCategories,
@@ -35,32 +37,38 @@ abstract class $AppRouter extends _i6.RootStackRouter {
         ),
       );
     },
-    HomeRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+    DiceDescriptionRoute.name: (routeData) {
+      final args = routeData.argsAs<DiceDescriptionRouteArgs>();
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.HomePage(),
-      );
-    },
-    RollDiceRoute.name: (routeData) {
-      final args = routeData.argsAs<RollDiceRouteArgs>();
-      return _i6.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i3.RollDicePage(
+        child: _i2.DiceDescriptionPage(
           categoryDices: args.categoryDices,
           key: args.key,
         ),
       );
     },
-    SplashRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+    FavoriteRoute.name: (routeData) {
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.SplashPage(),
+        child: const _i3.FavoritePage(),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return _i7.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.HomePage(),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return _i7.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i5.SplashPage(),
       );
     },
     UserDiceRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.UserDicePage(),
+        child: const _i6.UserDicePage(),
       );
     },
   };
@@ -68,11 +76,11 @@ abstract class $AppRouter extends _i6.RootStackRouter {
 
 /// generated route for
 /// [_i1.CategoryDetailPage]
-class CategoryDetailRoute extends _i6.PageRouteInfo<CategoryDetailRouteArgs> {
+class CategoryDetailRoute extends _i7.PageRouteInfo<CategoryDetailRouteArgs> {
   CategoryDetailRoute({
-    required _i7.Categories? diceCategories,
-    _i8.Key? key,
-    List<_i6.PageRouteInfo>? children,
+    required _i8.Categories? diceCategories,
+    _i9.Key? key,
+    List<_i7.PageRouteInfo>? children,
   }) : super(
           CategoryDetailRoute.name,
           args: CategoryDetailRouteArgs(
@@ -84,8 +92,8 @@ class CategoryDetailRoute extends _i6.PageRouteInfo<CategoryDetailRouteArgs> {
 
   static const String name = 'CategoryDetailRoute';
 
-  static const _i6.PageInfo<CategoryDetailRouteArgs> page =
-      _i6.PageInfo<CategoryDetailRouteArgs>(name);
+  static const _i7.PageInfo<CategoryDetailRouteArgs> page =
+      _i7.PageInfo<CategoryDetailRouteArgs>(name);
 }
 
 class CategoryDetailRouteArgs {
@@ -94,9 +102,9 @@ class CategoryDetailRouteArgs {
     this.key,
   });
 
-  final _i7.Categories? diceCategories;
+  final _i8.Categories? diceCategories;
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
   @override
   String toString() {
@@ -105,9 +113,61 @@ class CategoryDetailRouteArgs {
 }
 
 /// generated route for
-/// [_i2.HomePage]
-class HomeRoute extends _i6.PageRouteInfo<void> {
-  const HomeRoute({List<_i6.PageRouteInfo>? children})
+/// [_i2.DiceDescriptionPage]
+class DiceDescriptionRoute extends _i7.PageRouteInfo<DiceDescriptionRouteArgs> {
+  DiceDescriptionRoute({
+    required _i10.CategoryDices categoryDices,
+    _i9.Key? key,
+    List<_i7.PageRouteInfo>? children,
+  }) : super(
+          DiceDescriptionRoute.name,
+          args: DiceDescriptionRouteArgs(
+            categoryDices: categoryDices,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'DiceDescriptionRoute';
+
+  static const _i7.PageInfo<DiceDescriptionRouteArgs> page =
+      _i7.PageInfo<DiceDescriptionRouteArgs>(name);
+}
+
+class DiceDescriptionRouteArgs {
+  const DiceDescriptionRouteArgs({
+    required this.categoryDices,
+    this.key,
+  });
+
+  final _i10.CategoryDices categoryDices;
+
+  final _i9.Key? key;
+
+  @override
+  String toString() {
+    return 'DiceDescriptionRouteArgs{categoryDices: $categoryDices, key: $key}';
+  }
+}
+
+/// generated route for
+/// [_i3.FavoritePage]
+class FavoriteRoute extends _i7.PageRouteInfo<void> {
+  const FavoriteRoute({List<_i7.PageRouteInfo>? children})
+      : super(
+          FavoriteRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FavoriteRoute';
+
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.HomePage]
+class HomeRoute extends _i7.PageRouteInfo<void> {
+  const HomeRoute({List<_i7.PageRouteInfo>? children})
       : super(
           HomeRoute.name,
           initialChildren: children,
@@ -115,51 +175,13 @@ class HomeRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i3.RollDicePage]
-class RollDiceRoute extends _i6.PageRouteInfo<RollDiceRouteArgs> {
-  RollDiceRoute({
-    required _i9.CategoryDices categoryDices,
-    _i8.Key? key,
-    List<_i6.PageRouteInfo>? children,
-  }) : super(
-          RollDiceRoute.name,
-          args: RollDiceRouteArgs(
-            categoryDices: categoryDices,
-            key: key,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'RollDiceRoute';
-
-  static const _i6.PageInfo<RollDiceRouteArgs> page =
-      _i6.PageInfo<RollDiceRouteArgs>(name);
-}
-
-class RollDiceRouteArgs {
-  const RollDiceRouteArgs({
-    required this.categoryDices,
-    this.key,
-  });
-
-  final _i9.CategoryDices categoryDices;
-
-  final _i8.Key? key;
-
-  @override
-  String toString() {
-    return 'RollDiceRouteArgs{categoryDices: $categoryDices, key: $key}';
-  }
-}
-
-/// generated route for
-/// [_i4.SplashPage]
-class SplashRoute extends _i6.PageRouteInfo<void> {
-  const SplashRoute({List<_i6.PageRouteInfo>? children})
+/// [_i5.SplashPage]
+class SplashRoute extends _i7.PageRouteInfo<void> {
+  const SplashRoute({List<_i7.PageRouteInfo>? children})
       : super(
           SplashRoute.name,
           initialChildren: children,
@@ -167,13 +189,13 @@ class SplashRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i5.UserDicePage]
-class UserDiceRoute extends _i6.PageRouteInfo<void> {
-  const UserDiceRoute({List<_i6.PageRouteInfo>? children})
+/// [_i6.UserDicePage]
+class UserDiceRoute extends _i7.PageRouteInfo<void> {
+  const UserDiceRoute({List<_i7.PageRouteInfo>? children})
       : super(
           UserDiceRoute.name,
           initialChildren: children,
@@ -181,5 +203,5 @@ class UserDiceRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'UserDiceRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
