@@ -13,7 +13,10 @@ enum ProjectAssets {
   imgSplash('splash'),
 
   /// The path to the splash subtitle (Png file)
-  imgSplashSubtitle('splash_subtitle');
+  imgSplashSubtitle('splash_subtitle'),
+
+  /// Library Image path (Png file)
+  imgLibrary('library');
 
   /// The value of the enum
   final String value;
