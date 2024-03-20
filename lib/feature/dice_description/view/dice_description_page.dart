@@ -70,16 +70,7 @@ final class _RollDiceButton extends StatelessWidget {
                   color: ProjectColor.white.toColor,
                 ),
               ),
-              IconButton(
-                icon: Icon(
-                  Icons.casino,
-                  color: ProjectColor.white.toColor,
-                ),
-                iconSize: context.dynamicHeight(0.3),
-                onPressed: () {
-                  context.router.maybePop();
-                },
-              ),
+              const _RollIcon(),
               Text(
                 'Tap the dice to roll',
                 style: context.textTheme.titleSmall?.copyWith(
@@ -90,6 +81,26 @@ final class _RollDiceButton extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _RollIcon extends StatelessWidget {
+  const _RollIcon({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        Icons.casino,
+        color: ProjectColor.white.toColor,
+      ),
+      iconSize: context.dynamicHeight(0.3),
+      onPressed: () {
+        context.router.maybePop<void>();
+      },
     );
   }
 }
@@ -118,7 +129,15 @@ final class _DiceDescriptionStack extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const CustomBackButton(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const CustomBackButton(),
+                      _FavoriteButton(
+                        categoryDices: categoryDices,
+                      ),
+                    ],
+                  ),
                   _RollDiceDescription(
                     categoryDices: categoryDices,
                   ),
@@ -132,10 +151,8 @@ final class _DiceDescriptionStack extends StatelessWidget {
   }
 }
 
-class _DarkOverlayContainer extends StatelessWidget {
-  const _DarkOverlayContainer({
-    super.key,
-  });
+final class _DarkOverlayContainer extends StatelessWidget {
+  const _DarkOverlayContainer();
 
   @override
   Widget build(BuildContext context) {
@@ -147,10 +164,8 @@ class _DarkOverlayContainer extends StatelessWidget {
   }
 }
 
-class _DiceImage extends StatelessWidget {
-  const _DiceImage({
-    super.key,
-  });
+final class _DiceImage extends StatelessWidget {
+  const _DiceImage();
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +181,6 @@ class _DiceImage extends StatelessWidget {
 final class _FavoriteButton extends StatelessWidget {
   const _FavoriteButton({
     required this.categoryDices,
-    super.key,
   });
 
   final CategoryDices categoryDices;
@@ -176,12 +190,17 @@ final class _FavoriteButton extends StatelessWidget {
     return BlocBuilder<FavoriteCubit, FavoriteState>(
       builder: (context, state) {
         return IconButton(
-          icon: const Icon(Icons.casino),
-          iconSize: context.dynamicHeight(0.3),
+          icon: Icon(
+            state.categoryDices.contains(categoryDices)
+                ? Icons.favorite
+                : Icons.favorite_border,
+            color: ProjectColor.white.toColor,
+          ),
+          iconSize: context.dynamicHeight(0.07),
           onPressed: () {
-            context.read<FavoriteCubit>().addFavorite(
-                  categoryDices,
-                );
+            state.categoryDices.contains(categoryDices)
+                ? context.read<FavoriteCubit>().removeFavorite(categoryDices)
+                : context.read<FavoriteCubit>().addFavorite(categoryDices);
           },
         );
       },
@@ -200,11 +219,18 @@ final class _RollDiceDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: context.paddingAllLow,
-      child: Text(
-        textAlign: TextAlign.center,
-        categoryDices.description ?? '',
-        style: context.textTheme.titleMedium?.copyWith(
-          color: ProjectColor.white.toColor,
+      child: SizedBox(
+        height: context.dynamicHeight(1),
+        child: ListView(
+          children: [
+            Text(
+              textAlign: TextAlign.center,
+              categoryDices.description ?? '',
+              style: context.textTheme.titleMedium?.copyWith(
+                color: ProjectColor.white.toColor,
+              ),
+            ),
+          ],
         ),
       ),
     );

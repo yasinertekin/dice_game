@@ -28,6 +28,8 @@ final class _DiceApp extends StatelessWidget {
       /// This is the router of the app
       routerDelegate: _appRouter.delegate(),
       routeInformationParser: _appRouter.defaultRouteParser(),
+
+      debugShowCheckedModeBanner: false,
     );
   }
 }

@@ -1,7 +1,11 @@
 import 'package:auto_route/annotations.dart';
 import 'package:dice_game/feature/user_dice/cubit/state/user_dice_state.dart';
 import 'package:dice_game/feature/user_dice/cubit/user_dice_cubit.dart';
-import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/core/enum/project_color.dart';
+import 'package:dice_game/product/core/extension/context_extension.dart';
+import 'package:dice_game/product/widget/button/custom_back_button.dart';
+import 'package:dice_game/product/widget/container/custom_gradient_container.dart';
+import 'package:dice_game/product/widget/grid_list/dice_category_grid_view.dart';
 import 'package:dice_game/product/widget/loading/custom_circular_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,42 +28,47 @@ final class _UserDiceView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          context.read<UserDiceCubit>().addUserDice(
-                CategoryDices(
-                  diceName: 'Dice 1',
-                ),
+    return CustomGradientContainer(
+      child: Scaffold(
+        backgroundColor: ProjectColor.transparent.toColor,
+        appBar: const _UserDiceAppBar(),
+        body: BlocBuilder<UserDiceCubit, UserDiceState>(
+          builder: (context, state) {
+            if (state.isLoading ?? false) {
+              return const CustomCircularProgressIndicator();
+            } else if (state.error?.isNotEmpty ?? false) {
+              return Center(
+                child: Text(state.error!),
               );
-        },
-        child: const Icon(Icons.add),
-      ),
-      appBar: AppBar(
-        title: const Text('User Dice'),
-        actions: const [],
-      ),
-      body: BlocBuilder<UserDiceCubit, UserDiceState>(
-        builder: (context, state) {
-          if (state.isLoading ?? false) {
-            return const CustomCircularProgressIndicator();
-          } else if (state.error?.isNotEmpty ?? false) {
-            return Center(
-              child: Text(state.error!),
-            );
-          } else {
-            return ListView.builder(
-              itemCount: state.categoryDices.length,
-              itemBuilder: (context, index) {
-                final categoryDice = state.categoryDices[index];
-                return ListTile(
-                  title: Text(categoryDice.diceName ?? ''),
-                );
-              },
-            );
-          }
-        },
+            } else {
+              return DiceCategoryGridView(
+                diceList: state.categoryDices,
+              );
+            }
+          },
+        ),
       ),
     );
   }
+}
+
+final class _UserDiceAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const _UserDiceAppBar();
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text(
+        'Zarlarım',
+        style: context.textTheme.titleLarge?.copyWith(
+          color: ProjectColor.white.toColor,
+        ),
+      ),
+      leading: const CustomBackButton(),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

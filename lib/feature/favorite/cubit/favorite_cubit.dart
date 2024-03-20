@@ -40,4 +40,21 @@ final class FavoriteCubit extends Cubit<FavoriteState> {
       emit(state.copyWith(isLoading: false, errorMessage: e.toString()));
     }
   }
+
+  /// Remove favorite
+  Future<void> removeFavorite(CategoryDices categoryDices) async {
+    emit(state.copyWith(isLoading: true));
+    try {
+      await _userDiceRepository.removeModel(categoryDices);
+      final retrievedCategoryDices = _userDiceRepository.getValues();
+      emit(
+        state.copyWith(
+          isLoading: false,
+          categoryDices: retrievedCategoryDices,
+        ),
+      );
+    } catch (e) {
+      emit(state.copyWith(isLoading: false, errorMessage: e.toString()));
+    }
+  }
 }
