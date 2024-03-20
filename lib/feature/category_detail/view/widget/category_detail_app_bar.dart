@@ -12,7 +12,7 @@ final class _CategoryDetailAppBar extends StatelessWidget
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        diceCategories?.categoryName ?? '',
+        diceCategories?.categoryName ?? 'Zarların',
         style: context.textTheme.titleLarge!.copyWith(
           color: ProjectColor.white.toColor,
         ),
