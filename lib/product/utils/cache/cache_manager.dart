@@ -1,5 +1,8 @@
 import 'package:dice_game/product/core/constants/hive_type_id_constants.dart';
+import 'package:dice_game/product/core/enum/hive_key.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/core/model/options/options.dart';
+import 'package:dice_game/product/core/model/sub_dices/sub_dices.dart';
 import 'package:hive/hive.dart';
 
 /// Represents a cache manager.
@@ -103,9 +106,20 @@ final class CategoryDicesCacheManager extends ICacheManager<CategoryDices> {
   @override
   void saveDataAdapter() {
     if (!Hive.isAdapterRegistered(HiveTypeIdConstants.categoryDicesId)) {
-      Hive.registerAdapter(
-        CategoryDicesAdapter(),
-      );
+      Hive
+        ..registerAdapter(
+          CategoryDicesAdapter(),
+        )
+        ..registerAdapter(
+          SubDicesAdapter(),
+        )
+        ..registerAdapter(
+          OptionsAdapter(),
+        );
     }
   }
+}
+
+final class FavoriteCacheManager extends CategoryDicesCacheManager {
+  FavoriteCacheManager() : super(HiveKey.favoriteDicesKey.value);
 }
