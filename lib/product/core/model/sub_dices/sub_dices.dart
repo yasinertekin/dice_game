@@ -8,8 +8,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'sub_dices.g.dart';
 
 @JsonSerializable()
-@immutable
 @HiveType(typeId: HiveTypeIdConstants.subDicesId)
+@immutable
 final class SubDices with EquatableMixin {
   SubDices({
     this.name,
