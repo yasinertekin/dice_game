@@ -9,7 +9,9 @@ final class _FavoriteIcon extends StatelessWidget {
       icon: CustomSvg(
         assetPath: ProjectAssets.icHeard.toSvg,
       ),
-      onPressed: () {},
+      onPressed: () {
+        context.router.push(const FavoriteRoute());
+      },
     );
   }
 }
