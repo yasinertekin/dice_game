@@ -8,18 +8,19 @@ import 'package:json_annotation/json_annotation.dart';
 part 'category_dices.g.dart';
 
 @JsonSerializable()
-@immutable
 @HiveType(typeId: HiveTypeIdConstants.categoryDicesId)
+@immutable
 final class CategoryDices with EquatableMixin {
   CategoryDices({
     this.diceName,
     this.icon,
-    String? id,
+    this.id,
+    this.diceImage,
     this.isPremium,
-    this.isadultContent,
+    this.isAdultContent,
     this.description,
     this.subDices,
-  }) : id = id ?? UniqueKey().toString();
+  });
 
   factory CategoryDices.fromJson(Map<String, dynamic> json) =>
       _$CategoryDicesFromJson(json);
@@ -33,31 +34,42 @@ final class CategoryDices with EquatableMixin {
   @JsonKey(name: 'id')
   final String? id;
   @HiveField(3)
+  @JsonKey(name: 'dice_image')
+  final String? diceImage;
+  @HiveField(4)
   @JsonKey(name: 'isPremium')
   final bool? isPremium;
-  @HiveField(4)
-  @JsonKey(name: 'isAdultContent')
-  final bool? isadultContent;
   @HiveField(5)
+  @JsonKey(name: 'isAdultContent')
+  final bool? isAdultContent;
+  @HiveField(6)
   @JsonKey(name: 'description')
   final String? description;
-  @HiveField(6)
+  @HiveField(7)
   @JsonKey(name: 'sub_dices')
   final List<SubDices>? subDices;
 
   Map<String, dynamic> toJson() => _$CategoryDicesToJson(this);
 
   @override
-  List<Object?> get props =>
-      [diceName, icon, id, isPremium, isadultContent, description, subDices];
+  List<Object?> get props => [
+        diceName,
+        icon,
+        id,
+        diceImage,
+        isPremium,
+        isAdultContent,
+        description,
+        subDices,
+      ];
 
-  ///
   CategoryDices copyWith({
     String? diceName,
     String? icon,
     String? id,
+    String? diceImage,
     bool? isPremium,
-    bool? adultContent,
+    bool? isAdultContent,
     String? description,
     List<SubDices>? subDices,
   }) {
@@ -65,8 +77,9 @@ final class CategoryDices with EquatableMixin {
       diceName: diceName ?? this.diceName,
       icon: icon ?? this.icon,
       id: id ?? this.id,
+      diceImage: diceImage ?? this.diceImage,
       isPremium: isPremium ?? this.isPremium,
-      isadultContent: adultContent ?? isadultContent,
+      isAdultContent: isAdultContent ?? this.isAdultContent,
       description: description ?? this.description,
       subDices: subDices ?? this.subDices,
     );
