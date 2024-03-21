@@ -59,6 +59,9 @@ flutter:
 
   assets:
    - assets/image/project_image/
+   - assets/image/dice_image/
    - assets/icon/project_icon/
+   - assets/icon/category_icon/
+   - assets/icon/dice_icon/
    - assets/lottie/
    - assets/data/
