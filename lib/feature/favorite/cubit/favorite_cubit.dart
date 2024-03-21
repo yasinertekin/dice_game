@@ -28,7 +28,10 @@ final class FavoriteCubit extends Cubit<FavoriteState> {
   Future<void> addFavorite(CategoryDices categoryDices) async {
     emit(state.copyWith(isLoading: true));
     try {
-      await _userDiceRepository.addItems([categoryDices]);
+      await _userDiceRepository.putItem(
+        categoryDices.id.toString(),
+        categoryDices,
+      );
       final retrievedCategoryDices = _userDiceRepository.getValues();
       emit(
         state.copyWith(
@@ -45,7 +48,7 @@ final class FavoriteCubit extends Cubit<FavoriteState> {
   Future<void> removeFavorite(CategoryDices categoryDices) async {
     emit(state.copyWith(isLoading: true));
     try {
-      await _userDiceRepository.removeModel(categoryDices);
+      await _userDiceRepository.removeItem(categoryDices.id.toString());
       final retrievedCategoryDices = _userDiceRepository.getValues();
       emit(
         state.copyWith(
