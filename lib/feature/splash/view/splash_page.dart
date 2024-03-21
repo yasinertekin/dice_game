@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:dice_game/locator.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/utils/router/app_router.gr.dart';
