@@ -20,17 +20,18 @@ class CategoryDicesAdapter extends TypeAdapter<CategoryDices> {
       diceName: fields[0] as String?,
       icon: fields[1] as String?,
       id: fields[2] as String?,
-      isPremium: fields[3] as bool?,
-      isadultContent: fields[4] as bool?,
-      description: fields[5] as String?,
-      subDices: (fields[6] as List?)?.cast<SubDices>(),
+      diceImage: fields[3] as String?,
+      isPremium: fields[4] as bool?,
+      isAdultContent: fields[5] as bool?,
+      description: fields[6] as String?,
+      subDices: (fields[7] as List?)?.cast<SubDices>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, CategoryDices obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.diceName)
       ..writeByte(1)
@@ -38,12 +39,14 @@ class CategoryDicesAdapter extends TypeAdapter<CategoryDices> {
       ..writeByte(2)
       ..write(obj.id)
       ..writeByte(3)
-      ..write(obj.isPremium)
+      ..write(obj.diceImage)
       ..writeByte(4)
-      ..write(obj.isadultContent)
+      ..write(obj.isPremium)
       ..writeByte(5)
-      ..write(obj.description)
+      ..write(obj.isAdultContent)
       ..writeByte(6)
+      ..write(obj.description)
+      ..writeByte(7)
       ..write(obj.subDices);
   }
 
@@ -67,8 +70,9 @@ CategoryDices _$CategoryDicesFromJson(Map<String, dynamic> json) =>
       diceName: json['dice_name'] as String?,
       icon: json['icon'] as String?,
       id: json['id'] as String?,
+      diceImage: json['dice_image'] as String?,
       isPremium: json['isPremium'] as bool?,
-      isadultContent: json['isAdultContent'] as bool?,
+      isAdultContent: json['isAdultContent'] as bool?,
       description: json['description'] as String?,
       subDices: (json['sub_dices'] as List<dynamic>?)
           ?.map((e) => SubDices.fromJson(e as Map<String, dynamic>))
@@ -80,8 +84,9 @@ Map<String, dynamic> _$CategoryDicesToJson(CategoryDices instance) =>
       'dice_name': instance.diceName,
       'icon': instance.icon,
       'id': instance.id,
+      'dice_image': instance.diceImage,
       'isPremium': instance.isPremium,
-      'isAdultContent': instance.isadultContent,
+      'isAdultContent': instance.isAdultContent,
       'description': instance.description,
       'sub_dices': instance.subDices,
     };

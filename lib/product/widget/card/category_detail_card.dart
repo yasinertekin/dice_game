@@ -1,7 +1,8 @@
-import 'package:dice_game/product/core/enum/project_assets.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/image/custom_svg.dart';
 import 'package:flutter/material.dart';
 
@@ -21,13 +22,20 @@ final class CategoryDetailCard extends StatelessWidget {
   /// Index
   final int index;
 
+  /// OnLongPress
   final VoidCallback? onLongPress;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onLongPress: onLongPress,
-      onTap: () {},
+      onTap: () {
+        context.router.push(
+          DiceDescriptionRoute(
+            categoryDices: diceList![index],
+          ),
+        );
+      },
       child: Padding(
         padding: context.paddingAllLow,
         child: Card(
@@ -43,7 +51,7 @@ final class CategoryDetailCard extends StatelessWidget {
                 flex: 5,
               ),
               CustomSvg(
-                assetPath: ProjectAssets.icHeard.toSvg,
+                assetPath: diceList?[index].icon,
                 height: context.dynamicHeight(0.1),
               ),
               const Spacer(),

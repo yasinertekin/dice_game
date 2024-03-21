@@ -89,7 +89,7 @@ final class _AddDiceButton extends StatelessWidget {
                   CategoryDices(
                     isPremium: false,
                     diceName: 'Yeni Zar',
-                    isadultContent: false,
+                    isAdultContent: false,
                     subDices: const [],
                     description: 'Yeni zar eklemek için tıklayınız',
                     icon: 'assets/images/dice.png',
