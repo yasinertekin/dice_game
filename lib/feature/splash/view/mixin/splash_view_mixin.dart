@@ -6,7 +6,7 @@ base mixin SplashViewMixin on State<_SplashView> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      context.router.replace(const HomeRoute());
+      Locator.appRouter.push(const HomeRoute());
     });
   }
 }
