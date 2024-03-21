@@ -1,6 +1,6 @@
 part of '../home_page.dart';
 
-final class _UserDiceCard extends StatelessWidget {
+final class _UserDiceCard extends StatelessWidget with NavigationManager {
   const _UserDiceCard();
 
   @override
@@ -9,11 +9,7 @@ final class _UserDiceCard extends StatelessWidget {
       width: context.dynamicWidth(0.8),
       height: context.dynamicHeight(0.2),
       child: InkWell(
-        onTap: () {
-          context.router.push(
-            const UserDiceRoute(),
-          );
-        },
+        onTap: () => navigatePush(const UserDiceRoute()),
         child: Card(
           shape: _CardShape(context),
           color: ProjectColor.buzzIn.toColor,
