@@ -33,6 +33,7 @@ final class _FavoriteView extends StatelessWidget {
         appBar: const _FavoriteAppBar(),
         backgroundColor: ProjectColor.transparent.toColor,
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             BlocBuilder<FavoriteCubit, FavoriteState>(
               builder: (context, state) {
@@ -43,7 +44,7 @@ final class _FavoriteView extends StatelessWidget {
                   return Text(state.errorMessage);
                 }
                 if (state.categoryDices.isEmpty) {
-                  return const Text('Favori zar bulunamadı');
+                  return const Center(child: Text('Favori zar bulunamadı'));
                 }
 
                 return Expanded(
