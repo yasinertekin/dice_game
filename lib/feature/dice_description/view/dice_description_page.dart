@@ -3,6 +3,7 @@ import 'package:dice_game/feature/favorite/cubit/favorite_cubit.dart';
 import 'package:dice_game/feature/favorite/cubit/state/favorite_state.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
+import 'package:dice_game/product/core/mixin/navigation_manager.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +83,7 @@ final class _RollDiceButton extends StatelessWidget {
   }
 }
 
-final class _RollIcon extends StatelessWidget {
+final class _RollIcon extends StatelessWidget with NavigationManager {
   const _RollIcon();
 
   @override
@@ -93,9 +94,7 @@ final class _RollIcon extends StatelessWidget {
         color: ProjectColor.white.toColor,
       ),
       iconSize: context.dynamicHeight(0.3),
-      onPressed: () {
-        context.router.maybePop<void>();
-      },
+      onPressed: navigatePop,
     );
   }
 }
@@ -222,11 +221,16 @@ final class _RollDiceDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: context.paddingAllLow,
-      child: Text(
-        textAlign: TextAlign.center,
-        categoryDices.description ?? '',
-        style: context.textTheme.titleMedium?.copyWith(
-          color: ProjectColor.white.toColor,
+      child: SizedBox(
+        height: context.dynamicHeight(0.35),
+        child: SingleChildScrollView(
+          child: Text(
+            textAlign: TextAlign.center,
+            categoryDices.description ?? '',
+            style: context.textTheme.titleMedium?.copyWith(
+              color: ProjectColor.white.toColor,
+            ),
+          ),
         ),
       ),
     );
