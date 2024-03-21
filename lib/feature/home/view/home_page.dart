@@ -102,13 +102,13 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.dynamicHeight(0.85),
+      height: context.dynamicHeight(0.8),
       child: GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
+          mainAxisSpacing: 6,
         ),
         itemCount: diceModel.categories?.length ?? 0,
         itemBuilder: (context, index) {
