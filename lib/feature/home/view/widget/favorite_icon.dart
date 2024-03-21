@@ -1,6 +1,6 @@
 part of '../home_page.dart';
 
-final class _FavoriteIcon extends StatelessWidget {
+final class _FavoriteIcon extends StatelessWidget with NavigationManager {
   const _FavoriteIcon();
 
   @override
@@ -9,9 +9,7 @@ final class _FavoriteIcon extends StatelessWidget {
       icon: CustomSvg(
         assetPath: ProjectAssets.icHeard.toSvg,
       ),
-      onPressed: () {
-        context.router.push(const FavoriteRoute());
-      },
+      onPressed: () => navigatePush(const FavoriteRoute()),
     );
   }
 }
