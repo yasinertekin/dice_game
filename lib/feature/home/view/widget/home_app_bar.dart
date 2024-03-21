@@ -7,7 +7,7 @@ final class _HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: ProjectColor.silkyWhite.toColor,
-      title: const Text('Home Page'),
+      title: const _AppLogo(),
       automaticallyImplyLeading: false,
       bottom: const _AppbarBottom(),
     );
@@ -15,6 +15,19 @@ final class _HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+final class _AppLogo extends StatelessWidget {
+  const _AppLogo();
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      ProjectAssets.imgAppLogo.toPng,
+      height: context.dynamicHeight(0.05),
+      fit: BoxFit.fill,
+    );
+  }
 }
 
 final class _AppbarBottom extends StatelessWidget

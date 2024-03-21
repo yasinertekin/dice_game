@@ -11,32 +11,34 @@ final class _HomeCategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: context.paddingAllLow,
-      child: InkWell(
-        onTap: () {
-          context.router.push(
-            CategoryDetailRoute(
-              diceCategories: dice,
-            ),
-          );
-        },
-        child: Card(
-          margin: const EdgeInsets.all(10),
-          color: dice?.categoryColor != null
-              ? _CardColor(dice!.categoryColor.toString())
-              : ProjectColor.buzzIn.toColor,
+    return InkWell(
+      onTap: () {
+        context.router.push(
+          CategoryDetailRoute(
+            diceCategories: dice,
+          ),
+        );
+      },
+      child: Card(
+        color: dice?.categoryColor != null
+            ? _CardColor(dice!.categoryColor.toString())
+            : ProjectColor.buzzIn.toColor,
+        child: Padding(
+          padding: context.paddingAllLow,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
-                padding: context.paddingAllLow,
-                child: Text(
-                  textAlign: TextAlign.center,
-                  dice?.categoryName ?? '',
-                  style: context.textTheme.titleLarge,
-                ),
+              const Spacer(),
+              Text(
+                textAlign: TextAlign.center,
+                dice?.categoryName ?? '',
+                style: context.textTheme.titleLarge,
               ),
+              CustomSvg(
+                assetPath: dice?.categoryIcon ?? '',
+                height: context.dynamicHeight(0.1),
+              ),
+              const Spacer(),
             ],
           ),
         ),
