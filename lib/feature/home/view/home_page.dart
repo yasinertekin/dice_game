@@ -4,6 +4,7 @@ import 'package:dice_game/feature/home/cubit/state/home_state.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
+import 'package:dice_game/product/core/mixin/navigation_manager.dart';
 import 'package:dice_game/product/core/model/categories/categories.dart';
 import 'package:dice_game/product/core/model/category/category.dart';
 import 'package:dice_game/product/core/service/json_service.dart';
