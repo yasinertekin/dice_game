@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/favorite/cubit/favorite_cubit.dart';
 import 'package:dice_game/feature/favorite/cubit/state/favorite_state.dart';
-import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
@@ -40,13 +39,11 @@ final class _DiceDescriptionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            _DiceDescriptionStack(categoryDices: categoryDices),
-            const _RollDiceButton(),
-          ],
-        ),
+      body: Column(
+        children: [
+          _DiceDescriptionStack(categoryDices: categoryDices),
+          const _RollDiceButton(),
+        ],
       ),
     );
   }
@@ -85,10 +82,8 @@ final class _RollDiceButton extends StatelessWidget {
   }
 }
 
-class _RollIcon extends StatelessWidget {
-  const _RollIcon({
-    super.key,
-  });
+final class _RollIcon extends StatelessWidget {
+  const _RollIcon();
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +112,9 @@ final class _DiceDescriptionStack extends StatelessWidget {
     return Expanded(
       child: Stack(
         children: [
-          const _DiceImage(),
+          _DiceImage(
+            categoryDices,
+          ),
           const _DarkOverlayContainer(),
           Positioned(
             top: 0,
@@ -165,12 +162,16 @@ final class _DarkOverlayContainer extends StatelessWidget {
 }
 
 final class _DiceImage extends StatelessWidget {
-  const _DiceImage();
+  const _DiceImage(
+    this.categoryDices,
+  );
+
+  final CategoryDices categoryDices;
 
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      ProjectAssets.imgLibrary.toPng,
+      categoryDices.diceImage ?? '',
       fit: BoxFit.cover,
       width: context.dynamicWidth(1),
       height: context.dynamicHeight(1),
@@ -198,9 +199,11 @@ final class _FavoriteButton extends StatelessWidget {
           ),
           iconSize: context.dynamicHeight(0.07),
           onPressed: () {
-            state.categoryDices.contains(categoryDices)
-                ? context.read<FavoriteCubit>().removeFavorite(categoryDices)
-                : context.read<FavoriteCubit>().addFavorite(categoryDices);
+            if (state.categoryDices.contains(categoryDices)) {
+              context.read<FavoriteCubit>().removeFavorite(categoryDices);
+            } else {
+              context.read<FavoriteCubit>().addFavorite(categoryDices);
+            }
           },
         );
       },
@@ -219,18 +222,11 @@ final class _RollDiceDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: context.paddingAllLow,
-      child: SizedBox(
-        height: context.dynamicHeight(1),
-        child: ListView(
-          children: [
-            Text(
-              textAlign: TextAlign.center,
-              categoryDices.description ?? '',
-              style: context.textTheme.titleMedium?.copyWith(
-                color: ProjectColor.white.toColor,
-              ),
-            ),
-          ],
+      child: Text(
+        textAlign: TextAlign.center,
+        categoryDices.description ?? '',
+        style: context.textTheme.titleMedium?.copyWith(
+          color: ProjectColor.white.toColor,
         ),
       ),
     );
