@@ -1,7 +1,6 @@
 import 'package:dice_game/feature/favorite/cubit/favorite_cubit.dart';
 import 'package:dice_game/feature/user_dice/cubit/user_dice_cubit.dart';
-import 'package:dice_game/product/core/enum/hive_key.dart';
-import 'package:dice_game/product/utils/cache/cache_manager.dart';
+import 'package:dice_game/locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,14 +18,10 @@ final class StateInitialize extends StatelessWidget {
       providers: [
         // Add the providers here
         BlocProvider<UserDiceCubit>(
-          create: (context) => UserDiceCubit(
-            CategoryDicesCacheManager(HiveKey.categoryDicesManagerKey.value),
-          )..fetchUserDice(),
+          create: (context) => Locator.userDiceCubit..fetchUserDice(),
         ),
         BlocProvider<FavoriteCubit>(
-          create: (context) => FavoriteCubit(
-            FavoriteCacheManager(),
-          )..fetchFavorite(),
+          create: (context) => Locator.favoriteCubit..fetchFavorite(),
         ),
       ],
       child: child,
