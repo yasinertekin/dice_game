@@ -1,9 +1,10 @@
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/user_dice/cubit/state/user_dice_state.dart';
 import 'package:dice_game/feature/user_dice/cubit/user_dice_cubit.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
-import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/core/mixin/navigation_manager.dart';
+import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/card/category_detail_card.dart';
 import 'package:dice_game/product/widget/container/custom_gradient_container.dart';
@@ -69,7 +70,7 @@ final class _UserDiceView extends StatelessWidget {
   }
 }
 
-final class _AddDiceButton extends StatelessWidget {
+final class _AddDiceButton extends StatelessWidget with NavigationManager {
   const _AddDiceButton();
 
   @override
@@ -85,16 +86,9 @@ final class _AddDiceButton extends StatelessWidget {
             size: 40,
           ),
           onPressed: () {
-            context.read<UserDiceCubit>().addUserDice(
-                  CategoryDices(
-                    isPremium: false,
-                    diceName: 'Yeni Zar',
-                    isAdultContent: false,
-                    subDices: const [],
-                    description: 'Yeni zar eklemek için tıklayınız',
-                    icon: 'assets/images/dice.png',
-                  ),
-                );
+            navigatePush(
+              const AddDiceRoute(),
+            );
           },
         ),
       ),
