@@ -1,6 +1,6 @@
 part of '../home_page.dart';
 
-final class _HomeCategoryCard extends StatelessWidget {
+final class _HomeCategoryCard extends StatelessWidget with NavigationManager {
   const _HomeCategoryCard({
     required this.dice,
     required this.index,
@@ -12,13 +12,11 @@ final class _HomeCategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        context.router.push(
-          CategoryDetailRoute(
-            diceCategories: dice,
-          ),
-        );
-      },
+      onTap: () => navigatePush(
+        CategoryDetailRoute(
+          diceCategories: dice,
+        ),
+      ),
       child: Card(
         color: dice?.categoryColor != null
             ? _CardColor(dice!.categoryColor.toString())
