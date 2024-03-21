@@ -1,13 +1,13 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
+import 'package:dice_game/product/core/mixin/navigation_manager.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/image/custom_svg.dart';
 import 'package:flutter/material.dart';
 
 /// Category Detail Card
-final class CategoryDetailCard extends StatelessWidget {
+final class CategoryDetailCard extends StatelessWidget with NavigationManager {
   /// Category Detail Card
   const CategoryDetailCard({
     required this.diceList,
@@ -30,7 +30,7 @@ final class CategoryDetailCard extends StatelessWidget {
     return InkWell(
       onLongPress: onLongPress,
       onTap: () {
-        context.router.push(
+        navigatePush(
           DiceDescriptionRoute(
             categoryDices: diceList![index],
           ),
@@ -50,15 +50,30 @@ final class CategoryDetailCard extends StatelessWidget {
               const Spacer(
                 flex: 5,
               ),
-              CustomSvg(
-                assetPath: diceList?[index].icon,
-                height: context.dynamicHeight(0.1),
-              ),
+              _CategoryCardImage(diceList: diceList, index: index),
               const Spacer(),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+final class _CategoryCardImage extends StatelessWidget {
+  const _CategoryCardImage({
+    required this.diceList,
+    required this.index,
+  });
+
+  final List<CategoryDices>? diceList;
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomSvg(
+      assetPath: diceList?[index].icon,
+      height: context.dynamicHeight(0.1),
     );
   }
 }
