@@ -13,7 +13,6 @@ import 'package:dice_game/product/widget/image/custom_svg.dart';
 import 'package:dice_game/product/widget/loading/custom_circular_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kartal/kartal.dart';
 
 part 'widget/bottom_bar.dart';
 part 'widget/custom_divider.dart';
@@ -49,20 +48,16 @@ final class _HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: ProjectColor.silkyWhite.toColor,
       appBar: const _HomeAppBar(),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const _HomeTitle(),
-              const _DiceGategoryList(),
-              const _UserDiceCard(),
-              context.sized.emptySizedHeightBoxNormal,
-            ],
-          ),
+      body: const SingleChildScrollView(
+        child: Column(
+          children: [
+            _HomeTitle(),
+            _DiceGategoryList(),
+            _UserDiceCard(),
+            _BottomBar(),
+          ],
         ),
       ),
-      bottomNavigationBar: const _BottomBar(),
     );
   }
 }
@@ -103,7 +98,7 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.dynamicHeight(0.8),
+      height: context.dynamicHeight(0.95),
       child: GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
