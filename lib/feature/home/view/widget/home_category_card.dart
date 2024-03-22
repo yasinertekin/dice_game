@@ -27,20 +27,46 @@ final class _HomeCategoryCard extends StatelessWidget with NavigationManager {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Spacer(),
-              Text(
-                textAlign: TextAlign.center,
-                dice?.categoryName ?? '',
-                style: context.textTheme.titleLarge,
-              ),
-              CustomSvg(
-                assetPath: dice?.categoryIcon ?? '',
-                height: context.dynamicHeight(0.1),
-              ),
+              _CategoryTitle(dice: dice),
+              _CategoryIcon(dice: dice),
               const Spacer(),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+final class _CategoryIcon extends StatelessWidget {
+  const _CategoryIcon({
+    required this.dice,
+  });
+
+  final Categories? dice;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomSvg(
+      assetPath: dice?.categoryIcon ?? '',
+      height: context.dynamicHeight(0.1),
+    );
+  }
+}
+
+final class _CategoryTitle extends StatelessWidget {
+  const _CategoryTitle({
+    required this.dice,
+  });
+
+  final Categories? dice;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      textAlign: TextAlign.center,
+      dice?.categoryName ?? '',
+      style: context.textTheme.titleLarge,
     );
   }
 }
