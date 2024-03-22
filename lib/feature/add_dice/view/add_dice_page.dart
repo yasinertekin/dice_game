@@ -1,14 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/add_dice/cubit/add_dice_cubit.dart';
 import 'package:dice_game/feature/add_dice/cubit/svg_files_cubit.dart';
+import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'mixin/add_dice_mixin.dart';
 
 @RoutePage()
+
+/// AddDicePage
 final class AddDicePage extends StatelessWidget {
   const AddDicePage({super.key});
 
@@ -53,7 +57,7 @@ final class _AddDiceViewState extends State<_AddDiceView> with _AddDicemixin {
               descriptionController: _descriptionController,
             );
           case _PageEnum.addOptions:
-            return const _AddOptions();
+            return _AddOptions();
           case _PageEnum.addIcon:
             return const _AddIcon();
         }
@@ -63,32 +67,86 @@ final class _AddDiceViewState extends State<_AddDiceView> with _AddDicemixin {
 }
 
 final class _AddOptions extends StatelessWidget {
-  const _AddOptions();
-
+  _AddOptions();
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Zar Seçenekleri'),
-      ),
-      body: BlocSelector<AddDiceCubit, CategoryDices, CategoryDices>(
-        selector: (state) => state,
-        builder: (context, state) {
-          return ListView.builder(
-            itemCount: state.subDices?.length,
-            itemBuilder: (BuildContext context, int index) {
-              return null;
-
-              // return ListTile(
-              //   title: Text(state.subDices![index].diceName),
-              //   subtitle: Text(state.subDices![index].description),
-              // );
-            },
-          );
-        },
+      backgroundColor: ProjectColor.silkyWhite.toColor,
+      appBar: const _AddOptionsAppBar(),
+      body: Padding(
+        padding: context.paddingAllLow,
+        child: Column(
+          children: [
+            SizedBox(height: context.dynamicHeight(0.05)),
+            Form(
+              key: _formKey,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Expanded>[
+                  Expanded(
+                    flex: 2,
+                    child: TextFormField(
+                      keyboardType: TextInputType.text,
+                      validator: (value) =>
+                          _OptionsValidator(value: value!).validate,
+                      decoration: const InputDecoration(
+                        labelText: 'Seçenek Ekle',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 0,
+                    child: InkWell(
+                      onTap: () {
+                        if (_formKey.currentState?.validate() ?? false) {}
+                      },
+                      child: const Icon(Icons.add),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            BlocSelector<AddDiceCubit, CategoryDices, CategoryDices>(
+              selector: (state) => state,
+              builder: (context, state) {
+                return Expanded(
+                  child: ListView.builder(
+                    itemCount: state.subDices?.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Text(state.subDices?[index].name ?? '');
+                    },
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
+}
+
+final class _AddOptionsAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const _AddOptionsAppBar();
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: ProjectColor.concreteSideWalk.toColor,
+      leading: const CustomBackButton(),
+      title: const Text('Zar Seçenekleri'),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 final class _AddIcon extends StatelessWidget {
@@ -122,48 +180,55 @@ final class _AddNameView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ProjectColor.silkyWhite.toColor,
       appBar: AppBar(
-        title: const Text('Zar Ekle'),
+        title: const Text(
+          'Zar Ekle',
+        ),
+        backgroundColor: ProjectColor.concreteSideWalk.toColor,
+        leading: const CustomBackButton(),
       ),
       body: Padding(
         padding: context.paddingAllLow,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Spacer(),
-            Icon(
-              Icons.casino,
-              size: context.dynamicHeight(0.2),
-            ),
-            const Spacer(),
-            _CustomForm(
-              formKey: _formKey,
-              nameController: nameController,
-              descriptionController: descriptionController,
-            ),
-            SizedBox(height: context.lowValue),
-            SizedBox(
-              width: double.infinity,
-              child: BlocBuilder<AddDiceCubit, CategoryDices>(
-                builder: (context, state) => ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState?.validate() ?? false) {
-                      state.copyWith(
-                        diceName: nameController.text,
-                        description: descriptionController.text,
-                      );
-                      pageController.nextPage(
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.easeIn,
-                      );
-                    }
-                  },
-                  child: const Text('Devam Et'),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: context.dynamicHeight(0.15),
+              ),
+              Icon(
+                Icons.casino,
+                size: context.dynamicHeight(0.2),
+              ),
+              _CustomForm(
+                formKey: _formKey,
+                nameController: nameController,
+                descriptionController: descriptionController,
+              ),
+              SizedBox(height: context.lowValue),
+              SizedBox(
+                width: double.infinity,
+                child: BlocBuilder<AddDiceCubit, CategoryDices>(
+                  builder: (context, state) => ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState?.validate() ?? false) {
+                        state.copyWith(
+                          diceName: nameController.text,
+                          description: descriptionController.text,
+                        );
+                        pageController.nextPage(
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeIn,
+                        );
+                      }
+                    },
+                    child: const Text('Devam Et'),
+                  ),
                 ),
               ),
-            ),
-            const Spacer(),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -196,7 +261,7 @@ final class _CustomForm extends StatelessWidget {
               labelText: 'Zar Adı',
             ),
           ),
-          SizedBox(height: context.lowValue),
+          SizedBox(height: context.highValue),
           TextFormField(
             textInputAction: TextInputAction.done,
             keyboardType: TextInputType.text,
@@ -206,6 +271,7 @@ final class _CustomForm extends StatelessWidget {
               labelText: 'Zar Açıklaması',
             ),
           ),
+          SizedBox(height: context.highValue),
         ],
       ),
     );
@@ -263,6 +329,17 @@ final class _BodyValidator extends _Validator {
   String? get validate {
     if (value == null || value!.isEmpty) {
       return 'Lütfen bir açıklama giriniz';
+    }
+    return null;
+  }
+}
+
+final class _OptionsValidator extends _Validator {
+  const _OptionsValidator({required String value}) : super(value: value);
+  @override
+  String? get validate {
+    if (value == null || value!.isEmpty) {
+      return 'Lütfen bir seçenek giriniz';
     }
     return null;
   }

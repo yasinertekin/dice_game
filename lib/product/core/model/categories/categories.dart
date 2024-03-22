@@ -1,11 +1,13 @@
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'categories.g.dart';
 
 @JsonSerializable()
-class Categories with EquatableMixin {
+@immutable
+final class Categories with EquatableMixin {
   Categories({
     this.categoryName,
     this.categoryIcon,
@@ -16,13 +18,13 @@ class Categories with EquatableMixin {
   factory Categories.fromJson(Map<String, dynamic> json) =>
       _$CategoriesFromJson(json);
   @JsonKey(name: 'categoryName')
-  String? categoryName;
+  final String? categoryName;
   @JsonKey(name: 'categoryIcon')
-  String? categoryIcon;
+  final String? categoryIcon;
   @JsonKey(name: 'categoryColor')
-  String? categoryColor;
+  final String? categoryColor;
   @JsonKey(name: 'categoryDices')
-  List<CategoryDices>? categoryDices;
+  final List<CategoryDices>? categoryDices;
 
   Map<String, dynamic> toJson() => _$CategoriesToJson(this);
 

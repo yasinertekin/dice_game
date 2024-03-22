@@ -11,9 +11,9 @@ part 'options.g.dart';
 @HiveType(typeId: HiveTypeIdConstants.optionsId)
 final class Options with EquatableMixin {
   Options({
-    this.id,
+    String? id,
     this.name,
-  });
+  }) : id = id ?? UniqueKey().toString();
 
   factory Options.fromJson(Map<String, dynamic> json) =>
       _$OptionsFromJson(json);
