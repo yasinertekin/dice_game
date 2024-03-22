@@ -5,6 +5,7 @@ mixin _AddDicemixin on State<_AddDiceView> {
   late final PageController _pageController;
   late final TextEditingController _nameController;
   late final TextEditingController _descriptionController;
+  late final TextEditingController _optionController;
 
   @override
   void initState() {
@@ -12,6 +13,7 @@ mixin _AddDicemixin on State<_AddDiceView> {
     _pageController = PageController();
     _nameController = TextEditingController();
     _descriptionController = TextEditingController();
+    _optionController = TextEditingController();
   }
 
   @override
@@ -20,5 +22,6 @@ mixin _AddDicemixin on State<_AddDiceView> {
     _pageController.dispose();
     _nameController.dispose();
     _descriptionController.dispose();
+    _optionController.dispose();
   }
 }
