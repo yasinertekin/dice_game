@@ -18,5 +18,6 @@ final class AppRouter extends $AppRouter {
         AdaptiveRoute(page: DiceDescriptionRoute.page),
         AdaptiveRoute(page: FavoriteRoute.page),
         AdaptiveRoute(page: AddDiceRoute.page),
+        AdaptiveRoute(page: RollDiceRoute.page),
       ];
 }
