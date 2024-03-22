@@ -1,10 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/favorite/cubit/favorite_cubit.dart';
 import 'package:dice_game/feature/favorite/cubit/state/favorite_state.dart';
+import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/mixin/navigation_manager.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,19 +41,27 @@ final class _DiceDescriptionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          _DiceDescriptionStack(categoryDices: categoryDices),
-          const _RollDiceButton(),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            _DiceDescriptionStack(categoryDices: categoryDices),
+            _RollDiceButton(
+              categoryDices,
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
 final class _RollDiceButton extends StatelessWidget {
-  const _RollDiceButton();
+  const _RollDiceButton(
+    this.categoryDices,
+  );
+
+  final CategoryDices categoryDices;
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +78,9 @@ final class _RollDiceButton extends StatelessWidget {
                   color: ProjectColor.white.toColor,
                 ),
               ),
-              const _RollIcon(),
+              _RollIcon(
+                categoryDices,
+              ),
               Text(
                 'Tap the dice to roll',
                 style: context.textTheme.titleSmall?.copyWith(
@@ -84,7 +96,11 @@ final class _RollDiceButton extends StatelessWidget {
 }
 
 final class _RollIcon extends StatelessWidget with NavigationManager {
-  const _RollIcon();
+  const _RollIcon(
+    this.categoryDices,
+  );
+
+  final CategoryDices categoryDices;
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +110,11 @@ final class _RollIcon extends StatelessWidget with NavigationManager {
         color: ProjectColor.white.toColor,
       ),
       iconSize: context.dynamicHeight(0.3),
-      onPressed: navigatePop,
+      onPressed: () {
+        navigatePush(
+          RollDiceRoute(options: categoryDices.subDices!.first),
+        );
+      },
     );
   }
 }
@@ -170,7 +190,7 @@ final class _DiceImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      categoryDices.diceImage ?? '',
+      categoryDices.diceImage ?? ProjectAssets.imgLibrary.toPng,
       fit: BoxFit.cover,
       width: context.dynamicWidth(1),
       height: context.dynamicHeight(1),
