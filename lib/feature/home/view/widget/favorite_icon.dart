@@ -8,6 +8,7 @@ final class _FavoriteIcon extends StatelessWidget with NavigationManager {
     return IconButton(
       icon: CustomSvg(
         assetPath: ProjectAssets.icHeard.toSvg,
+        color: ProjectColor.black.toColor,
       ),
       onPressed: () => navigatePush(const FavoriteRoute()),
     );

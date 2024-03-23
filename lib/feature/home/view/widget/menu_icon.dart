@@ -8,6 +8,7 @@ final class _MenuIcon extends StatelessWidget {
     return IconButton(
       icon: CustomSvg(
         assetPath: ProjectAssets.icMenu.toSvg,
+        color: ProjectColor.black.toColor,
       ),
       onPressed: () {},
     );

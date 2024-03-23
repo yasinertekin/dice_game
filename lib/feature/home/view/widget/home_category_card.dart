@@ -66,7 +66,10 @@ final class _CategoryTitle extends StatelessWidget {
     return Text(
       textAlign: TextAlign.center,
       dice?.categoryName ?? '',
-      style: context.textTheme.titleLarge,
+      style: context.textTheme.titleLarge?.copyWith(
+        color: ProjectColor.white.toColor,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }
