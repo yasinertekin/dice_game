@@ -1,7 +1,6 @@
 part of '../add_dice_page.dart';
 
 mixin _AddDicemixin on State<_AddDiceView> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   late final PageController _pageController;
   late final TextEditingController _nameController;
   late final TextEditingController _descriptionController;
