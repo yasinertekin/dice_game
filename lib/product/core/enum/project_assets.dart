@@ -16,7 +16,10 @@ enum ProjectAssets {
   imgSplashSubtitle('splash_subtitle'),
 
   /// Library Image path (Png file)
-  imgLibrary('library');
+  imgLibrary('library'),
+
+  /// The path to the dice Lottie file
+  lottieDice('dice');
 
   /// The value of the enum
   final String value;
@@ -29,4 +32,7 @@ enum ProjectAssets {
 
   /// The path to the SVG file
   String get toSvg => 'assets/icon/project_icon/ic_$value.svg';
+
+  /// The path to the Lottie file
+  String get toLottie => 'assets/lottie/lottie_$value.json';
 }
