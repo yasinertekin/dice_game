@@ -46,10 +46,6 @@ final class _HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
-      ),
       backgroundColor: ProjectColor.silkyWhite.toColor,
       appBar: const _HomeAppBar(),
       body: const SingleChildScrollView(
