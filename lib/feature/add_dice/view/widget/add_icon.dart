@@ -81,9 +81,10 @@ final class _IconCard extends StatelessWidget {
       child: Card(
         color: context.read<SVGFilesCubit>().selectedIconIndex == index
             ? ProjectColor.buzzIn.toColor
-            : ProjectColor.white.toColor,
+            : ProjectColor.transparent.toColor,
         child: CustomSvg(
           assetPath: path,
+          color: ProjectColor.black.toColor,
         ),
       ),
     );
@@ -105,7 +106,9 @@ final class _SaveIconButton extends StatelessWidget with NavigationManager {
           context,
           userDice,
         );
-        await Locator.appRouter.popAndPush(const UserDiceRoute());
+        await Locator.appRouter.popAndPush(
+          const UserDiceRoute(),
+        );
       },
       icon: const Icon(Icons.check),
     );
