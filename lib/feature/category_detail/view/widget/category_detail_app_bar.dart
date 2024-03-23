@@ -18,7 +18,9 @@ final class _CategoryDetailAppBar extends StatelessWidget
         ),
       ),
       backgroundColor: ProjectColor.transparent.toColor,
-      leading: const CustomBackButton(),
+      leading: const CustomBackButton(
+        pageRouteInfo: HomeRoute(),
+      ),
     );
   }
 

@@ -3,6 +3,7 @@ import 'package:dice_game/feature/favorite/cubit/favorite_cubit.dart';
 import 'package:dice_game/feature/favorite/cubit/state/favorite_state.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
+import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/container/custom_gradient_container.dart';
 import 'package:dice_game/product/widget/grid_list/dice_category_grid_view.dart';
@@ -74,7 +75,9 @@ final class _FavoriteAppBar extends StatelessWidget
           color: ProjectColor.white.toColor,
         ),
       ),
-      leading: const CustomBackButton(),
+      leading: const CustomBackButton(
+        pageRouteInfo: HomeRoute(),
+      ),
     );
   }
 

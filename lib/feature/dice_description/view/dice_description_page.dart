@@ -13,6 +13,8 @@ import 'package:dice_game/product/widget/image/custom_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+part 'mixin/dice_description_view_mixin.dart';
+
 @RoutePage()
 
 /// RollDicePage
@@ -45,20 +47,58 @@ final class _DiceDescriptionView extends StatefulWidget {
   State<_DiceDescriptionView> createState() => _DiceDescriptionViewState();
 }
 
-final class _DiceDescriptionViewState extends State<_DiceDescriptionView> {
+final class _DiceDescriptionViewState extends State<_DiceDescriptionView>
+    with _DiceDescriptionViewMixin {
   @override
-  void initState() {
-    super.initState();
-    Future.microtask(() {
-      widget.categoryDices.isAdultContent ?? false
-          ? showDatePicker(
-              barrierDismissible: false,
-              context: context,
-              firstDate: DateTime(1900),
-              lastDate: DateTime.now(),
-            )
-          : null;
-    });
+  Future<void> _showDatePicker() async {
+    if (widget.categoryDices.isAdultContent ?? false) {
+      final pickedDate = await showDatePicker(
+        barrierDismissible: false,
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(1900),
+        lastDate: DateTime.now(),
+        keyboardType: TextInputType.datetime,
+      );
+
+      if (pickedDate != null) {
+        final today = DateTime.now();
+        final minimumDate =
+            today.subtract(const Duration(days: 18 * 365)); // 18 years ago
+        if (pickedDate.isAfter(minimumDate)) {
+          // Kullanıcı 18 yaşından küçük, işlem yapma
+
+          await _showAlerDialog();
+          return;
+        } else {
+          // Kullanıcı 18 yaşından büyük, devam et
+          // Burada istediğiniz işlemi gerçekleştirin
+          // Örneğin, seçilen tarihi kullanarak bir işlem yapabilirsiniz.
+        }
+      }
+    }
+  }
+
+  @override
+  Future<void> _showAlerDialog() async {
+    await showDialog<void>(
+      barrierDismissible: false,
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Uyarı'),
+          content: const Text('18 yaşından küçükler işlem yapamaz!'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Locator.appRouter.push(const HomeRoute());
+              },
+              child: const Text('Geri Dön'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -108,7 +148,7 @@ final class _RollIcon extends StatelessWidget with NavigationManager {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Locator.appRouter.push(
+      onTap: () => Locator.appRouter.popAndPush(
         RollDiceRoute(
           options: categoryDices.subDices!.first,
         ),
@@ -249,7 +289,9 @@ final class _DiceDescriptionStack extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const CustomBackButton(),
+                      const CustomBackButton(
+                        pageRouteInfo: HomeRoute(),
+                      ),
                       _FavoriteButton(
                         categoryDices: categoryDices,
                       ),

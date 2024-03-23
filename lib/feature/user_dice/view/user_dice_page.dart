@@ -117,7 +117,9 @@ final class _UserDiceAppBar extends StatelessWidget
           color: ProjectColor.white.toColor,
         ),
       ),
-      leading: const CustomBackButton(),
+      leading: const CustomBackButton(
+        pageRouteInfo: HomeRoute(),
+      ),
     );
   }
 

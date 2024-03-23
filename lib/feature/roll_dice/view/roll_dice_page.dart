@@ -4,6 +4,7 @@ import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/model/sub_dices/sub_dices.dart';
+import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/scheduler/ticker.dart';
@@ -55,9 +56,51 @@ final class _RollDiceViewState extends State<_RollDiceView>
     with _RollDiceViewMixin {
   @override
   Widget build(BuildContext context) {
+    return widget.options?.name == 'Pişirme Yöntemi'
+        ? Scaffold(
+            backgroundColor: ProjectColor.silkyWhite.toColor,
+            appBar: _RollDiceAppBar(
+              widget.options ?? SubDices(),
+            ),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _DiceLottie(controller: _controller),
+                  _RandomOptionsBuilder(
+                      widget: widget, controller: _controller),
+                ],
+              ),
+            ),
+          )
+        : _DefaultRollView(
+            widget: widget,
+            controller: _controller,
+          );
+  }
+
+  @override
+  Ticker createTicker(TickerCallback onTick) {
+    return Ticker(onTick);
+  }
+}
+
+final class _DefaultRollView extends StatelessWidget {
+  const _DefaultRollView({
+    required this.widget,
+    required AnimationController controller,
+  }) : _controller = controller;
+
+  final _RollDiceView widget;
+  final AnimationController _controller;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ProjectColor.silkyWhite.toColor,
-      appBar: const _RollDiceAppBar(),
+      appBar: _RollDiceAppBar(
+        widget.options ?? SubDices(),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -68,11 +111,6 @@ final class _RollDiceViewState extends State<_RollDiceView>
         ),
       ),
     );
-  }
-
-  @override
-  Ticker createTicker(TickerCallback onTick) {
-    return Ticker(onTick);
   }
 }
 
