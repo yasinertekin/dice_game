@@ -9,6 +9,7 @@ import 'package:dice_game/product/core/mixin/navigation_manager.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
+import 'package:dice_game/product/widget/image/custom_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -69,27 +70,8 @@ final class _RollDiceButton extends StatelessWidget {
     return Expanded(
       child: ColoredBox(
         color: ProjectColor.red.toColor,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Zar At',
-                style: context.textTheme.titleLarge?.copyWith(
-                  color: ProjectColor.white.toColor,
-                ),
-              ),
-              _RollIcon(
-                categoryDices,
-              ),
-              Text(
-                'Zar Atmak İçin Tıklayın',
-                style: context.textTheme.titleSmall?.copyWith(
-                  color: ProjectColor.white.toColor,
-                ),
-              ),
-            ],
-          ),
+        child: _RollIcon(
+          categoryDices,
         ),
       ),
     );
@@ -105,17 +87,115 @@ final class _RollIcon extends StatelessWidget with NavigationManager {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(
-        Icons.casino,
-        color: ProjectColor.white.toColor,
+    return GestureDetector(
+      onTap: () => Locator.appRouter.push(
+        RollDiceRoute(
+          options: categoryDices.subDices!.first,
+        ),
       ),
-      iconSize: context.dynamicHeight(0.3),
-      onPressed: () {
-        Locator.appRouter.push(
-          RollDiceRoute(options: categoryDices.subDices!.first),
-        );
-      },
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          _DiceIcon(categoryDices: categoryDices),
+          const _CasinoIcon(),
+          const _RollDiceText(),
+        ],
+      ),
+    );
+  }
+}
+
+final class _CasinoIcon extends StatelessWidget {
+  const _CasinoIcon();
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      left: 0,
+      right: 0,
+      top: context.dynamicHeight(0.04),
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: ProjectColor.red.toColor,
+          border: Border.all(
+            color: ProjectColor.white.toColor,
+            width: 8,
+          ),
+        ),
+        child: Padding(
+          padding: context.paddingAllLow,
+          child: const Icon(
+            Icons.casino,
+            size: 35,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+final class _RollDiceText extends StatelessWidget {
+  const _RollDiceText();
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: context.dynamicHeight(0.1),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: context.borderRadiusLow,
+          side: BorderSide(
+            color: ProjectColor.white.toColor,
+            width: 7,
+          ),
+        ),
+        color: ProjectColor.red.toColor,
+        child: Padding(
+          padding: context.paddingAllDefault,
+          child: Text(
+            'Zar At!',
+            style: context.textTheme.displayLarge?.copyWith(
+              color: ProjectColor.white.toColor,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+final class _DiceIcon extends StatelessWidget {
+  const _DiceIcon({
+    required this.categoryDices,
+  });
+
+  final CategoryDices categoryDices;
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      left: 0,
+      right: 0,
+      bottom: 0,
+      child: Container(
+        margin: context.paddingAllLow,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(
+            color: ProjectColor.white.toColor,
+            width: 20,
+          ),
+        ),
+        child: Padding(
+          padding: context.paddingAllHigh,
+          child: CustomSvg(
+            assetPath: categoryDices.icon ?? '',
+            height: context.dynamicHeight(0.15),
+          ),
+        ),
+      ),
     );
   }
 }
