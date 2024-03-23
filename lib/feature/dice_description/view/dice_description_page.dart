@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/favorite/cubit/favorite_cubit.dart';
 import 'package:dice_game/feature/favorite/cubit/state/favorite_state.dart';
+import 'package:dice_game/locator.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
@@ -73,7 +74,7 @@ final class _RollDiceButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Roll the dice',
+                'Zar At',
                 style: context.textTheme.titleLarge?.copyWith(
                   color: ProjectColor.white.toColor,
                 ),
@@ -82,7 +83,7 @@ final class _RollDiceButton extends StatelessWidget {
                 categoryDices,
               ),
               Text(
-                'Tap the dice to roll',
+                'Zar Atmak İçin Tıklayın',
                 style: context.textTheme.titleSmall?.copyWith(
                   color: ProjectColor.white.toColor,
                 ),
@@ -111,7 +112,7 @@ final class _RollIcon extends StatelessWidget with NavigationManager {
       ),
       iconSize: context.dynamicHeight(0.3),
       onPressed: () {
-        navigatePush(
+        Locator.appRouter.push(
           RollDiceRoute(options: categoryDices.subDices!.first),
         );
       },
