@@ -414,7 +414,7 @@
                     "id": "4",
                     "dice_image": "assets/image/dice_image/what_should_i_drink_image.jpg",
                     "isPremium": false,
-                    "isAdultContent": false,
+                    "isAdultContent": true,
                     "description": "Ne içmek istediğine karar veremiyorsan bunu kesinlikle denemelisin.",
                     "sub_dices": [{
                             "name": "Ne İçmeliyim ?",

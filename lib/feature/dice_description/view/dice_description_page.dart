@@ -34,7 +34,7 @@ final class DiceDescriptionPage extends StatelessWidget {
   }
 }
 
-final class _DiceDescriptionView extends StatelessWidget {
+final class _DiceDescriptionView extends StatefulWidget {
   const _DiceDescriptionView({
     required this.categoryDices,
   });
@@ -42,14 +42,34 @@ final class _DiceDescriptionView extends StatelessWidget {
   final CategoryDices categoryDices;
 
   @override
+  State<_DiceDescriptionView> createState() => _DiceDescriptionViewState();
+}
+
+final class _DiceDescriptionViewState extends State<_DiceDescriptionView> {
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(() {
+      widget.categoryDices.isAdultContent ?? false
+          ? showDatePicker(
+              barrierDismissible: false,
+              context: context,
+              firstDate: DateTime(1900),
+              lastDate: DateTime.now(),
+            )
+          : null;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Column(
           children: [
-            _DiceDescriptionStack(categoryDices: categoryDices),
+            _DiceDescriptionStack(categoryDices: widget.categoryDices),
             _RollDiceButton(
-              categoryDices,
+              widget.categoryDices,
             ),
           ],
         ),
