@@ -3,6 +3,7 @@ import 'package:dice_game/feature/roll_dice/cubit/roll_dice_cubit.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
+import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:dice_game/product/core/model/sub_dices/sub_dices.dart';
 import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
@@ -24,18 +25,20 @@ final class RollDicePage extends StatelessWidget {
   /// RollDicePage is a page that shows a dice animation and random options.
   const RollDicePage({
     required this.options,
+    required this.categoryDices,
     super.key,
   });
 
   /// Options for the dice.
   final SubDices options;
-
+  final CategoryDices categoryDices;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => RollDiceCubit(),
       child: _RollDiceView(
         options: options,
+        categoryDices: categoryDices,
       ),
     );
   }
@@ -44,9 +47,11 @@ final class RollDicePage extends StatelessWidget {
 final class _RollDiceView extends StatefulWidget {
   const _RollDiceView({
     required this.options,
+    required this.categoryDices,
   });
 
   final SubDices? options;
+  final CategoryDices categoryDices;
 
   @override
   State<_RollDiceView> createState() => _RollDiceViewState();
@@ -56,23 +61,8 @@ final class _RollDiceViewState extends State<_RollDiceView>
     with _RollDiceViewMixin {
   @override
   Widget build(BuildContext context) {
-    return widget.options?.name == 'Pişirme Yöntemi'
-        ? Scaffold(
-            backgroundColor: ProjectColor.silkyWhite.toColor,
-            appBar: _RollDiceAppBar(
-              widget.options ?? SubDices(),
-            ),
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _DiceLottie(controller: _controller),
-                  _RandomOptionsBuilder(
-                      widget: widget, controller: _controller),
-                ],
-              ),
-            ),
-          )
+    return widget.categoryDices.diceName == 'Gurme Zarı'
+        ? _GourmetDice(widget: widget, controller: _controller)
         : _DefaultRollView(
             widget: widget,
             controller: _controller,
@@ -82,6 +72,91 @@ final class _RollDiceViewState extends State<_RollDiceView>
   @override
   Ticker createTicker(TickerCallback onTick) {
     return Ticker(onTick);
+  }
+}
+
+class _GourmetDice extends StatelessWidget {
+  const _GourmetDice({
+    required this.widget,
+    required AnimationController controller,
+  }) : _controller = controller;
+
+  final _RollDiceView widget;
+  final AnimationController _controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: ProjectColor.silkyWhite.toColor,
+      appBar: _RollDiceAppBar(
+        widget.options ?? SubDices(),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _DiceLottie(
+              controller: _controller,
+            ),
+            _GourmeDiceList(widget: widget, controller: _controller),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+final class _GourmeDiceList extends StatelessWidget {
+  const _GourmeDiceList({
+    required this.widget,
+    required AnimationController controller,
+  }) : _controller = controller;
+
+  final _RollDiceView widget;
+  final AnimationController _controller;
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: BlocBuilder<RollDiceCubit, RollDiceState>(
+        builder: (context, state) {
+          final cubit = context.read<RollDiceCubit>();
+          final subDices = widget.categoryDices.subDices;
+
+          if (state == RollDiceState.completed) {
+            return Padding(
+              padding: context.paddingAllLow,
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: subDices?.length ?? 0,
+                      itemBuilder: (BuildContext context, int index) {
+                        final subDice = subDices?[index];
+                        final randomIndex =
+                            cubit.getRandomIndex(subDice?.options);
+                        final randomOption =
+                            subDice?.options?[randomIndex].name;
+                        return ListTile(
+                          title: Text(
+                            subDice?.name ?? '',
+                          ),
+                          subtitle: Text(
+                            randomOption ?? '',
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  _ResetButton(cubit: cubit, controller: _controller),
+                ],
+              ),
+            );
+          } else {
+            return const _EmptyWidget();
+          }
+        },
+      ),
+    );
   }
 }
 

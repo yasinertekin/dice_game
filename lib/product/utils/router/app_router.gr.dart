@@ -75,6 +75,7 @@ abstract class $AppRouter extends _i9.RootStackRouter {
         routeData: routeData,
         child: _i6.RollDicePage(
           options: args.options,
+          categoryDices: args.categoryDices,
           key: args.key,
         ),
       );
@@ -217,12 +218,14 @@ class HomeRoute extends _i9.PageRouteInfo<void> {
 class RollDiceRoute extends _i9.PageRouteInfo<RollDiceRouteArgs> {
   RollDiceRoute({
     required _i13.SubDices options,
+    required _i12.CategoryDices categoryDices,
     _i11.Key? key,
     List<_i9.PageRouteInfo>? children,
   }) : super(
           RollDiceRoute.name,
           args: RollDiceRouteArgs(
             options: options,
+            categoryDices: categoryDices,
             key: key,
           ),
           initialChildren: children,
@@ -237,16 +240,19 @@ class RollDiceRoute extends _i9.PageRouteInfo<RollDiceRouteArgs> {
 class RollDiceRouteArgs {
   const RollDiceRouteArgs({
     required this.options,
+    required this.categoryDices,
     this.key,
   });
 
   final _i13.SubDices options;
 
+  final _i12.CategoryDices categoryDices;
+
   final _i11.Key? key;
 
   @override
   String toString() {
-    return 'RollDiceRouteArgs{options: $options, key: $key}';
+    return 'RollDiceRouteArgs{options: $options, categoryDices: $categoryDices, key: $key}';
   }
 }
 

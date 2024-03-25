@@ -18,10 +18,10 @@ final class _ResetButton extends StatelessWidget {
           backgroundColor: ProjectColor.concreteSideWalk.toColor,
         ),
         onPressed: () {
-          cubit.resetAnimation();
           _controller
             ..reset()
             ..forward();
+          cubit.resetAnimation();
         },
         child: Text(
           'Tekrar At',

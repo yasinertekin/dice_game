@@ -1,6 +1,7 @@
 part of '../roll_dice_page.dart';
 
-mixin _RollDiceViewMixin on State<_RollDiceView> implements TickerProvider {
+base mixin _RollDiceViewMixin on State<_RollDiceView>
+    implements TickerProvider {
   late final AnimationController _controller;
 
   @override

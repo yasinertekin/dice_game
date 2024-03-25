@@ -150,6 +150,7 @@ final class _RollIcon extends StatelessWidget with NavigationManager {
     return GestureDetector(
       onTap: () => Locator.appRouter.popAndPush(
         RollDiceRoute(
+          categoryDices: categoryDices,
           options: categoryDices.subDices!.first,
         ),
       ),
