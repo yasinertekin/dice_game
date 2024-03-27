@@ -9,23 +9,28 @@ final class _DiceLottie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: Lottie.asset(
-        ProjectAssets.lottieDice.toLottie,
-        width: context.dynamicWidth(0.5),
-        height: context.dynamicHeight(0.5),
-        controller: _controller,
-        onLoaded: (composition) {
-          _controller
-            ..duration = composition.duration
-            ..forward()
-            ..addStatusListener((status) {
-              if (status == AnimationStatus.completed) {
-                context.read<RollDiceCubit>().completeAnimation();
-              }
-            });
-        },
-      ),
+    return BlocBuilder<RollDiceCubit, RollDiceState>(
+      builder: (context, state) {
+        return Visibility(
+          visible: state == RollDiceState.initial,
+          child: Lottie.asset(
+            ProjectAssets.lottieDice.toLottie,
+            width: context.dynamicWidth(0.5),
+            height: context.dynamicHeight(0.5),
+            controller: _controller,
+            onLoaded: (composition) {
+              _controller
+                ..duration = composition.duration
+                ..forward()
+                ..addStatusListener((status) {
+                  if (status == AnimationStatus.completed) {
+                    context.read<RollDiceCubit>().completeAnimation();
+                  }
+                });
+            },
+          ),
+        );
+      },
     );
   }
 }

@@ -12,7 +12,7 @@ final class _ResetButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: context.dynamicWidth(0.5),
+      width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: ProjectColor.concreteSideWalk.toColor,
