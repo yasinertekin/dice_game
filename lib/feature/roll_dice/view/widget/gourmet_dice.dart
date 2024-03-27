@@ -13,18 +13,7 @@ final class _GourmetDice extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ProjectColor.silkyWhite.toColor,
-      appBar: AppBar(
-        leading: const CustomBackButton(),
-        title: Text(
-          widget.categoryDices.diceName ?? '',
-          style: context.textTheme.headlineMedium?.copyWith(
-            color: ProjectColor.silkyWhite.toColor,
-          ),
-        ),
-        backgroundColor: ProjectColor.concreteSideWalk.toColor,
-        elevation: 0,
-        centerTitle: true,
-      ),
+      appBar: _GourmetDiceAppBar(widget: widget),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,4 +27,32 @@ final class _GourmetDice extends StatelessWidget {
       ),
     );
   }
+}
+
+final class _GourmetDiceAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const _GourmetDiceAppBar({
+    required this.widget,
+  });
+
+  final _RollDiceView widget;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      leading: const CustomBackButton(),
+      title: Text(
+        widget.categoryDices.diceName ?? '',
+        style: context.textTheme.headlineMedium?.copyWith(
+          color: ProjectColor.silkyWhite.toColor,
+        ),
+      ),
+      backgroundColor: ProjectColor.concreteSideWalk.toColor,
+      elevation: 0,
+      centerTitle: true,
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
