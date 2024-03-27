@@ -5,7 +5,7 @@ import 'package:dice_game/locator.dart';
 base mixin NavigationManager {
   /// This method is used to navigate to the page
   void navigatePush(PageRouteInfo pageRouteInfo) {
-    Locator.appRouter.popAndPush(
+    Locator.appRouter.push(
       pageRouteInfo,
     );
   }

@@ -90,7 +90,10 @@ final class _DiceDescriptionViewState extends State<_DiceDescriptionView>
           actions: [
             TextButton(
               onPressed: () {
-                Locator.appRouter.push(const HomeRoute());
+                Locator.appRouter.pushAndPopUntil(
+                  const HomeRoute(),
+                  predicate: (route) => false,
+                );
               },
               child: const Text('Geri Dön'),
             ),

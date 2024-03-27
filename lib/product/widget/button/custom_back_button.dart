@@ -17,9 +17,7 @@ final class CustomBackButton extends StatelessWidget with NavigationManager {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        pageRouteInfo != null ? navigatePush(pageRouteInfo!) : navigatePop();
-      },
+      onTap: navigatePop,
       child: Container(
         margin: const EdgeInsets.all(10),
         decoration: _BackButtonDecoration(),
