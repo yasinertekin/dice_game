@@ -14,6 +14,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'mixin/dice_description_view_mixin.dart';
+part 'widget/casino_icon.dart';
+part 'widget/dark_overlay_container.dart';
+part 'widget/dice_icon.dart';
+part 'widget/dice_image.dart';
+part 'widget/favorite_button.dart';
+part 'widget/roll_dice_button.dart';
+part 'widget/roll_dice_description.dart';
+part 'widget/roll_dice_text.dart';
+part 'widget/roll_icon.dart';
 
 @RoutePage()
 
@@ -50,55 +59,12 @@ final class _DiceDescriptionView extends StatefulWidget {
 final class _DiceDescriptionViewState extends State<_DiceDescriptionView>
     with _DiceDescriptionViewMixin {
   @override
-  Future<void> _showDatePicker() async {
-    if (widget.categoryDices.isAdultContent ?? false) {
-      final pickedDate = await showDatePicker(
-        useRootNavigator: false,
-        barrierDismissible: false,
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(1900),
-        lastDate: DateTime.now(),
-        keyboardType: TextInputType.datetime,
-      );
-      if (pickedDate == null) {
-        Locator.appRouter.navigate(const HomeRoute());
-        return;
-      }
-
-      final today = DateTime.now();
-      final minimumDate =
-          today.subtract(const Duration(days: 18 * 365)); // 18 years ago
-      if (pickedDate.isAfter(minimumDate)) {
-        // Kullanıcı 18 yaşından küçük, işlem yapma
-
-        await _showAlerDialog();
-        return;
-      }
-    }
-  }
-
-  @override
   Future<void> _showAlerDialog() async {
     await showDialog<void>(
       barrierDismissible: false,
       context: context,
       builder: (context) {
-        return AlertDialog(
-          title: const Text('Uyarı'),
-          content: const Text('18 yaşından küçükler işlem yapamaz!'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Locator.appRouter.pushAndPopUntil(
-                  const HomeRoute(),
-                  predicate: (route) => false,
-                );
-              },
-              child: const Text('Geri Dön'),
-            ),
-          ],
-        );
+        return const _CustomAlertDialog();
       },
     );
   }
@@ -120,145 +86,34 @@ final class _DiceDescriptionViewState extends State<_DiceDescriptionView>
   }
 }
 
-final class _RollDiceButton extends StatelessWidget {
-  const _RollDiceButton(
-    this.categoryDices,
-  );
-
-  final CategoryDices categoryDices;
+final class _CustomAlertDialog extends StatelessWidget {
+  const _CustomAlertDialog();
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ColoredBox(
-        color: ProjectColor.red.toColor,
-        child: _RollIcon(
-          categoryDices,
-        ),
-      ),
+    return const AlertDialog(
+      title: Text('Uyarı'),
+      content: Text('Bu kategoriye erişim yaş sınırı vardır.'),
+      actions: [
+        _BackButton(),
+      ],
     );
   }
 }
 
-final class _RollIcon extends StatelessWidget with NavigationManager {
-  const _RollIcon(
-    this.categoryDices,
-  );
-
-  final CategoryDices categoryDices;
+final class _BackButton extends StatelessWidget {
+  const _BackButton();
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => Locator.appRouter.popAndPush(
-        RollDiceRoute(
-          categoryDices: categoryDices,
-          options: categoryDices.subDices!.first,
-        ),
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          _DiceIcon(categoryDices: categoryDices),
-          const _CasinoIcon(),
-          const _RollDiceText(),
-        ],
-      ),
-    );
-  }
-}
-
-final class _CasinoIcon extends StatelessWidget {
-  const _CasinoIcon();
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      left: 0,
-      right: 0,
-      top: context.dynamicHeight(0.04),
-      child: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: ProjectColor.red.toColor,
-          border: Border.all(
-            color: ProjectColor.white.toColor,
-            width: 8,
-          ),
-        ),
-        child: Padding(
-          padding: context.paddingAllLow,
-          child: const Icon(
-            Icons.casino,
-            size: 35,
-            color: Colors.white,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-final class _RollDiceText extends StatelessWidget {
-  const _RollDiceText();
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      top: context.dynamicHeight(0.1),
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: context.borderRadiusLow,
-          side: BorderSide(
-            color: ProjectColor.white.toColor,
-            width: 7,
-          ),
-        ),
-        color: ProjectColor.red.toColor,
-        child: Padding(
-          padding: context.paddingAllDefault,
-          child: Text(
-            'Zar At!',
-            style: context.textTheme.displayLarge?.copyWith(
-              color: ProjectColor.white.toColor,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-final class _DiceIcon extends StatelessWidget {
-  const _DiceIcon({
-    required this.categoryDices,
-  });
-
-  final CategoryDices categoryDices;
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      left: 0,
-      right: 0,
-      bottom: 0,
-      child: Container(
-        margin: context.paddingAllLow,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: ProjectColor.white.toColor,
-            width: 20,
-          ),
-        ),
-        child: Padding(
-          padding: context.paddingAllHigh,
-          child: CustomSvg(
-            assetPath: categoryDices.icon ?? '',
-            height: context.dynamicHeight(0.15),
-          ),
-        ),
-      ),
+    return TextButton(
+      onPressed: () {
+        Locator.appRouter.pushAndPopUntil(
+          const HomeRoute(),
+          predicate: (route) => false,
+        );
+      },
+      child: const Text('Geri Dön'),
     );
   }
 }
@@ -308,96 +163,6 @@ final class _DiceDescriptionStack extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-final class _DarkOverlayContainer extends StatelessWidget {
-  const _DarkOverlayContainer();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black.withOpacity(
-        0.7,
-      ), // 0.5 opaklık seviyesini ayarlayabilirsiniz
-    );
-  }
-}
-
-final class _DiceImage extends StatelessWidget {
-  const _DiceImage(
-    this.categoryDices,
-  );
-
-  final CategoryDices categoryDices;
-
-  @override
-  Widget build(BuildContext context) {
-    return Image.asset(
-      categoryDices.diceImage ?? ProjectAssets.imgLibrary.toPng,
-      fit: BoxFit.cover,
-      width: context.dynamicWidth(1),
-      height: context.dynamicHeight(1),
-    );
-  }
-}
-
-final class _FavoriteButton extends StatelessWidget {
-  const _FavoriteButton({
-    required this.categoryDices,
-  });
-
-  final CategoryDices categoryDices;
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<FavoriteCubit, FavoriteState>(
-      builder: (context, state) {
-        return IconButton(
-          icon: Icon(
-            state.categoryDices.contains(categoryDices)
-                ? Icons.favorite
-                : Icons.favorite_border,
-            color: ProjectColor.white.toColor,
-          ),
-          iconSize: context.dynamicHeight(0.07),
-          onPressed: () {
-            if (state.categoryDices.contains(categoryDices)) {
-              context.read<FavoriteCubit>().removeFavorite(categoryDices);
-            } else {
-              context.read<FavoriteCubit>().addFavorite(categoryDices);
-            }
-          },
-        );
-      },
-    );
-  }
-}
-
-final class _RollDiceDescription extends StatelessWidget {
-  const _RollDiceDescription({
-    required this.categoryDices,
-  });
-
-  final CategoryDices categoryDices;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: context.paddingAllLow,
-      child: SizedBox(
-        height: context.dynamicHeight(0.35),
-        child: SingleChildScrollView(
-          child: Text(
-            textAlign: TextAlign.center,
-            categoryDices.description ?? '',
-            style: context.textTheme.titleMedium?.copyWith(
-              color: ProjectColor.white.toColor,
-            ),
-          ),
-        ),
       ),
     );
   }
