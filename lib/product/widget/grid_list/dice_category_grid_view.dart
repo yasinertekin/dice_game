@@ -33,6 +33,7 @@ final class _SliverGridDelegate
   const _SliverGridDelegate()
       : super(
           crossAxisCount: 2,
+          mainAxisExtent: 200,
           crossAxisSpacing: 15,
         );
 }
