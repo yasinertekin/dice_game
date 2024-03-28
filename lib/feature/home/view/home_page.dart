@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/home/cubit/home_cubit.dart';
 import 'package:dice_game/feature/home/cubit/state/home_state.dart';
@@ -13,7 +15,9 @@ import 'package:dice_game/product/widget/image/custom_svg.dart';
 import 'package:dice_game/product/widget/loading/custom_circular_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+part 'mixin/home_view_mixin.dart';
 part 'widget/bottom_bar.dart';
 part 'widget/custom_divider.dart';
 part 'widget/favorite_icon.dart';
@@ -40,9 +44,14 @@ final class HomePage extends StatelessWidget {
   }
 }
 
-final class _HomeView extends StatelessWidget {
+final class _HomeView extends StatefulWidget {
   const _HomeView();
 
+  @override
+  State<_HomeView> createState() => _HomeViewState();
+}
+
+final class _HomeViewState extends State<_HomeView> with _HomeViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,13 +107,14 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.dynamicHeight(0.95),
+      height: context.dynamicHeight(1),
       child: GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 6,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+          mainAxisExtent: 210,
         ),
         itemCount: diceModel.categories?.length ?? 0,
         itemBuilder: (context, index) {
