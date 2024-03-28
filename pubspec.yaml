@@ -30,6 +30,7 @@ dependencies:
   # Google
   google_fonts: ^6.2.1
   json_annotation: ^4.8.1
+  google_mobile_ads: ^5.0.0
 
   # Utils
   flutter_svg: ^2.0.10+1
@@ -43,6 +44,8 @@ dependencies:
 
   # Dependency Injection
   get_it: ^7.6.7
+
+
 
 
 dev_dependencies:
