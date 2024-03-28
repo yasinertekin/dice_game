@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/home/cubit/home_cubit.dart';
 import 'package:dice_game/feature/home/cubit/state/home_state.dart';
+import 'package:dice_game/locator.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';

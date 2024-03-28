@@ -14,7 +14,7 @@ final class _DiceLottie extends StatelessWidget {
         return Visibility(
           visible: state == RollDiceState.initial,
           child: Lottie.asset(
-            ProjectAssets.lottieDice.toLottie,
+            context.read<DiceTypeCubit>().state.toLottie,
             width: context.dynamicWidth(0.5),
             height: context.dynamicHeight(0.5),
             controller: _controller,

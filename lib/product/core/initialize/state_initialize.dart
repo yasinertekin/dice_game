@@ -1,4 +1,5 @@
 import 'package:dice_game/feature/favorite/cubit/favorite_cubit.dart';
+import 'package:dice_game/feature/settings/cubit/dice_type_cubit.dart';
 import 'package:dice_game/feature/user_dice/cubit/user_dice_cubit.dart';
 import 'package:dice_game/locator.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,10 @@ final class StateInitialize extends StatelessWidget {
         ),
         BlocProvider<FavoriteCubit>(
           create: (context) => Locator.favoriteCubit..fetchFavorite(),
+        ),
+        BlocProvider<DiceTypeCubit>(
+          create: (context) =>
+              DiceTypeCubit()..changeDice(DiceType.defaultDice),
         ),
       ],
       child: child,

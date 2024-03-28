@@ -10,7 +10,9 @@ final class _MenuIcon extends StatelessWidget {
         assetPath: ProjectAssets.icMenu.toSvg,
         color: ProjectColor.black.toColor,
       ),
-      onPressed: () {},
+      onPressed: () {
+        Locator.appRouter.push(const SettingsRoute());
+      },
     );
   }
 }

@@ -34,5 +34,5 @@ enum ProjectAssets {
   String get toSvg => 'assets/icon/project_icon/ic_$value.svg';
 
   /// The path to the Lottie file
-  String get toLottie => 'assets/lottie/lottie_$value.json';
+  String get toLottie => 'assets/lottie/lottie_${value}_dice.json';
 }

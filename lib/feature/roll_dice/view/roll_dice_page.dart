@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/roll_dice/cubit/roll_dice_cubit.dart';
-import 'package:dice_game/product/core/enum/project_assets.dart';
+import 'package:dice_game/feature/settings/cubit/dice_type_cubit.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
