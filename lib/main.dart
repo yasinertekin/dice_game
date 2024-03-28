@@ -32,3 +32,4 @@ final class _DiceApp extends StatelessWidget {
     );
   }
 }
+//ca-app-pub-6166667374953390~8907305466
