@@ -13,10 +13,14 @@ final class _AddOptions extends StatelessWidget {
     final cubit = context.read<AddDiceCubit>();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: ProjectColor.concreteSideWalk.toColor,
         onPressed: () {
           _navigateAndCheckOptionsLength(cubit, context);
         },
-        child: const Icon(Icons.arrow_forward),
+        child: Icon(
+          Icons.arrow_forward,
+          color: ProjectColor.white.toColor,
+        ),
       ),
       backgroundColor: ProjectColor.silkyWhite.toColor,
       appBar: const _AddOptionsAppBar(),
@@ -168,7 +172,12 @@ final class _AddOptionsAppBar extends StatelessWidget
     return AppBar(
       backgroundColor: ProjectColor.concreteSideWalk.toColor,
       leading: const CustomBackButton(),
-      title: const Text('Zar Seçenekleri'),
+      title: Text(
+        'Zar Seçenekleri',
+        style: context.textTheme.titleLarge?.copyWith(
+          color: ProjectColor.white.toColor,
+        ),
+      ),
     );
   }
 
