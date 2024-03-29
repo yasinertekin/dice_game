@@ -2,6 +2,8 @@ import 'package:dice_game/locator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:path_provider/path_provider.dart';
 
 @immutable
 
@@ -13,6 +15,11 @@ final class AppInitialize {
   static Future<void> initialize() async {
     WidgetsFlutterBinding.ensureInitialized();
     await MobileAds.instance.initialize();
+    final appDocumentDirectory = await getApplicationDocumentsDirectory();
+    HydratedBloc.storage = await HydratedStorage.build(
+      storageDirectory: appDocumentDirectory,
+    );
+
     await Locator.setup();
     await Hive.initFlutter();
   }

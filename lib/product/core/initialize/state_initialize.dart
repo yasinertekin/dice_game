@@ -25,8 +25,7 @@ final class StateInitialize extends StatelessWidget {
           create: (context) => Locator.favoriteCubit..fetchFavorite(),
         ),
         BlocProvider<DiceTypeCubit>(
-          create: (context) =>
-              DiceTypeCubit()..changeDice(DiceType.defaultDice),
+          create: (context) => DiceTypeCubit(),
         ),
       ],
       child: child,
