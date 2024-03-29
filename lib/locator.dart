@@ -6,7 +6,7 @@ import 'package:dice_game/product/utils/router/app_router.dart';
 import 'package:get_it/get_it.dart';
 
 /// A class that is used to locate the cubits
-abstract final class Locator {
+abstract interface class Locator {
   static final _instance = GetIt.instance;
 
   /// This method is used to setup the locator
