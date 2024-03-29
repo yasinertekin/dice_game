@@ -33,7 +33,12 @@ final class _AddIconAppBar extends StatelessWidget
       actions: const [
         _SaveIconButton(),
       ],
-      title: const Text('Lütfen bir simge seçin'),
+      title: Text(
+        'Lütfen bir simge seçin',
+        style: context.textTheme.titleLarge?.copyWith(
+          color: ProjectColor.white.toColor,
+        ),
+      ),
     );
   }
 
@@ -93,12 +98,16 @@ final class _IconCard extends StatelessWidget {
 
 final class _SaveIconButton extends StatelessWidget with NavigationManager {
   const _SaveIconButton();
-
+//context.read<SVGFilesCubit>().selectedIconIndex == -1
   @override
   Widget build(BuildContext context) {
     final userDice = context.read<AddDiceCubit>().state;
     return IconButton(
       onPressed: () async {
+        if (context.read<SVGFilesCubit>().selectedIconIndex == -1) {
+          context.showCustomSnackBar(message: 'Lütfen bir simge seçin');
+          return;
+        }
         await _setIcon(context);
 
         await _addDice(
