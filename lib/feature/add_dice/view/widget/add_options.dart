@@ -13,6 +13,7 @@ final class _AddOptions extends StatelessWidget {
     final cubit = context.read<AddDiceCubit>();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        elevation: 5,
         backgroundColor: ProjectColor.concreteSideWalk.toColor,
         onPressed: () {
           _navigateAndCheckOptionsLength(cubit, context);
