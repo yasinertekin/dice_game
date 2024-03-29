@@ -1,19 +1,27 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 
-final class DiceTypeCubit extends Cubit<DiceType> {
-  DiceTypeCubit() : super(DiceType.defaultDice);
+part 'dice_state.dart';
 
-  void changeDice(DiceType diceType) => emit(diceType);
-}
+/// DiceTypeCubit is used to change the selected dice type of the app
 
-enum DiceType {
-  defaultDice('default'),
-  blueDice('blue'),
-  ;
+final class DiceTypeCubit extends HydratedCubit<DiceState> {
+  /// DiceTypeCubit constructor
+  DiceTypeCubit() : super(const DiceState());
 
-  final String value;
+  /// Takes a [DiceType] object and changes the selected dice type
+  Future<void> changeDiceType(DiceType diceType) async {
+    emit(DiceState(selectedDice: diceType));
+  }
 
-  const DiceType(this.value);
+  @override
+  DiceState? fromJson(Map<String, dynamic> json) {
+    return DiceState.fromMap(json);
+  }
 
-  String get toLottie => 'assets/lottie/lottie_${value}_dice.json';
+  @override
+  Map<String, dynamic>? toJson(DiceState state) {
+    return state.toMap();
+  }
 }
