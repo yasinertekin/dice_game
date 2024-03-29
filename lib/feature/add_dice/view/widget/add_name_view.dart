@@ -18,8 +18,11 @@ final class _AddNameView extends StatelessWidget {
     return Scaffold(
       backgroundColor: ProjectColor.silkyWhite.toColor,
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Zar Ekle',
+          style: context.textTheme.titleLarge?.copyWith(
+            color: ProjectColor.white.toColor,
+          ),
         ),
         backgroundColor: ProjectColor.concreteSideWalk.toColor,
         leading: const CustomBackButton(),
