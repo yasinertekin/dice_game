@@ -49,7 +49,7 @@ final class _CategoryIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomSvg(
       assetPath: dice?.categoryIcon ?? '',
-      height: context.dynamicHeight(0.15),
+      height: context.dynamicHeight(0.13),
     );
   }
 }

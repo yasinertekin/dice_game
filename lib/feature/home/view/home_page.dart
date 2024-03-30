@@ -58,13 +58,13 @@ final class _HomeViewState extends State<_HomeView> with _HomeViewMixin {
     return Scaffold(
       backgroundColor: ProjectColor.silkyWhite.toColor,
       appBar: const _HomeAppBar(),
+      bottomNavigationBar: const _BottomBar(),
       body: const SingleChildScrollView(
         child: Column(
           children: [
             _HomeTitle(),
             _DiceGategoryList(),
             _UserDiceCard(),
-            _BottomBar(),
           ],
         ),
       ),
@@ -113,8 +113,8 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 12,
-          mainAxisSpacing: 12,
+          crossAxisSpacing: 1,
+          mainAxisSpacing: 1,
           mainAxisExtent: 210,
         ),
         itemCount: diceModel.categories?.length ?? 0,
