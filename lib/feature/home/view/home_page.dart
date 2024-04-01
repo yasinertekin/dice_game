@@ -48,10 +48,10 @@ final class _HomeView extends StatefulWidget {
 
 final class _HomeViewState extends State<_HomeView>
     with _HomeViewMixin, AdmobMixin {
-  @override
-  void loadAd() {
-    loadAds();
-  }
+  // @override
+  // void loadAd() {
+  //   loadAds();
+  // }
 
   @override
   Future<void> showAd() async {

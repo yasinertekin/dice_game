@@ -4,52 +4,56 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 base mixin AdmobMixin {
   InterstitialAd? _interstitialAd;
-  RewardedAd? rewardedAd;
+  RewardedAd? _rewardedAd;
 
   final adUnitId = '/6499/example/interstitial';
-  final String _adUnitId = Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/1033173712'
-      : 'ca-app-pub-3940256099942544/4411468910';
+  // final String _adUnitId = Platform.isAndroid
+  //     ? 'ca-app-pub-3940256099942544/1033173712'
+  //     : 'ca-app-pub-3940256099942544/4411468910';
 
-  Future<void> loadAds() async {
-    await InterstitialAd.load(
-      adUnitId: _adUnitId,
-      request: const AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(
-        // Called when an ad is successfully received.
-        onAdLoaded: (InterstitialAd ad) {
-          ad.fullScreenContentCallback = FullScreenContentCallback(
-            // Called when the ad showed the full screen content.
-            onAdShowedFullScreenContent: (ad) {},
-            // Called when an impression occurs on the ad.
-            onAdImpression: (ad) {},
-            // Called when the ad failed to show full screen content.
-            onAdFailedToShowFullScreenContent: (ad, err) {
-              ad.dispose();
-            },
-            // Called when the ad dismissed full screen content.
-            onAdDismissedFullScreenContent: (ad) {
-              ad.dispose();
-            },
-            // Called when a click is recorded for an ad.
-            onAdClicked: (ad) {},
-          );
+  final String _addRewardId = Platform.isAndroid
+      ? 'ca-app-pub-3940256099942544/5224354917'
+      : 'ca-app-pub-3940256099942544/1712485313';
 
-          // Keep a reference to the ad so you can show it later.
-          _interstitialAd = ad;
-        },
-        // Called when an ad request failed.
-        onAdFailedToLoad: (LoadAdError error) {
-          // ignore: avoid_print
-          print('InterstitialAd failed to load: $error');
-        },
-      ),
-    );
-  }
+  // Future<void> loadAds() async {
+  //   await InterstitialAd.load(
+  //     adUnitId: _adUnitId,
+  //     request: const AdRequest(),
+  //     adLoadCallback: InterstitialAdLoadCallback(
+  //       // Called when an ad is successfully received.
+  //       onAdLoaded: (InterstitialAd ad) {
+  //         ad.fullScreenContentCallback = FullScreenContentCallback(
+  //           // Called when the ad showed the full screen content.
+  //           onAdShowedFullScreenContent: (ad) {},
+  //           // Called when an impression occurs on the ad.
+  //           onAdImpression: (ad) {},
+  //           // Called when the ad failed to show full screen content.
+  //           onAdFailedToShowFullScreenContent: (ad, err) {
+  //             ad.dispose();
+  //           },
+  //           // Called when the ad dismissed full screen content.
+  //           onAdDismissedFullScreenContent: (ad) {
+  //             ad.dispose();
+  //           },
+  //           // Called when a click is recorded for an ad.
+  //           onAdClicked: (ad) {},
+  //         );
 
-  void loadRewardedAd() {
-    RewardedAd.load(
-      adUnitId: _adUnitId,
+  //         // Keep a reference to the ad so you can show it later.
+  //         _interstitialAd = ad;
+  //       },
+  //       // Called when an ad request failed.
+  //       onAdFailedToLoad: (LoadAdError error) {
+  //         // ignore: avoid_print
+  //         print('InterstitialAd failed to load: $error');
+  //       },
+  //     ),
+  //   );
+  // }
+
+  Future<void> loadRewardedAd() async {
+    await RewardedAd.load(
+      adUnitId: _addRewardId,
       request: const AdRequest(),
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) {
@@ -71,7 +75,7 @@ base mixin AdmobMixin {
           );
 
           // Keep a reference to the ad so you can show it later.
-          rewardedAd = ad;
+          _rewardedAd = ad;
         },
         onAdFailedToLoad: (LoadAdError error) {
           // ignore: avoid_print
@@ -81,16 +85,16 @@ base mixin AdmobMixin {
     );
   }
 
-  void showRewardedAd() {
-    // rewardedAd?.show(
-    //   onUserEarnedReward: (RewardedAd ad, RewardItem reward) {
-    //     // ignore: avoid_print
-    //     print('Reward earned: $reward');
-    //   },
-    // );
-  }
-
   Future<void> showInterstitialAd() async {
     await _interstitialAd?.show();
+  }
+
+  Future<void> showRewardedAd() async {
+    await _rewardedAd?.show(
+      onUserEarnedReward: (ad, reward) {
+        // ignore: avoid_print
+        print('User earned reward of ${reward.amount} ${reward.type}');
+      },
+    );
   }
 }
