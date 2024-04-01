@@ -18,9 +18,7 @@ final class _RollDiceAppBar extends StatelessWidget
           color: ProjectColor.white.toColor,
         ),
       ),
-      leading: const CustomBackButton(
-        pageRouteInfo: HomeRoute(),
-      ),
+      leading: const CustomBackButton(),
     );
   }
 
