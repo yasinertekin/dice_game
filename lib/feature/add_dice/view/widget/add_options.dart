@@ -70,6 +70,13 @@ final class _OptionsTextField extends StatelessWidget {
     return Flexible(
       flex: 8,
       child: TextField(
+        autofocus: true,
+        onEditingComplete: () {
+          if (optionController.text.isEmpty) return;
+
+          context.read<AddDiceCubit>().updateOptions([optionController.text]);
+          optionController.clear();
+        },
         controller: optionController,
         keyboardType: TextInputType.text,
         decoration: const _CustomInputDecoration(
