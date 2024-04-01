@@ -1,4 +1,5 @@
 import 'package:dice_game/locator.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -21,6 +22,7 @@ final class AppInitialize {
     );
 
     await Locator.setup();
+    await EasyLocalization.ensureInitialized();
     await Hive.initFlutter();
   }
 }
