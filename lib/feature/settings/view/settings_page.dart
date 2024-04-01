@@ -1,8 +1,13 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:dice_game/feature/home/cubit/home_cubit.dart';
 import 'package:dice_game/feature/settings/cubit/dice_type_cubit.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
+import 'package:dice_game/product/utils/localization/locale_keys.g.dart';
+import 'package:dice_game/product/utils/localization/localization_manager.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
+import 'package:dice_game/product/widget/text/custom_text.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
@@ -43,11 +48,15 @@ final class _ScaffoldBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: context.paddingAllLow,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _SelectDiceText(),
-          _DiceList(),
+          const _SelectDiceText(),
+          const _DiceList(),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Change Language'),
+          ),
         ],
       ),
     );
