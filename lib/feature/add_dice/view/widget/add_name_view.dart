@@ -107,6 +107,7 @@ final class _CustomForm extends StatelessWidget {
           TextFormField(
             keyboardType: TextInputType.text,
             textInputAction: TextInputAction.next,
+            autofocus: true,
             controller: nameController,
             validator: (value) => _TitleValidator(value: value!).validate,
             decoration: const _CustomInputDecoration(
