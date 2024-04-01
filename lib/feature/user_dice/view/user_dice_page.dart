@@ -9,6 +9,7 @@ import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/card/category_detail_card.dart';
 import 'package:dice_game/product/widget/container/custom_gradient_container.dart';
 import 'package:dice_game/product/widget/loading/custom_circular_progress_indicator.dart';
+import 'package:dice_game/product/widget/text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -111,8 +112,8 @@ final class _UserDiceAppBar extends StatelessWidget
           },
         ),
       ],
-      title: Text(
-        'Zarlarım',
+      title: CustomText(
+        text: 'Zarlarım',
         style: context.textTheme.titleLarge?.copyWith(
           color: ProjectColor.white.toColor,
         ),
