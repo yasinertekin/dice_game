@@ -147,9 +147,7 @@ final class _DiceDescriptionStack extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const CustomBackButton(
-                        pageRouteInfo: HomeRoute(),
-                      ),
+                      const CustomBackButton(),
                       _FavoriteButton(
                         categoryDices: categoryDices,
                       ),
