@@ -85,8 +85,10 @@ final class _DiceGategoryList extends StatelessWidget {
               state.diceModel ?? Category(),
             );
           case HomeStatus.error:
-            return Text(
-              'Hata oluştu, lütfen tekrar deneyin ${HomeStatus.error.name}',
+            return const Center(
+              child: CustomText(
+                text: LocaleKeys.error_something_went_wrong,
+              ),
             );
         }
       },

@@ -4,12 +4,17 @@
        "usersDice": "Senin Zarların"
     },
     "favorites": {
-        "favorites_dice": "Favori Zarlar"
+        "favorites_dice": "Favori Zarlar",
+        "no_favorites": "Favori zarın yok"
+
     
     },
     "settings":{
         "settings_title": "Ayarlar",
         "select_dice": "Zar Seç"
+    },
+     "users_dice":{
+        "my_dice": "Zarlarım"
     }
    
 }

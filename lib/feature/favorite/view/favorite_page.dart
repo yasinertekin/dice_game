@@ -46,7 +46,9 @@ final class _FavoriteView extends StatelessWidget {
                   return Text(state.errorMessage);
                 }
                 if (state.categoryDices.isEmpty) {
-                  return const Center(child: Text('Favori zar bulunamadı'));
+                  return const Center(
+                    child: CustomText(text: LocaleKeys.favorites_no_favorites),
+                  );
                 }
 
                 return Expanded(

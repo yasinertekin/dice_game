@@ -4,12 +4,19 @@
        "usersDice": "Your dice"
     },
     "favorites": {
-        "favorites_dice": "Favorites dice"
+        "favorites_dice": "Favorites dice",
+        "no_favorites": "No favorites dice"
     
     },
     "settings":{
         "settings_title": "Settings",
         "select_dice": "Select dice"
+    },
+    "users_dice":{
+        "my_dice": "My dice"
+    },
+    "error":{
+        "something_went_wrong": "Something went wrong"
     }
    
 }

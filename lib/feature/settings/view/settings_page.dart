@@ -48,15 +48,11 @@ final class _ScaffoldBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: context.paddingAllLow,
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const _SelectDiceText(),
-          const _DiceList(),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('Change Language'),
-          ),
+          _SelectDiceText(),
+          _DiceList(),
         ],
       ),
     );

@@ -4,6 +4,7 @@ import 'package:dice_game/feature/user_dice/cubit/user_dice_cubit.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/mixin/navigation_manager.dart';
+import 'package:dice_game/product/utils/localization/locale_keys.g.dart';
 import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/card/category_detail_card.dart';
@@ -113,7 +114,7 @@ final class _UserDiceAppBar extends StatelessWidget
         ),
       ],
       title: CustomText(
-        text: 'Zarlarım',
+        text: LocaleKeys.users_dice_my_dice,
         style: context.textTheme.titleLarge?.copyWith(
           color: ProjectColor.white.toColor,
         ),
