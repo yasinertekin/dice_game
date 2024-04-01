@@ -3,11 +3,12 @@ import 'package:dice_game/feature/favorite/cubit/favorite_cubit.dart';
 import 'package:dice_game/feature/favorite/cubit/state/favorite_state.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
-import 'package:dice_game/product/utils/router/app_router.gr.dart';
+import 'package:dice_game/product/utils/localization/locale_keys.g.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/container/custom_gradient_container.dart';
 import 'package:dice_game/product/widget/grid_list/dice_category_grid_view.dart';
 import 'package:dice_game/product/widget/loading/custom_circular_progress_indicator.dart';
+import 'package:dice_game/product/widget/text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -69,15 +70,13 @@ final class _FavoriteAppBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(
-        'Favori Zarlar',
+      title: CustomText(
+        text: LocaleKeys.favorites_favorites_dice,
         style: context.textTheme.titleLarge?.copyWith(
           color: ProjectColor.white.toColor,
         ),
       ),
-      leading: const CustomBackButton(
-        pageRouteInfo: HomeRoute(),
-      ),
+      leading: const CustomBackButton(),
     );
   }
 
