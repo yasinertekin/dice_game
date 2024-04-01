@@ -5,8 +5,8 @@ final class _SelectDiceText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'Zar Seç',
+    return CustomText(
+      text: LocaleKeys.settings_select_dice,
       style: context.textTheme.titleLarge?.copyWith(
         color: ProjectColor.black.toColor,
       ),
