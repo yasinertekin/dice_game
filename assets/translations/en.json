@@ -1,0 +1,15 @@
+{
+    "home": {
+        "categories": "Categories",
+       "usersDice": "Your dice"
+    },
+    "favorites": {
+        "favorites_dice": "Favorites dice"
+    
+    },
+    "settings":{
+        "settings_title": "Settings",
+        "select_dice": "Select dice"
+    }
+   
+}

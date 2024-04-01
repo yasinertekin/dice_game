@@ -1,0 +1,15 @@
+{
+    "home": {
+        "categories": "Kategoriler",
+       "usersDice": "Senin Zarların"
+    },
+    "favorites": {
+        "favorites_dice": "Favori Zarlar"
+    
+    },
+    "settings":{
+        "settings_title": "Ayarlar",
+        "select_dice": "Zar Seç"
+    }
+   
+}
