@@ -26,8 +26,8 @@ final class _CardTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(
-        'Senin Zarların',
+      child: CustomText(
+        text: LocaleKeys.home_usersDice,
         style: context.textTheme.titleLarge?.copyWith(
           color: ProjectColor.black.toColor,
           fontWeight: FontWeight.bold,
