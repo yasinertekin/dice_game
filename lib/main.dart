@@ -1,17 +1,16 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:dice_game/locator.dart';
 import 'package:dice_game/product/core/initialize/app_initialize.dart';
 import 'package:dice_game/product/core/initialize/state_initialize.dart';
+import 'package:dice_game/product/utils/localization/localization_manager.dart';
 import 'package:dice_game/product/utils/theme/custom_theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
   await AppInitialize.initialize();
   runApp(
     StateInitialize(
-      child: DevicePreview(
-        builder: (context) => const _DiceApp(),
-      ),
+      child: ProductLocalization(child: const _DiceApp()),
     ),
   );
 }
@@ -35,11 +34,10 @@ final class _DiceApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      /// This is the device preview
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
-      useInheritedMediaQuery: true,
+      /// Localizations
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
     );
   }
 }
-//ca-app-pub-6166667374953390~8907305466
