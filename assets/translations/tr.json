@@ -18,6 +18,26 @@
     },
         "error":{
         "something_went_wrong": "Bir şeyler yanlış gitti"
+    },
+     "add_dice":{
+        "add_dice_title": "Zar Ekle",
+        "dice_name": "Zar Adı",
+        "dice_description": "Zar Açıklaması",
+
+        "button":{
+            "continue": "Devam Et"
+        },
+        "dice_options": "Zar Seçenekleri",
+        "options_name": "Seçenek Adı",
+        "select_icon":"Lütfen bir simge seçin",
+        "dice_name_validation": "Lütfen zar adı girin",
+        "dice_description_validation": "Lütfen zar açıklaması girin",
+        "please_enter_atleast_one_option": "Lütfen en az bir seçenek girin",
+        "please_select_icon": "Lütfen bir simge seçin",
+                "icon_not_found": "Simge Bulunamadı"
+
+
+
     }
    
 }

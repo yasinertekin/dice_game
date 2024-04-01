@@ -50,7 +50,9 @@ final class _AddOptions extends StatelessWidget {
     BuildContext context,
   ) {
     cubit.state.subDices?.first.options?.isEmpty ?? true
-        ? context.showCustomSnackBar(message: 'En az bir seçenek ekleyin')
+        ? context.showCustomSnackBar(
+            message: LocaleKeys.add_dice_please_enter_atleast_one_option.tr(),
+          )
         : pageController.nextPage(
             duration: const Duration(milliseconds: 500),
             curve: Curves.easeInOut,
@@ -79,8 +81,8 @@ final class _OptionsTextField extends StatelessWidget {
         },
         controller: optionController,
         keyboardType: TextInputType.text,
-        decoration: const _CustomInputDecoration(
-          labelText: 'Seçenek Adı',
+        decoration: _CustomInputDecoration(
+          labelText: LocaleKeys.add_dice_options_name.tr(),
         ),
       ),
     );
@@ -98,22 +100,40 @@ final class _OptionsList extends StatelessWidget {
           child: ListView.builder(
             itemCount: state.subDices?.first.options?.length ?? 0,
             itemBuilder: (context, index) {
-              return Card(
-                color: ProjectColor.concreteSideWalk.toColor,
-                child: ListTile(
-                  title: Text(
-                    state.subDices?.first.options?[index].name ?? '',
-                    style: context.textTheme.bodyLarge,
-                  ),
-                  trailing: _DeleteOptions(
-                    optionId: state.subDices?.first.options?[index].id ?? '',
-                  ),
-                ),
+              return _OptionsCard(
+                subDices: state.subDices,
+                index: index,
               );
             },
           ),
         );
       },
+    );
+  }
+}
+
+final class _OptionsCard extends StatelessWidget {
+  const _OptionsCard({
+    required this.subDices,
+    required this.index,
+  });
+
+  final List<SubDices>? subDices;
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: ProjectColor.concreteSideWalk.toColor,
+      child: ListTile(
+        title: Text(
+          subDices?.first.options?[index].name ?? '',
+          style: context.textTheme.bodyLarge,
+        ),
+        trailing: _DeleteOptions(
+          optionId: subDices?.first.options?[index].id ?? '',
+        ),
+      ),
     );
   }
 }
@@ -126,19 +146,15 @@ final class _DeleteOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AddDiceCubit, CategoryDices>(
-      builder: (context, state) {
-        final cubit = context.read<AddDiceCubit>();
-        return IconButton(
-          onPressed: () {
-            cubit.deleteOptionById(optionId);
-          },
-          icon: Icon(
-            Icons.delete,
-            color: ProjectColor.white.toColor,
-          ),
-        );
+    final cubit = context.read<AddDiceCubit>();
+    return IconButton(
+      onPressed: () {
+        cubit.deleteOptionById(optionId);
       },
+      icon: Icon(
+        Icons.delete,
+        color: ProjectColor.white.toColor,
+      ),
     );
   }
 }
@@ -152,20 +168,16 @@ final class _AddOptionsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<AddDiceCubit>();
     return Flexible(
       flex: 2,
-      child: BlocBuilder<AddDiceCubit, CategoryDices>(
-        builder: (context, state) {
-          final cubit = context.read<AddDiceCubit>();
-          return IconButton(
-            onPressed: () async {
-              if (optionController.text.isEmpty) return;
-              await cubit.updateOptions([optionController.text]);
-              optionController.clear();
-            },
-            icon: const Icon(Icons.add),
-          );
+      child: IconButton(
+        onPressed: () async {
+          if (optionController.text.isEmpty) return;
+          await cubit.updateOptions([optionController.text]);
+          optionController.clear();
         },
+        icon: const Icon(Icons.add),
       ),
     );
   }
@@ -180,8 +192,8 @@ final class _AddOptionsAppBar extends StatelessWidget
     return AppBar(
       backgroundColor: ProjectColor.concreteSideWalk.toColor,
       leading: const CustomBackButton(),
-      title: Text(
-        'Zar Seçenekleri',
+      title: CustomText(
+        text: LocaleKeys.add_dice_dice_options,
         style: context.textTheme.titleLarge?.copyWith(
           color: ProjectColor.white.toColor,
         ),

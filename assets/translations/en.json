@@ -17,6 +17,24 @@
     },
     "error":{
         "something_went_wrong": "Something went wrong"
+    },
+    "add_dice":{
+        "add_dice_title": "Add dice",
+        "dice_name": "Dice name",
+        "dice_description": "Dice description",
+
+        "button":{
+            "continue": "Continue"
+        },
+        "dice_options": "Dice options",
+        "options_name": "Options name",
+        "select_icon":"Please select an icon",
+        "dice_name_validation": "Please enter dice name",
+        "dice_description_validation": "Please enter dice description",
+        "please_enter_atleast_one_option": "Please enter atleast one option",
+        "please_select_icon": "Please select icon",
+        "icon_not_found": "Icon not found"
+
     }
    
 }

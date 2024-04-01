@@ -8,9 +8,13 @@ import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/extension/snack_bar_extension.dart';
 import 'package:dice_game/product/core/mixin/navigation_manager.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/core/model/sub_dices/sub_dices.dart';
+import 'package:dice_game/product/utils/localization/locale_keys.g.dart';
 import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/image/custom_svg.dart';
+import 'package:dice_game/product/widget/text/custom_text.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,11 +35,11 @@ final class AddDicePage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<SVGFilesCubit>(
-          create: (context) =>
+          create: (_) =>
               SVGFilesCubit()..listSVGFiles(_IconPath.diceIcon._path),
         ),
         BlocProvider(
-          create: (context) => AddDiceCubit(),
+          create: (_) => AddDiceCubit(),
         ),
       ],
       child: const _AddDiceView(),
@@ -116,7 +120,7 @@ final class _TitleValidator extends _Validator {
   @override
   String? get validate {
     if (value == null || value!.isEmpty) {
-      return 'Lütfen bir zar adı giriniz';
+      return LocaleKeys.add_dice_dice_name_validation.tr();
     }
     return null;
   }
@@ -128,7 +132,7 @@ final class _BodyValidator extends _Validator {
   @override
   String? get validate {
     if (value == null || value!.isEmpty) {
-      return 'Lütfen bir açıklama giriniz';
+      return LocaleKeys.add_dice_dice_description_validation.tr();
     }
     return null;
   }

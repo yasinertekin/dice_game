@@ -15,18 +15,10 @@ final class _AddNameView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<AddDiceCubit>();
     return Scaffold(
       backgroundColor: ProjectColor.silkyWhite.toColor,
-      appBar: AppBar(
-        title: Text(
-          'Zar Ekle',
-          style: context.textTheme.titleLarge?.copyWith(
-            color: ProjectColor.white.toColor,
-          ),
-        ),
-        backgroundColor: ProjectColor.concreteSideWalk.toColor,
-        leading: const CustomBackButton(),
-      ),
+      appBar: const _AddNameAppBar(),
       body: Padding(
         padding: context.paddingAllLow,
         child: SingleChildScrollView(
@@ -36,53 +28,105 @@ final class _AddNameView extends StatelessWidget {
               SizedBox(
                 height: context.dynamicHeight(0.15),
               ),
-              Icon(
-                Icons.casino,
-                size: context.dynamicHeight(0.2),
-              ),
+              const _CasinoIcon(),
               _CustomForm(
                 formKey: formKey,
                 nameController: nameController,
                 descriptionController: descriptionController,
               ),
               SizedBox(height: context.lowValue),
-              BlocBuilder<AddDiceCubit, CategoryDices>(
-                builder: (context, state) {
-                  final cubit = context.read<AddDiceCubit>();
-                  return SizedBox(
-                    width: double.infinity,
-                    height: context.dynamicHeight(0.07),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: ProjectColor.concreteSideWalk.toColor,
-                      ),
-                      onPressed: () async {
-                        if (formKey.currentState?.validate() ?? true) {
-                          await cubit.setDiceName(nameController.text);
-                          await cubit
-                              .setDescription(descriptionController.text);
-
-                          await pageController.nextPage(
-                            duration: const Duration(milliseconds: 500),
-                            curve: Curves.ease,
-                          );
-                        }
-                      },
-                      child: Text(
-                        'Devam Et',
-                        style: context.textTheme.labelLarge?.copyWith(
-                          color: ProjectColor.white.toColor,
-                        ),
-                      ),
-                    ),
-                  );
-                },
+              _ContinueButton(
+                formKey: formKey,
+                cubit: cubit,
+                nameController: nameController,
+                descriptionController: descriptionController,
+                pageController: pageController,
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+final class _AddNameAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const _AddNameAppBar();
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: CustomText(
+        text: LocaleKeys.add_dice_add_dice_title,
+        style: context.textTheme.titleLarge?.copyWith(
+          color: ProjectColor.white.toColor,
+        ),
+      ),
+      backgroundColor: ProjectColor.concreteSideWalk.toColor,
+      leading: const CustomBackButton(),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+final class _ContinueButton extends StatelessWidget {
+  const _ContinueButton({
+    required this.formKey,
+    required this.cubit,
+    required this.nameController,
+    required this.descriptionController,
+    required this.pageController,
+  });
+
+  final GlobalKey<FormState> formKey;
+  final AddDiceCubit cubit;
+  final TextEditingController nameController;
+  final TextEditingController descriptionController;
+  final PageController pageController;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: context.dynamicHeight(0.07),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: ProjectColor.concreteSideWalk.toColor,
+        ),
+        onPressed: () async {
+          if (formKey.currentState?.validate() ?? true) {
+            await cubit.setDiceName(nameController.text);
+            await cubit.setDescription(descriptionController.text);
+
+            await pageController.nextPage(
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.ease,
+            );
+          }
+        },
+        child: CustomText(
+          text: LocaleKeys.add_dice_button_continue,
+          style: context.textTheme.labelLarge?.copyWith(
+            color: ProjectColor.white.toColor,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+final class _CasinoIcon extends StatelessWidget {
+  const _CasinoIcon();
+
+  @override
+  Widget build(BuildContext context) {
+    return Icon(
+      Icons.casino,
+      size: context.dynamicHeight(0.2),
     );
   }
 }
@@ -110,8 +154,8 @@ final class _CustomForm extends StatelessWidget {
             autofocus: true,
             controller: nameController,
             validator: (value) => _TitleValidator(value: value!).validate,
-            decoration: const _CustomInputDecoration(
-              labelText: 'Zar Adı',
+            decoration: _CustomInputDecoration(
+              labelText: LocaleKeys.add_dice_dice_name.tr(),
             ),
           ),
           SizedBox(height: context.highValue),
@@ -120,8 +164,8 @@ final class _CustomForm extends StatelessWidget {
             keyboardType: TextInputType.text,
             controller: descriptionController,
             validator: (value) => _BodyValidator(value: value!).validate,
-            decoration: const _CustomInputDecoration(
-              labelText: 'Zar Açıklaması',
+            decoration: _CustomInputDecoration(
+              labelText: LocaleKeys.add_dice_dice_description.tr(),
             ),
           ),
           SizedBox(height: context.highValue),

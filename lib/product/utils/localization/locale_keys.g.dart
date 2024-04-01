@@ -14,5 +14,19 @@ abstract class  LocaleKeys {
   static const users_dice = 'users_dice';
   static const error_something_went_wrong = 'error.something_went_wrong';
   static const error = 'error';
+  static const add_dice_add_dice_title = 'add_dice.add_dice_title';
+  static const add_dice_dice_name = 'add_dice.dice_name';
+  static const add_dice_dice_description = 'add_dice.dice_description';
+  static const add_dice_button_continue = 'add_dice.button.continue';
+  static const add_dice_button = 'add_dice.button';
+  static const add_dice_dice_options = 'add_dice.dice_options';
+  static const add_dice_options_name = 'add_dice.options_name';
+  static const add_dice_select_icon = 'add_dice.select_icon';
+  static const add_dice_dice_name_validation = 'add_dice.dice_name_validation';
+  static const add_dice_dice_description_validation = 'add_dice.dice_description_validation';
+  static const add_dice_please_enter_atleast_one_option = 'add_dice.please_enter_atleast_one_option';
+  static const add_dice_please_select_icon = 'add_dice.please_select_icon';
+  static const add_dice_icon_not_found = 'add_dice.icon_not_found';
+  static const add_dice = 'add_dice';
 
 }

@@ -11,7 +11,9 @@ final class _AddIcon extends StatelessWidget {
       body: BlocBuilder<SVGFilesCubit, List<String>>(
         builder: (context, state) {
           return state.isEmpty
-              ? const Text('Simge bulunamadı')
+              ? const CustomText(
+                  text: LocaleKeys.add_dice_icon_not_found,
+                )
               : _IconList(
                   iconList: state,
                 );
@@ -33,8 +35,8 @@ final class _AddIconAppBar extends StatelessWidget
       actions: const [
         _SaveIconButton(),
       ],
-      title: Text(
-        'Lütfen bir simge seçin',
+      title: CustomText(
+        text: LocaleKeys.add_dice_select_icon,
         style: context.textTheme.titleLarge?.copyWith(
           color: ProjectColor.white.toColor,
         ),
@@ -105,7 +107,9 @@ final class _SaveIconButton extends StatelessWidget with NavigationManager {
     return IconButton(
       onPressed: () async {
         if (context.read<SVGFilesCubit>().selectedIconIndex == -1) {
-          context.showCustomSnackBar(message: 'Lütfen bir simge seçin');
+          context.showCustomSnackBar(
+            message: LocaleKeys.add_dice_select_icon.tr(),
+          );
           return;
         }
         await _setIcon(context);
