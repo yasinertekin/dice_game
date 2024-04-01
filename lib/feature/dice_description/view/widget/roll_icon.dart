@@ -10,12 +10,16 @@ final class _RollIcon extends StatelessWidget with NavigationManager {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Locator.appRouter.popAndPush(
-        RollDiceRoute(
-          categoryDices: categoryDices,
-          options: categoryDices.subDices!.first,
-        ),
-      ),
+      onTap: () async {
+        await context.read<DiceDescriptionCubit>().showAd();
+
+        await Locator.appRouter.push(
+          RollDiceRoute(
+            categoryDices: categoryDices,
+            options: categoryDices.subDices!.first,
+          ),
+        );
+      },
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[

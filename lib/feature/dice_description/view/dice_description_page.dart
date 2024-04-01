@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:dice_game/feature/dice_description/cubit/dice_description_cubit.dart';
 import 'package:dice_game/feature/favorite/cubit/favorite_cubit.dart';
 import 'package:dice_game/feature/favorite/cubit/state/favorite_state.dart';
 import 'package:dice_game/locator.dart';
@@ -39,8 +40,11 @@ final class DiceDescriptionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _DiceDescriptionView(
-      categoryDices: categoryDices,
+    return BlocProvider(
+      create: (context) => DiceDescriptionCubit(),
+      child: _DiceDescriptionView(
+        categoryDices: categoryDices,
+      ),
     );
   }
 }

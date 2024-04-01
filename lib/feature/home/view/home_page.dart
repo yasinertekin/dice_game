@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/home/cubit/home_cubit.dart';
 import 'package:dice_game/feature/home/cubit/state/home_state.dart';
@@ -7,6 +5,7 @@ import 'package:dice_game/locator.dart';
 import 'package:dice_game/product/core/enum/project_assets.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
+import 'package:dice_game/product/core/mixin/admob_mixin.dart';
 import 'package:dice_game/product/core/mixin/navigation_manager.dart';
 import 'package:dice_game/product/core/model/categories/categories.dart';
 import 'package:dice_game/product/core/model/category/category.dart';
@@ -17,7 +16,6 @@ import 'package:dice_game/product/widget/loading/custom_circular_progress_indica
 import 'package:dice_game/product/widget/text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 part 'mixin/home_view_mixin.dart';
 part 'widget/bottom_bar.dart';
@@ -48,7 +46,25 @@ final class _HomeView extends StatefulWidget {
   State<_HomeView> createState() => _HomeViewState();
 }
 
-final class _HomeViewState extends State<_HomeView> with _HomeViewMixin {
+final class _HomeViewState extends State<_HomeView>
+    with _HomeViewMixin, AdmobMixin {
+  @override
+  void loadAd() {
+    loadAds();
+  }
+
+  @override
+  Future<void> showAd() async {
+    // Future.delayed(
+    //   const Duration(seconds: 10),
+    //   () async {
+    //     if (interstitialAd != null) {
+    //       await interstitialAd!.show();
+    //     }
+    //   },
+    // );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
