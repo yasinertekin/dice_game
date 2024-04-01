@@ -15,6 +15,9 @@
     },
      "users_dice":{
         "my_dice": "Zarlarım"
+    },
+        "error":{
+        "something_went_wrong": "Bir şeyler yanlış gitti"
     }
    
 }
