@@ -10,27 +10,25 @@ final class _GourmeDiceList extends StatelessWidget {
   final AnimationController _controller;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: BlocBuilder<RollDiceCubit, RollDiceState>(
-        builder: (context, state) {
-          final cubit = context.read<RollDiceCubit>();
-          final subDices = widget.categoryDices.subDices;
+    return BlocBuilder<RollDiceCubit, RollDiceState>(
+      builder: (context, state) {
+        final cubit = context.read<RollDiceCubit>();
+        final subDices = widget.categoryDices.subDices;
 
-          if (state == RollDiceState.completed) {
-            return Padding(
-              padding: context.paddingAllLow,
-              child: Column(
-                children: [
-                  _GourmeGridViewBuilder(subDices: subDices, cubit: cubit),
-                  _ResetButton(cubit: cubit, controller: _controller),
-                ],
-              ),
-            );
-          } else {
-            return const _EmptyWidget();
-          }
-        },
-      ),
+        if (state == RollDiceState.completed) {
+          return Padding(
+            padding: context.paddingAllLow,
+            child: Column(
+              children: [
+                _GourmeGridViewBuilder(subDices: subDices, cubit: cubit),
+                _ResetButton(cubit: cubit, controller: _controller),
+              ],
+            ),
+          );
+        } else {
+          return const _EmptyWidget();
+        }
+      },
     );
   }
 }
@@ -46,7 +44,8 @@ final class _GourmeGridViewBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: context.dynamicHeight(0.8),
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
