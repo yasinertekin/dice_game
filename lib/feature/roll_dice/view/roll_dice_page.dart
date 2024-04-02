@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:dice_game/feature/roll_dice/cubit/roll_dice_counter_cubit.dart';
 import 'package:dice_game/feature/roll_dice/cubit/roll_dice_cubit.dart';
 import 'package:dice_game/feature/settings/cubit/dice_type_cubit.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
@@ -6,7 +7,6 @@ import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:dice_game/product/core/model/options/options.dart';
 import 'package:dice_game/product/core/model/sub_dices/sub_dices.dart';
-import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/scheduler/ticker.dart';
@@ -38,8 +38,15 @@ final class RollDicePage extends StatelessWidget {
   final CategoryDices categoryDices;
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => RollDiceCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<RollDiceCubit>(
+          create: (context) => RollDiceCubit(),
+        ),
+        BlocProvider<RollDiceCounterCubit>(
+          create: (context) => RollDiceCounterCubit(),
+        ),
+      ],
       child: _RollDiceView(
         options: options,
         categoryDices: categoryDices,
@@ -65,7 +72,7 @@ final class _RollDiceViewState extends State<_RollDiceView>
     with _RollDiceViewMixin {
   @override
   Widget build(BuildContext context) {
-    return widget.categoryDices.diceName == 'Gurme Zarı'
+    return widget.categoryDices.id == '1'
         ? _GourmetDice(widget: widget, controller: _controller)
         : _DefaultRollView(
             widget: widget,
@@ -98,7 +105,7 @@ final class _RandomOptionsBuilder extends StatelessWidget {
               .read<RollDiceCubit>()
               .getRandomIndex(widget.options?.options);
           return Padding(
-            padding: const EdgeInsets.all(8),
+            padding: context.paddingAllLow,
             child: Column(
               children: [
                 _RandomOptionsTitle(
