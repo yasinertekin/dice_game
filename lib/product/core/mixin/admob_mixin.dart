@@ -93,7 +93,6 @@ base mixin AdmobMixin {
     await _rewardedAd?.show(
       onUserEarnedReward: (ad, reward) {
         // ignore: avoid_print
-        print('User earned reward of ${reward.amount} ${reward.type}');
       },
     );
   }
