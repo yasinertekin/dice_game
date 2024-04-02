@@ -1,7 +1,27 @@
 part of '../home_page.dart';
 
-final class _UserDiceCard extends StatelessWidget with NavigationManager {
+// ignore: must_be_immutable
+final class _UserDiceCard extends StatefulWidget {
   const _UserDiceCard();
+
+  @override
+  State<_UserDiceCard> createState() => _UserDiceCardState();
+}
+
+final class _UserDiceCardState extends State<_UserDiceCard>
+    with NavigationManager, AdmobMixin {
+  Future<void> _loadRewardAds() async {
+    await loadRewardedAd();
+  }
+
+  Future<void> _showAds() async {
+    Future.delayed(
+      const Duration(seconds: 2),
+      () async {
+        await showRewardedAd();
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +29,11 @@ final class _UserDiceCard extends StatelessWidget with NavigationManager {
       width: context.dynamicWidth(0.8),
       height: context.dynamicHeight(0.2),
       child: InkWell(
-        onTap: () => navigatePush(const UserDiceRoute()),
+        onTap: () async {
+          await _loadRewardAds();
+          await _showAds();
+          navigatePush(const UserDiceRoute());
+        },
         child: Card(
           shape: _CardShape(context),
           color: ProjectColor.buzzIn.toColor,
