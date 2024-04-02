@@ -18,11 +18,12 @@ final class _ResetButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: ProjectColor.concreteSideWalk.toColor,
           ),
-          onPressed: () {
+          onPressed: () async {
             _controller
               ..reset()
               ..forward();
             cubit.resetAnimation();
+            await context.read<RollDiceCounterCubit>().showAd();
           },
           child: Text(
             'Tekrar At',
