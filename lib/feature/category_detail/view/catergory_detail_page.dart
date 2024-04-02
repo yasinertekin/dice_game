@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/model/categories/categories.dart';
-import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/container/custom_gradient_container.dart';
 import 'package:dice_game/product/widget/grid_list/dice_category_grid_view.dart';
