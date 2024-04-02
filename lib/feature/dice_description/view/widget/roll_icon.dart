@@ -9,25 +9,30 @@ final class _RollIcon extends StatelessWidget with NavigationManager {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () async {
-        await context.read<DiceDescriptionCubit>().showAd();
+    final diceDescriptionCubit = context.watch<DiceDescriptionCubit>();
+    return BlocBuilder<DiceDescriptionCubit, int>(
+      builder: (context, state) {
+        return GestureDetector(
+          onTap: () async {
+            await diceDescriptionCubit.showAd();
 
-        await Locator.appRouter.push(
-          RollDiceRoute(
-            categoryDices: categoryDices,
-            options: categoryDices.subDices!.first,
+            await Locator.appRouter.push(
+              RollDiceRoute(
+                categoryDices: categoryDices,
+                options: categoryDices.subDices!.first,
+              ),
+            );
+          },
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              _DiceIcon(categoryDices: categoryDices),
+              const _CasinoIcon(),
+              const _RollDiceText(),
+            ],
           ),
         );
       },
-      child: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          _DiceIcon(categoryDices: categoryDices),
-          const _CasinoIcon(),
-          const _RollDiceText(),
-        ],
-      ),
     );
   }
 }
