@@ -4,6 +4,7 @@ import 'package:dice_game/feature/user_dice/cubit/user_dice_cubit.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/mixin/navigation_manager.dart';
+import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
 import 'package:dice_game/product/utils/localization/locale_keys.g.dart';
 import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
@@ -36,38 +37,62 @@ final class _UserDiceView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: ProjectColor.transparent.toColor,
         appBar: const _UserDiceAppBar(),
-        body: BlocBuilder<UserDiceCubit, UserDiceState>(
-          builder: (context, state) {
-            if (state.isLoading ?? false) {
-              return const CustomCircularProgressIndicator();
-            } else if (state.error?.isNotEmpty ?? false) {
-              return Center(
-                child: Text(state.error!),
-              );
-            } else {
-              return GridView.builder(
-                gridDelegate: const _SliverGridDelegate(),
-                itemCount: (state.categoryDices?.length ?? 0) + 1,
-                itemBuilder: (context, index) {
-                  if (index == state.categoryDices?.length) {
-                    return const _AddDiceButton();
-                  } else {
-                    return CategoryDetailCard(
-                      diceList: state.categoryDices,
-                      onLongPress: () {
-                        context.read<UserDiceCubit>().deleteUserDice(
-                              state.categoryDices![index],
-                            );
-                      },
-                      index: index,
-                    );
-                  }
-                },
-              );
-            }
-          },
-        ),
+        body: const _ScaffoldBody(),
       ),
+    );
+  }
+}
+
+final class _ScaffoldBody extends StatelessWidget {
+  const _ScaffoldBody();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<UserDiceCubit, UserDiceState>(
+      builder: (context, state) {
+        if (state.isLoading ?? false) {
+          return const CustomCircularProgressIndicator();
+        } else if (state.error?.isNotEmpty ?? false) {
+          return Center(
+            child: Text(state.error!),
+          );
+        } else {
+          return _UserDiceList(
+            categoryDices: state.categoryDices,
+          );
+        }
+      },
+    );
+  }
+}
+
+final class _UserDiceList extends StatelessWidget {
+  const _UserDiceList({
+    required this.categoryDices,
+  });
+
+  final List<CategoryDices>? categoryDices;
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      gridDelegate: const _SliverGridDelegate(),
+      itemCount: (categoryDices?.length ?? 0) + 1,
+      itemBuilder: (context, index) {
+        if (index == categoryDices?.length) {
+          return const _AddDiceButton();
+        } else {
+          return CategoryDetailCard(
+            diceList: categoryDices,
+            onLongPress: () {
+              context.read<UserDiceCubit>().deleteUserDice(
+                    categoryDices![index],
+                  );
+            },
+            index: index,
+          );
+        }
+      },
     );
   }
 }
