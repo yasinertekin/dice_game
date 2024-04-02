@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="dice_game"
+        android:label="Karar Zarı"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -35,7 +35,7 @@
             android:value="ca-app-pub-6166667374953390~8907305466"/>
     </application>
     <!-- Required to query activities that can process text, see:
-         https://developer.android.com/training/package-visibility?hl=en and
+         https://developer.android.com/training/package="com.karar_zari">
          https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
 
          In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
