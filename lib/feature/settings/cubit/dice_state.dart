@@ -28,15 +28,19 @@ enum DiceType {
   /// defaultDice
   defaultDice('default'),
 
-  /// catDice
-  catDice('cat'),
+  /// blueDice
+  blueDice('blue'),
 
   /// dogDice
-  pinkDice('pink');
+  pinkDice('pink'),
+
+  /// catDice
+  catDice('cat');
 
   /// Constructor
   final String value;
 
+  // ignore: sort_constructors_first
   const DiceType(this.value);
 
   /// toLottie

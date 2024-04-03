@@ -57,12 +57,14 @@ final class _ScaffoldBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: context.paddingAllLow,
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _SelectDiceText(),
-          _DiceList(),
-        ],
+      child: const Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _SelectDiceText(),
+            _DiceList(),
+          ],
+        ),
       ),
     );
   }

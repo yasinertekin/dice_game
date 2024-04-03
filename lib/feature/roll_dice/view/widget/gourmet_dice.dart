@@ -15,14 +15,16 @@ final class _GourmetDice extends StatelessWidget {
       backgroundColor: ProjectColor.silkyWhite.toColor,
       appBar: _GourmetDiceAppBar(widget: widget),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _DiceLottie(
-              controller: _controller,
-            ),
-            _GourmeDiceList(widget: widget, controller: _controller),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _DiceLottie(
+                controller: _controller,
+              ),
+              _GourmeDiceList(widget: widget, controller: _controller),
+            ],
+          ),
         ),
       ),
     );
