@@ -5,15 +5,13 @@ final class _DiceList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: GridView.builder(
-        gridDelegate: const _CustomSliverDelegate(),
-        itemCount: DiceType.values.length,
-        itemBuilder: (BuildContext context, int index) {
-          final diceType = DiceType.values[index];
-          return _DiceLottie(diceType: diceType);
-        },
-      ),
+    return GridView.builder(
+      gridDelegate: const _CustomSliverDelegate(),
+      itemCount: DiceType.values.length,
+      itemBuilder: (BuildContext context, int index) {
+        final diceType = DiceType.values[index];
+        return _DiceLottie(diceType: diceType);
+      },
     );
   }
 }
