@@ -16,7 +16,7 @@
         "buy": "Satın Al",
         "cancel": "İptal",
         "buy_premium":"Premium Satın Al",
-        "remove_ads_premium_features": "Reklamları Kaldır ve Premium Özellikler Kullan"
+        "remove_ads_premium_features": "Reklamları Kaldır + Sınırlı İçerik (Aylık : {{price}} TL)"
 
     },
      "users_dice":{
