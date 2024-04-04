@@ -11,7 +11,13 @@
     },
     "settings":{
         "settings_title": "Ayarlar",
-        "select_dice": "Zar Seç"
+        "select_dice": "Zar Seç",
+        "remove_ads": "Reklamları Kaldır",
+        "buy": "Satın Al",
+        "cancel": "İptal",
+        "buy_premium":"Premium Satın Al",
+        "remove_ads_premium_features": "Reklamları Kaldır ve Premium Özellikler Kullan"
+
     },
      "users_dice":{
         "my_dice": "Zarlarım"

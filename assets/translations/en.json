@@ -10,7 +10,12 @@
     },
     "settings":{
         "settings_title": "Settings",
-        "select_dice": "Select dice"
+        "select_dice": "Select dice",
+        "remove_ads": "Remove ads",
+        "buy": "Buy",
+        "cancel": "Cancel",
+        "buy_premium": "Buy premium",
+        "remove_ads_premium_features": "Remove ads and get premium features"
     },
     "users_dice":{
         "my_dice": "My dice"
