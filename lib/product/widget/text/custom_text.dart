@@ -6,14 +6,18 @@ final class CustomText extends StatelessWidget {
     required this.text,
     super.key,
     this.style,
+    this.textAlign,
   });
 
   final String text;
 
   final TextStyle? style;
+
+  final TextAlign? textAlign;
   @override
   Widget build(BuildContext context) {
     return Text(
+      textAlign: textAlign,
       text,
       style: style,
     ).tr();
