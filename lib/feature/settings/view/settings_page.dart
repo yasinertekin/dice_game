@@ -18,12 +18,18 @@ import 'package:lottie/lottie.dart';
 
 part 'mixin/change_language_button_mixin.dart';
 part 'mixin/dice_lottie_mixin.dart';
+part 'mixin/premium_options_mixin.dart';
+part 'widget/buy_premium_cupertino_action_sheet.dart';
 part 'widget/cupertino_view.dart';
 part 'widget/custom_cupertino_action_sheet.dart';
 part 'widget/custom_material_action_sheet.dart';
+part 'widget/custom_material_checkbox_list_tile.dart';
 part 'widget/dice_list.dart';
 part 'widget/dice_lottie.dart';
 part 'widget/material_model_view.dart';
+part 'widget/premium_button.dart';
+part 'widget/premium_options.dart';
+part 'widget/remove_ads_cupertino_action_sheet.dart';
 part 'widget/selected_dice_text.dart';
 part 'widget/settings_page_app_bar.dart';
 
@@ -62,7 +68,10 @@ final class _ScaffoldBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _SelectDiceText(),
-            _DiceList(),
+            Expanded(
+              child: _DiceList(),
+            ),
+            _PremiumOptions(),
           ],
         ),
       ),
