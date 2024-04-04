@@ -6,14 +6,13 @@ base mixin AdmobMixin {
   InterstitialAd? _interstitialAd;
   RewardedAd? _rewardedAd;
 
-  final adUnitId = '/6499/example/interstitial';
   // final String _adUnitId = Platform.isAndroid
   //     ? 'ca-app-pub-3940256099942544/1033173712'
-  //     : 'ca-app-pub-3940256099942544/4411468910';
+  //     : 'ca-app-pub-3940256099942544/4411468910 ';
 
   final String _addRewardId = Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/5224354917'
-      : 'ca-app-pub-3940256099942544/1712485313';
+      ? 'ca-app-pub-5735107573485959/7660460954'
+      : 'ca-app-pub-5735107573485959/4292061586';
 
   // Future<void> loadAds() async {
   //   await InterstitialAd.load(
