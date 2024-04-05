@@ -28,7 +28,9 @@ final class _RollIcon extends StatelessWidget with NavigationManager {
             children: <Widget>[
               _DiceIcon(categoryDices: categoryDices),
               const _CasinoIcon(),
-              const _RollDiceText(),
+              _RollDiceText(
+                categoryDices,
+              ),
             ],
           ),
         );

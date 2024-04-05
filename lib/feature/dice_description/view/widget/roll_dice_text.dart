@@ -1,7 +1,11 @@
 part of '../dice_description_page.dart';
 
 final class _RollDiceText extends StatelessWidget {
-  const _RollDiceText();
+  const _RollDiceText(
+    this.categoryDices,
+  );
+
+  final CategoryDices categoryDices;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ final class _RollDiceText extends StatelessWidget {
         child: Padding(
           padding: context.paddingAllDefault,
           child: Text(
-            'Zar At!',
+            categoryDices.isPremium ?? true ? 'Satın Al' : 'Zar At',
             style: context.textTheme.displayLarge?.copyWith(
               color: ProjectColor.white.toColor,
             ),

@@ -1075,7 +1075,7 @@
                     "icon": "assets/icon/dice_icon/movie_icon.svg",
                     "id": "1",
                     "dice_image": "assets/image/dice_image/movie_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Film Zarı, içinde yüzlerce farklı film bulunan bir oyun aracıdır. Ne izleyeceğine kararveremiyorsan ya da kız arkadaşınla ortak bir karara varamıyorsanız bu zar tam size göre. Hem tekbaşına keyifli bir zaman geçirmek hem de arkadaşlarla eğlenceli bir oyun deneyimi yaşamak içinideal.",
                     "sub_dices": [
@@ -2148,7 +2148,7 @@
                     "icon": "assets/icon/dice_icon/tv_series_icon.svg",
                     "id": "3",
                     "dice_image": "assets/image/dice_image/tv_series_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Dizi Zarı, keyifli bir keşif deneyimi sunan bir oyundur. Her türden diziye yer verilen bu zar,farklı zevklere hitap eder ve izleyicilere geniş bir seçenek yelpazesi sunar. Belki de yeni favorinburada saklıdır!",
                     "sub_dices": [
@@ -3683,7 +3683,7 @@
                     "icon": "assets/icon/dice_icon/istanbul_icon.svg",
                     "id": "1",
                     "dice_image": "assets/image/dice_image/istanbul_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "İstanbul Zarı, şehri keşfetmek isteyenler için harika bir rehber ve eğlenceli bir yolarkadaşıdır. Kullanıcı zarı attığında rastgele bir seçenek belirlenir ve bu seçenek, ziyaret edilecek birmekan önerisi sunar. İstanbul Zarı, şehri daha derinlemesine keşfetmek isteyenler için mükemmelbir kılavuzdur ve her günü daha keyifli ve heyecanlı hale getirebilir.",
                     "sub_dices": [
@@ -3778,7 +3778,7 @@
                     "icon": "assets/icon/dice_icon/paris_icon.svg",
                     "id": "2",
                     "dice_image": "assets/image/dice_image/paris_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Paris Zarı, şehri keşfetmek isteyenler için ilham verici ve eğlenceli bir rehberdir. Zarınher bir yüzünde Paris'in farklı semtleri, ünlü simgeleri, tarihi yapıları, sanat galerileri, restoranları vekafeleri gibi çeşitli yerler bulunur. Paris Zarı, şehri daha derinlemesine keşfetmek isteyenler içinmükemmel bir kılavuzdur ve unutulmaz deneyimler yaşamalarına yardımcı olur.",
                     "sub_dices": [
@@ -3853,7 +3853,7 @@
                     "icon": "assets/icon/dice_icon/dubai_icon.svg",
                     "id": "3",
                     "dice_image": "assets/image/dice_image/dubai_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Dubai Zarı, bu göz alıcı şehri keşfetmek isteyenler için harika bir rehberdir. Zarın her biryüzünde Dubai'nin farklı semtleri, ikonik yapıları, alışveriş merkezleri, lüks otelleri, restoranları veeğlence mekanları gibi çeşitli yerler bulunur. Örneğin, Burj Khalifa'nın tepesinden muhteşemmanzarayı izlemek, Dubai Mall'da alışveriş yapmak, Palm Jumeirah'ta plajda dinlenmek veya DubaiFountain Show'unu izlemek gibi. Dubai Zarı, şehri daha derinlemesine keşfetmek isteyenler içinmükemmel bir kılavuzdur ve unutulmaz deneyimler yaşamalarına yardımcı olur.",
                     "sub_dices": [
@@ -3886,7 +3886,7 @@
                     "icon": "assets/icon/dice_icon/madrid_icon.svg",
                     "id": "4",
                     "dice_image": "assets/image/dice_image/madrid_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Madrid Zarı, şehri keşfetmek için yaratıcı ve eğlenceli bir rehberdir. Zar atıldığında, herbir yüzünde Madrid'in farklı semtleri ve etkinlikleri yer alır. Attığınız zar size rastgele bir öneri sunar:Prado Müzesi'ni ziyaret etmek, tapas tadını çıkarmak, Retiro Parkı'nda gezinti yapmak gibi. Bu zar,Madrid'i keşfetmeyi daha heyecanlı ve spontane hale getirir.",
                     "sub_dices": [
@@ -3951,7 +3951,7 @@
                     "icon": "assets/icon/dice_icon/tokyo_icon.svg",
                     "id": "5",
                     "dice_image": "assets/image/dice_image/tokyo_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Tokyo Zarı, şehri keşfetmek için heyecan verici bir rehberdir. Zar atıldığında, her biryüzünde Tokyo'nun farklı semtleri ve ilgi çekici mekanları yer alır. Attığınız zar size rastgele bir önerisunar: Asakusa Tapınağı'nı ziyaret etmek, Shibuya Kavşağı'nda insanları izlemek, Ueno Parkı'ndapiknik yapmak gibi. Bu zar, Tokyo'da yapılacak eğlenceli aktiviteleri keşfetmeyi daha kolay ve keyiflihale getirir.",
                     "sub_dices": [
@@ -4015,7 +4015,7 @@
                     "icon": "assets/icon/dice_icon/berlin_icon.svg",
                     "id": "6",
                     "dice_image": "assets/image/dice_image/berlin_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Berlin Zarı, şehri keşfetmek için heyecan verici bir rehberdir. Zar atıldığında, her biryüzünde Berlin'in farklı semtleri ve ilginç mekanları bulunur. Attığınız zar size rastgele bir öneri sunar:Brandenburg Kapısı'nı ziyaret etmek, Berlin Duvarı'nın bir parçasını görmek, Kreuzberg semtindesokak sanatını keşfetmek gibi. Bu zar, Berlin'in çeşitli deneyimlerini keşfetmeyi daha kolay ve keyiflihale getirir.",
                     "sub_dices": [
@@ -4079,7 +4079,7 @@
                     "icon": "assets/icon/dice_icon/amsterdam_icon.svg",
                     "id": "7",
                     "dice_image": "assets/image/dice_image/amsterdam_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Amsterdam Zarı, şehri keşfetmek için eğlenceli bir rehberdir. Zar atıldığında, herbir yüzünde Amsterdam'ın farklı semtleri ve ilginç mekanları bulunur. Attığınız zar size rastgele biröneri sunar: Anne Frank Evi'ni ziyaret etmek, kanallarda tekne turu yapmak, Vondelpark'ta piknikyapmak gibi. Bu zar, Amsterdam'ın sunduğu çeşitli deneyimleri keşfetmeyi daha keyifli ve heyecanlıhale getirir.",
                     "sub_dices": [
@@ -4144,7 +4144,7 @@
                     "icon": "assets/icon/dice_icon/rome_icon.svg",
                     "id": "8",
                     "dice_image": "assets/image/dice_image/rome_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Roma Zarı, şehri keşfetmek için eğlenceli bir rehberdir. Zar atıldığında, her bir yüzündeRoma'nın farklı semtleri ve görülmesi gereken mekanları bulunur. Attığınız zar size rastgele bir önerisunar: Colosseum'u ziyaret etmek, Pantheon'u keşfetmek, Vatikan Müzeleri'ni gezmek gibi. Bu zar,Roma'nın zengin tarihini ve kültürünü keşfetmeyi daha heyecanlı ve keyifli hale getirir.",
                     "sub_dices": [
@@ -4209,7 +4209,7 @@
                     "icon": "assets/icon/dice_icon/newyork_icon.svg",
                     "id": "9",
                     "dice_image": "assets/image/dice_image/newyork_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "New York Zarı, şehri keşfetmek için yaratıcı ve eğlenceli bir rehberdir. Zaratıldığında, her bir yüzünde New York'un farklı semtleri ve keşfedilecek ilginç mekanları bulunur.Attığınız zar size rastgele bir öneri sunar: Times Meydanı'nda yürüyüş yapmak, Central Park'ta piknikyapmak, Empire State Binası'nın tepesinden manzarayı izlemek gibi. Bu zar, New York'un sunduğufarklı deneyimleri keşfetmeyi daha heyecanlı ve keyifli hale getirir.",
                     "sub_dices": [
@@ -4274,7 +4274,7 @@
                     "icon": "assets/icon/dice_icon/barcelona_icon.svg",
                     "id": "10",
                     "dice_image": "assets/image/dice_image/barcelona_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Barcelona'nın eşsiz güzelliklerini keşfetmek için bu zarı kullanın! Şehrin en ünlü turistik yerlerini ve etkinliklerini deneyimleyin.",
                     "sub_dices": [
@@ -4339,7 +4339,7 @@
                     "icon": "assets/icon/dice_icon/london_icon.svg",
                     "id": "11",
                     "dice_image": "assets/image/dice_image/londra_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Londra Zarı, şehri keşfetmek için eğlenceli bir rehberdir. Zar atıldığında, her biryüzünde Londra'nın farklı semtleri ve ilgi çekici mekanları bulunur. Attığınız zar size rastgele bir önerisunar: Big Ben'i ziyaret etmek, Thames Nehri'nde tekne turu yapmak, Camden Pazarı'nda alışverişyapmak gibi. Bu zar, Londra'nın sunduğu çeşitli deneyimleri keşfetmeyi daha keyifli ve heyecanlıhale getirir.",
                     "sub_dices": [
@@ -4413,7 +4413,7 @@
                     "icon": "assets/icon/dice_icon/book_icon.svg",
                     "id": "1",
                     "dice_image": "assets/image/dice_image/book_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Kitap Zarı, okurları keşfetmeye ve yeni dünyalara adım atmaya teşvik eden bir rehberdir. Her atıldığında, içinde en çok okunması tavsiye edilen kitapların bulunduğu bir seçenek sunar. Bu zar, okuyucuların farklı türlerde ve konularda kitaplar deneyimlemesini sağlar. Macera, romantizm, bilim kurgu, tarih veya polisiye... Hangi türü tercih ederseniz edin, Kitap Zarı sizi keşif yolculuğuna çıkarır ve okuma tutkunuzu ateşler!",
                     "sub_dices": [
@@ -4524,7 +4524,7 @@
                     "icon": "assets/icon/dice_icon/wisdom_icon.svg",
                     "id": "2",
                     "dice_image": "assets/image/dice_image/wisdom_image.jpg",
-                    "isPremium": false,
+                    "isPremium": true,
                     "isAdultContent": false,
                     "description": "Bilgelik Küpü, içerdiği tarihten ilham alan ve derin düşüncelere yol açan sözlerle dolu bir zar oyunudur. Bu zarı atmak, tarihte büyük düşünürlerin ve liderlerin sözlerini keşfetmenizi sağlar. Her atışınızda karşınıza çıkan söz, sizi düşünmeye ve hayatınıza yeni bir bakış açısı kazandırmaya teşvik eder. Bilgelik Küpü, sadece bir oyun değil, aynı zamanda içinde barındırdığı derinlikle bir yaşam rehberidir. Sözler, sizi ilhamlandırırken aynı zamanda farkındalık yaratır, içsel büyüme ve gelişim yolculuğunuzda size eşlik eder.",
                     "sub_dices": [
