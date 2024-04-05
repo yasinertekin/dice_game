@@ -12,12 +12,12 @@
         "settings_title": "Settings",
         "select_dice": "Select dice",
         "remove_ads": "Remove ads",
-        "remove_ads_limited": "Remove Ads + Limited Content (Monthly: 19.99 TL)",
+        "remove_ads_limited": "Remove Ads + Limited Content (Monthly)",
         "buy": "Buy",
         "cancel": "Cancel",
         "buy_premium": "Buy premium",
-        "remove_ads_premium_features": "Remove ads and get premium features (Monthly : 149.99 TL)",
-        "remove_ads_premium_features_once": "One-Time Purchase : 149.99 TL"
+        "remove_ads_premium_features": "Remove ads and get premium features (Monthly)",
+        "remove_ads_premium_features_once": "One-Time Purchase"
 
     },
     "users_dice":{
@@ -43,6 +43,11 @@
         "please_select_icon": "Please select icon",
         "icon_not_found": "Icon not found"
 
+    },
+        "dice_decription":{
+        "warning": "Warning",
+        "age_limit":"Bu kategoriye erişim yaş sınırı vardır",
+        "go_back": "Go back"
     }
    
 }

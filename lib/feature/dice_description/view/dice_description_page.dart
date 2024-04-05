@@ -8,9 +8,11 @@ import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/mixin/navigation_manager.dart';
 import 'package:dice_game/product/core/model/category_dices/category_dices.dart';
+import 'package:dice_game/product/utils/localization/locale_keys.g.dart';
 import 'package:dice_game/product/utils/router/app_router.gr.dart';
 import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/image/custom_svg.dart';
+import 'package:dice_game/product/widget/text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -96,8 +98,12 @@ final class _CustomAlertDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const AlertDialog(
-      title: Text('Uyarı'),
-      content: Text('Bu kategoriye erişim yaş sınırı vardır.'),
+      title: CustomText(
+        text: LocaleKeys.dice_decription_warning,
+      ),
+      content: CustomText(
+        text: LocaleKeys.dice_decription_age_limit,
+      ),
       actions: [
         _BackButton(),
       ],
@@ -117,7 +123,9 @@ final class _BackButton extends StatelessWidget {
           predicate: (route) => false,
         );
       },
-      child: const Text('Geri Dön'),
+      child: const CustomText(
+        text: LocaleKeys.dice_decription_warning,
+      ),
     );
   }
 }

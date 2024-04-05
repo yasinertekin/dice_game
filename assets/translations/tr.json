@@ -13,12 +13,12 @@
         "settings_title": "Ayarlar",
         "select_dice": "Zar Seç",
         "remove_ads": "Reklamları Kaldır",
-        "remove_ads_limited": "Reklamları Kaldır (Aylık: 19.99 TL)",
+        "remove_ads_limited": "Reklamları Kaldır",
         "buy": "Satın Al",
         "cancel": "İptal",
         "buy_premium":"Premium Satın Al",
-        "remove_ads_premium_features": "Reklamsız Kullanım + Sınırsız İçerik (Aylık: 149.99 TL)",
-        "remove_ads_premium_features_once": "Tek Seferlik: 149.99 TL"
+        "remove_ads_premium_features": "Reklamsız Kullanım + Sınırsız İçerik Aylık",
+        "remove_ads_premium_features_once": "Tek Seferlik"
 
     },
      "users_dice":{
@@ -45,6 +45,12 @@
                 "icon_not_found": "Simge Bulunamadı"
 
 
+
+    },
+    "dice_decription":{
+        "warning": "Uyarı",
+        "age_limit":"Bu kategoriye erişim yaş sınırı vardır",
+        "go_back": "Geri Dön"
 
     }
    

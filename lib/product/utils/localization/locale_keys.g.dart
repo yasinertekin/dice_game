@@ -35,5 +35,9 @@ abstract class  LocaleKeys {
   static const add_dice_please_select_icon = 'add_dice.please_select_icon';
   static const add_dice_icon_not_found = 'add_dice.icon_not_found';
   static const add_dice = 'add_dice';
+  static const dice_decription_warning = 'dice_decription.warning';
+  static const dice_decription_age_limit = 'dice_decription.age_limit';
+  static const dice_decription_go_back = 'dice_decription.go_back';
+  static const dice_decription = 'dice_decription';
 
 }
