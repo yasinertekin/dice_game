@@ -11,7 +11,6 @@ final class _BuyPremiumCupertinoActionSheet extends StatelessWidget {
         style: TextStyle(
           color: ProjectColor.black.toColor,
           fontSize: 16,
-          fontWeight: FontWeight.bold,
         ),
       ),
       actions: <Widget>[
