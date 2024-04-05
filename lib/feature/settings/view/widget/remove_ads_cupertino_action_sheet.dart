@@ -14,9 +14,10 @@ final class _RemoveAdsCupertinoActionSheet extends StatelessWidget {
           onPressed: () {
             Locator.appRouter.popForced();
           },
-          child: const FittedBox(
+          child: FittedBox(
             child: CustomText(
-              text: 'Reklamları Kaldır + Sınırlı İçerik (Aylık : 19.99 TL)',
+              text: LocaleKeys.settings_remove_ads_limited,
+              style: context.textTheme.bodyLarge?.copyWith(),
             ),
           ),
         ),

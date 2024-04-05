@@ -12,10 +12,13 @@
         "settings_title": "Settings",
         "select_dice": "Select dice",
         "remove_ads": "Remove ads",
+        "remove_ads_limited": "Remove Ads + Limited Content (Monthly: 19.99 TL)",
         "buy": "Buy",
         "cancel": "Cancel",
         "buy_premium": "Buy premium",
-        "remove_ads_premium_features": "Remove ads and get premium features"
+        "remove_ads_premium_features": "Remove ads and get premium features (Monthly : 149.99 TL)",
+        "remove_ads_premium_features_once": "One-Time Purchase : 149.99 TL"
+
     },
     "users_dice":{
         "my_dice": "My dice"

@@ -10,10 +10,12 @@ abstract class  LocaleKeys {
   static const settings_settings_title = 'settings.settings_title';
   static const settings_select_dice = 'settings.select_dice';
   static const settings_remove_ads = 'settings.remove_ads';
+  static const settings_remove_ads_limited = 'settings.remove_ads_limited';
   static const settings_buy = 'settings.buy';
   static const settings_cancel = 'settings.cancel';
   static const settings_buy_premium = 'settings.buy_premium';
   static const settings_remove_ads_premium_features = 'settings.remove_ads_premium_features';
+  static const settings_remove_ads_premium_features_once = 'settings.remove_ads_premium_features_once';
   static const settings = 'settings';
   static const users_dice_my_dice = 'users_dice.my_dice';
   static const users_dice = 'users_dice';

@@ -13,10 +13,12 @@
         "settings_title": "Ayarlar",
         "select_dice": "Zar Seç",
         "remove_ads": "Reklamları Kaldır",
+        "remove_ads_limited": "Reklamları Kaldır (Aylık: 19.99 TL)",
         "buy": "Satın Al",
         "cancel": "İptal",
         "buy_premium":"Premium Satın Al",
-        "remove_ads_premium_features": "Reklamları Kaldır + Sınırlı İçerik (Aylık : {{price}} TL)"
+        "remove_ads_premium_features": "Reklamsız Kullanım + Sınırsız İçerik (Aylık: 149.99 TL)",
+        "remove_ads_premium_features_once": "Tek Seferlik: 149.99 TL"
 
     },
      "users_dice":{

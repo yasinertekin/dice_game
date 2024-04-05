@@ -14,18 +14,22 @@ final class _BuyPremiumCupertinoActionSheet extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      message: CustomText(
-        text: LocaleKeys.settings_remove_ads_premium_features,
-        style: TextStyle(
-          color: ProjectColor.black.toColor,
-          fontSize: 14,
-        ),
-      ),
       actions: <Widget>[
         CupertinoActionSheetAction(
           onPressed: () => Navigator.pop(context),
           child: CustomText(
-            text: LocaleKeys.settings_buy_premium,
+            text: LocaleKeys.settings_remove_ads_premium_features,
+            style: TextStyle(
+              color: ProjectColor.black.toColor,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        CupertinoActionSheetAction(
+          onPressed: () => Navigator.pop(context),
+          child: CustomText(
+            text: LocaleKeys.settings_remove_ads_premium_features_once,
             style: TextStyle(
               color: ProjectColor.black.toColor,
               fontSize: 16,
