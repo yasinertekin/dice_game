@@ -6,7 +6,7 @@
             "categoryColor": "B81C1C",
             "categoryDices": [
                 {
-                    "id": "1",
+                    "id": "999",
                     "dice_name": "Gurme Zarı",
                     "dice_image": "assets/image/dice_image/gourmet_image.jpg",
                     "icon": "assets/icon/dice_icon/gourmet_icon.svg",

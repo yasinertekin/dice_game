@@ -72,7 +72,7 @@ final class _RollDiceViewState extends State<_RollDiceView>
     with _RollDiceViewMixin {
   @override
   Widget build(BuildContext context) {
-    return widget.categoryDices.id == '1'
+    return widget.categoryDices.id == '999'
         ? _GourmetDice(widget: widget, controller: _controller)
         : _DefaultRollView(
             widget: widget,
