@@ -17,7 +17,7 @@ final class _SettingsPageAppBar extends StatelessWidget
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 5.0);
 }
 
 final class _AppBarTitle extends StatelessWidget {

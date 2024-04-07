@@ -5,7 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 final class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this._jsonService, BuildContext context)
-      : super(const HomeState(status: HomeStatus.loading));
+      : super(const HomeState(status: HomeStatus.loading)) {
+    getDiceModel(context);
+  }
 
   final IJsonService _jsonService;
 

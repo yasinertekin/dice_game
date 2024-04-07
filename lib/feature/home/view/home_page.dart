@@ -46,25 +46,7 @@ final class _HomeView extends StatefulWidget {
   State<_HomeView> createState() => _HomeViewState();
 }
 
-final class _HomeViewState extends State<_HomeView>
-    with _HomeViewMixin, AdmobMixin {
-  // @override
-  // void loadAd() {
-  //   loadAds();
-  // }
-
-  @override
-  Future<void> showAd() async {
-    // Future.delayed(
-    //   const Duration(seconds: 10),
-    //   () async {
-    //     if (interstitialAd != null) {
-    //       await interstitialAd!.show();
-    //     }
-    //   },
-    // );
-  }
-
+final class _HomeViewState extends State<_HomeView> with _HomeViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
