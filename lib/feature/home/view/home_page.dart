@@ -111,7 +111,7 @@ final class _CategoryGridViewBuilder extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 1,
           mainAxisSpacing: 1,
-          mainAxisExtent: 210,
+          mainAxisExtent: 220,
         ),
         itemCount: diceModel.categories?.length ?? 0,
         itemBuilder: (context, index) {
