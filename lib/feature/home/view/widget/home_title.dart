@@ -5,15 +5,12 @@ final class _HomeTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: context.dynamicHeight(0.08),
-      child: CustomText(
-        text: LocaleKeys.home_categories,
-        style: context.textTheme.bodyLarge?.copyWith(
-          color: ProjectColor.black.toColor,
-          fontWeight: FontWeight.bold,
-          fontSize: 35,
-        ),
+    return CustomText(
+      text: LocaleKeys.home_categories,
+      style: context.textTheme.bodyLarge?.copyWith(
+        color: ProjectColor.black.toColor,
+        fontWeight: FontWeight.bold,
+        fontSize: 35,
       ),
     );
   }

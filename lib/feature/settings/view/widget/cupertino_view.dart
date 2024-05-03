@@ -25,7 +25,7 @@ final class _CupertinoView extends StatelessWidget {
               value: e,
             );
             await cubit.getDiceModel(context);
-            Locator.appRouter.canPop();
+            await Locator.appRouter.maybePop();
           },
         ),
       ],

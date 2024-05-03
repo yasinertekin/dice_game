@@ -14,7 +14,12 @@ final class HomeCubit extends Cubit<HomeState> {
   Future<void> getDiceModel(BuildContext context) async {
     try {
       final diceModel = await _jsonService.getDiceModel(context);
-      emit(HomeState(diceModel: diceModel, status: HomeStatus.loaded));
+      emit(
+        state.copyWith(
+          status: HomeStatus.loaded,
+          diceModel: diceModel,
+        ),
+      );
     } catch (e) {
       emit(const HomeState(status: HomeStatus.error));
       print(e);

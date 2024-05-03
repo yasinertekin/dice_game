@@ -69,6 +69,7 @@ final class _CategoryTitle extends StatelessWidget {
       style: context.textTheme.titleLarge?.copyWith(
         color: ProjectColor.white.toColor,
         fontWeight: FontWeight.bold,
+        fontSize: 20,
       ),
     );
   }

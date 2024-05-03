@@ -50,6 +50,7 @@ final class _HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: ProjectColor.silkyWhite.toColor,
       title: const _AppLogo(),
       automaticallyImplyLeading: false,
+      forceMaterialTransparency: true,
       bottom: const _AppbarBottom(),
     );
   }

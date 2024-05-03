@@ -1,0 +1,57 @@
+{
+    "home": {
+        "categories": "Kategoriler",
+       "usersDice": "Senin Zarların"
+    },
+    "favorites": {
+        "favorites_dice": "Favori Zarlar",
+        "no_favorites": "Favori zarın yok"
+
+    
+    },
+    "settings":{
+        "settings_title": "Ayarlar",
+        "select_dice": "Zar Seç",
+        "remove_ads": "Reklamları Kaldır",
+        "remove_ads_limited": "Reklamları Kaldır",
+        "buy": "Satın Al",
+        "cancel": "İptal",
+        "buy_premium":"Premium Satın Al",
+        "remove_ads_premium_features": "Reklamsız Kullanım + Sınırsız İçerik Aylık",
+        "remove_ads_premium_features_once": "Tek Seferlik"
+
+    },
+     "users_dice":{
+        "my_dice": "Zarlarım"
+    },
+        "error":{
+        "something_went_wrong": "Bir şeyler yanlış gitti"
+    },
+     "add_dice":{
+        "add_dice_title": "Zar Ekle",
+        "dice_name": "Zar Adı",
+        "dice_description": "Zar Açıklaması",
+
+        "button":{
+            "continue": "Devam Et"
+        },
+        "dice_options": "Zar Seçenekleri",
+        "options_name": "Seçenek Adı",
+        "select_icon":"Lütfen bir simge seçin",
+        "dice_name_validation": "Lütfen zar adı girin",
+        "dice_description_validation": "Lütfen zar açıklaması girin",
+        "please_enter_atleast_one_option": "Lütfen en az bir seçenek girin",
+        "please_select_icon": "Lütfen bir simge seçin",
+                "icon_not_found": "Simge Bulunamadı"
+
+
+
+    },
+    "dice_decription":{
+        "warning": "Uyarı",
+        "age_limit":"Bu kategoriye erişim yaş sınırı vardır",
+        "go_back": "Geri Dön"
+
+    }
+   
+}

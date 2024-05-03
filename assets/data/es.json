@@ -1327,7 +1327,7 @@
                                 {"id": "68", "name": "Star Trek Online"},
                                 {"id": "69", "name": "TERA"},
                                 {"id": "70", "name": "Unturned"}
-                }
+                
               ]
             }
           ]
@@ -4210,9 +4210,8 @@
               ]
             }
           ]
-        }
-      ]
-    },
+        },
+      
     {
       "categoryName": "Dados de relación",
       "categoryIcon": "assets/icon/category_icon/relationship_icon.svg",
@@ -5547,7 +5546,7 @@
     {"id": "94", "name": "Death in Venice (Der Tod in Venedig) - Thomas Mann"},
     {"id": "95", "name": "September (Eylül) - Mehmet Rauf"},
     {"id": "96", "name": "The Flowers of Evil (Les Fleurs du Mal) - Charles Baudelaire"}
-]
+] }
               ]
             }
           ]
@@ -5616,5 +5615,3 @@
         }
       ]
     }
-  ]
-}

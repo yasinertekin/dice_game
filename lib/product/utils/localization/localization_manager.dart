@@ -18,6 +18,7 @@ final class ProductLocalization extends EasyLocalization {
   static final List<Locale> _supportedItems = [
     Locales.tr.locale,
     Locales.en.locale,
+    Locales.esp.locale,
   ];
 
   static const String _translationPath = 'assets/translations';
@@ -34,6 +35,8 @@ final class ProductLocalization extends EasyLocalization {
 enum Locales {
   /// Turkish locale
   tr(Locale('tr', 'TR')),
+
+  esp(Locale('es', 'ES')),
 
   /// English locale
   en(Locale('en', 'US'));
