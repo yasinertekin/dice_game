@@ -11,10 +11,13 @@ final class _CategoryDetailAppBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(
-        diceCategories?.categoryName ?? 'Zarların',
-        style: context.textTheme.titleLarge!.copyWith(
-          color: ProjectColor.white.toColor,
+      title: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Text(
+          diceCategories?.categoryName ?? 'Zarların',
+          style: context.textTheme.titleLarge!.copyWith(
+            color: ProjectColor.white.toColor,
+          ),
         ),
       ),
       backgroundColor: ProjectColor.transparent.toColor,
