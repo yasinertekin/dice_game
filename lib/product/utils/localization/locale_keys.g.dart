@@ -38,6 +38,15 @@ abstract class  LocaleKeys {
   static const dice_decription_warning = 'dice_decription.warning';
   static const dice_decription_age_limit = 'dice_decription.age_limit';
   static const dice_decription_go_back = 'dice_decription.go_back';
+  static const dice_decription_roll_dice = 'dice_decription.roll_dice';
+  static const dice_decription_roll_again = 'dice_decription.roll_again';
+  static const dice_decription_alert_dialog_confirm_text = 'dice_decription.alert_dialog.confirm_text';
+  static const dice_decription_alert_dialog_cancel_text = 'dice_decription.alert_dialog.cancel_text';
+  static const dice_decription_alert_dialog_barrier_label = 'dice_decription.alert_dialog.barrier_label';
+  static const dice_decription_alert_dialog_help_text = 'dice_decription.alert_dialog.help_text';
+  static const dice_decription_alert_dialog_error_format_text = 'dice_decription.alert_dialog.error_format_text';
+  static const dice_decription_alert_dialog_field_label_text = 'dice_decription.alert_dialog.field_label_text';
+  static const dice_decription_alert_dialog = 'dice_decription.alert_dialog';
   static const dice_decription = 'dice_decription';
 
 }

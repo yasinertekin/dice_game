@@ -43,15 +43,26 @@
         "please_enter_atleast_one_option": "Lütfen en az bir seçenek girin",
         "please_select_icon": "Lütfen bir simge seçin",
                 "icon_not_found": "Simge Bulunamadı"
-
-
+        
 
     },
     "dice_decription":{
         "warning": "Uyarı",
         "age_limit":"Bu kategoriye erişim yaş sınırı vardır",
-        "go_back": "Geri Dön"
+        "go_back": "Geri Dön",
+        "roll_dice": "Zar At",
+        "roll_again": "Roll again",
+        "alert_dialog": {
+            "confirm_text": "Seç",
+            "cancel_text": "İptal",
+            "barrier_label": "Tarih Seç",
+            "help_text":"Doğum Tarihinizi Seçin",
+            "error_format_text": "Lütfen Geçerli Bir Tarih Seçin",
+            "field_label_text": "Doğum Tarihi"
+        }
+
 
     }
+    
    
 }

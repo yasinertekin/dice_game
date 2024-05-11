@@ -9,16 +9,18 @@ final class _RollDiceDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: context.paddingAllLow,
-      child: SizedBox(
-        height: context.dynamicHeight(0.35),
-        child: SingleChildScrollView(
-          child: Text(
-            textAlign: TextAlign.center,
-            categoryDices.description ?? '',
-            style: context.textTheme.titleMedium?.copyWith(
-              color: ProjectColor.white.toColor,
+    return Center(
+      child: Padding(
+        padding: context.paddingAllLow,
+        child: SizedBox(
+          height: context.dynamicHeight(0.35),
+          child: SingleChildScrollView(
+            child: Text(
+              textAlign: TextAlign.center,
+              categoryDices.description ?? '',
+              style: context.textTheme.titleMedium?.copyWith(
+                color: ProjectColor.white.toColor,
+              ),
             ),
           ),
         ),

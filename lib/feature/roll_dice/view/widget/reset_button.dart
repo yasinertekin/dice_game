@@ -25,8 +25,8 @@ final class _ResetButton extends StatelessWidget {
             cubit.resetAnimation();
             await context.read<RollDiceCounterCubit>().showAd();
           },
-          child: Text(
-            'Tekrar At',
+          child: CustomText(
+            text: LocaleKeys.dice_decription_roll_again,
             style: context.textTheme.labelLarge?.copyWith(
               color: ProjectColor.white.toColor,
             ),
@@ -36,3 +36,6 @@ final class _ResetButton extends StatelessWidget {
     );
   }
 }
+  // style: context.textTheme.labelLarge?.copyWith(
+  //             color: ProjectColor.white.toColor,
+  //           ),

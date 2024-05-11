@@ -10,19 +10,6 @@ final class _UserDiceCard extends StatefulWidget {
 
 final class _UserDiceCardState extends State<_UserDiceCard>
     with NavigationManager, AdmobMixin {
-  Future<void> _loadRewardAds() async {
-    await loadRewardedAd();
-  }
-
-  Future<void> _showAds() async {
-    Future.delayed(
-      const Duration(seconds: 2),
-      () async {
-        await showRewardedAd();
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,8 +17,7 @@ final class _UserDiceCardState extends State<_UserDiceCard>
       height: context.dynamicHeight(0.2),
       child: InkWell(
         onTap: () async {
-          await _loadRewardAds();
-          await _showAds();
+          await context.read<AdmobCubit>().loadAds();
           navigatePush(const UserDiceRoute());
         },
         child: Card(

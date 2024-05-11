@@ -22,8 +22,8 @@ final class _RollDiceText extends StatelessWidget {
         color: ProjectColor.red.toColor,
         child: Padding(
           padding: context.paddingAllDefault,
-          child: Text(
-            categoryDices.isPremium ?? true ? 'Satın Al' : 'Zar At',
+          child: CustomText(
+            text: LocaleKeys.dice_decription_roll_dice,
             style: context.textTheme.displayLarge?.copyWith(
               color: ProjectColor.white.toColor,
             ),
@@ -33,3 +33,8 @@ final class _RollDiceText extends StatelessWidget {
     );
   }
 }
+// style: context.textTheme.displayLarge?.copyWith(
+//               color: ProjectColor.white.toColor,
+//             ),
+
+  // categoryDices.isPremium ?? true ? 'Satın Al' : 'Zar At',

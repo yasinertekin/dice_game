@@ -46,8 +46,18 @@
     },
         "dice_decription":{
         "warning": "Warning",
-        "age_limit":"Bu kategoriye erişim yaş sınırı vardır",
-        "go_back": "Go back"
+        "age_limit":"There is an age limit for accessing this category.",
+        "go_back": "Go back",
+        "roll_dice": "Roll dice",
+        "roll_again": "Roll again",
+        "alert_dialog": {
+            "confirm_text": "Confirm",
+            "cancel_text": "Cancel",
+            "barrier_label": "Choose a date",
+            "help_text":"Please select a birth date",
+            "error_format_text": "Please enter a valid date",
+            "field_label_text": "Birth date"
+        }
     }
    
 }

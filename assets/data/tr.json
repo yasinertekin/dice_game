@@ -3402,7 +3402,7 @@
                             }
                             ]
                             },{
-                                "dice_name": "Hangi DIY Projesini deneyeceksin?",
+                                "dice_name": "Hangi DIY Projesini Deneyeceksin?",
                                 "icon": "assets/icon/dice_icon/which_diy_project_will_you_try_icon.svg",
                                 "id": "7",
                                 "dice_image": "assets/image/dice_image/which_diy_project_will_you_try_image.jpg",

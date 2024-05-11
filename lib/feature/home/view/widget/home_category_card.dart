@@ -47,9 +47,12 @@ final class _CategoryIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomSvg(
-      assetPath: dice?.categoryIcon ?? '',
-      height: context.dynamicHeight(0.13),
+    return Expanded(
+      flex: 5,
+      child: CustomSvg(
+        assetPath: dice?.categoryIcon ?? '',
+        height: context.dynamicHeight(0.15),
+      ),
     );
   }
 }
@@ -63,13 +66,16 @@ final class _CategoryTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      textAlign: TextAlign.center,
-      dice?.categoryName ?? '',
-      style: context.textTheme.titleLarge?.copyWith(
-        color: ProjectColor.white.toColor,
-        fontWeight: FontWeight.bold,
-        fontSize: 20,
+    return Expanded(
+      flex: 5,
+      child: Text(
+        textAlign: TextAlign.center,
+        dice?.categoryName ?? '',
+        style: context.textTheme.titleLarge?.copyWith(
+          color: ProjectColor.white.toColor,
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
       ),
     );
   }

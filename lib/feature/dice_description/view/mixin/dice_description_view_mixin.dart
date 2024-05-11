@@ -16,14 +16,18 @@ base mixin _DiceDescriptionViewMixin on State<_DiceDescriptionView> {
         barrierDismissible: false,
         context: context,
         initialDate: DateTime.now(),
-        confirmText: 'Seç',
-        cancelText: 'İptal',
+        confirmText: LocaleKeys.dice_decription_alert_dialog_confirm_text.tr(),
+        cancelText: LocaleKeys.dice_decription_alert_dialog_cancel_text.tr(),
         barrierColor: Colors.black.withOpacity(0.5),
-        barrierLabel: 'Tarih Seç',
-        helpText: 'Doğum Tarihinizi Seçin',
-        errorFormatText: 'Geçerli bir tarih seçin',
-        errorInvalidText: 'Geçerli bir tarih seçin',
-        fieldLabelText: 'Doğum Tarihi',
+        barrierLabel:
+            LocaleKeys.dice_decription_alert_dialog_barrier_label.tr(),
+        helpText: LocaleKeys.dice_decription_alert_dialog_help_text.tr(),
+        errorFormatText:
+            LocaleKeys.dice_decription_alert_dialog_error_format_text.tr(),
+        errorInvalidText:
+            LocaleKeys.dice_decription_alert_dialog_error_format_text.tr(),
+        fieldLabelText:
+            LocaleKeys.dice_decription_alert_dialog_field_label_text.tr(),
         firstDate: DateTime(1900),
         lastDate: DateTime.now(),
         keyboardType: TextInputType.datetime,
