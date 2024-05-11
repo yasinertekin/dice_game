@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dice_game/feature/user_dice/cubit/state/user_dice_state.dart';
 import 'package:dice_game/feature/user_dice/cubit/user_dice_cubit.dart';
-import 'package:dice_game/product/core/cubit/admob_cubit.dart';
 import 'package:dice_game/product/core/enum/project_color.dart';
 import 'package:dice_game/product/core/extension/context_extension.dart';
 import 'package:dice_game/product/core/mixin/admob_mixin.dart';
@@ -38,17 +37,6 @@ final class _UserDiceView extends StatefulWidget {
 }
 
 final class _UserDiceViewState extends State<_UserDiceView> with AdmobMixin {
-  @override
-  void initState() {
-    super.initState();
-
-    _showAds();
-  }
-
-  Future<void> _showAds() async {
-    await context.read<AdmobCubit>().showAds();
-  }
-
   @override
   Widget build(BuildContext context) {
     return CustomGradientContainer(

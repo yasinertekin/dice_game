@@ -414,7 +414,7 @@
                     "id": "4",
                     "dice_image": "assets/image/dice_image/what_should_i_drink_image.jpg",
                     "isPremium": false,
-                    "isAdultContent": true,
+                    "isAdultContent": false,
                     "description": "Ne içmek istediğine karar veremiyorsan bunu kesinlikle denemelisin.",
                     "sub_dices": [{
                             "name": "Ne İçmeliyim ?",
@@ -505,7 +505,8 @@
                                 {
                                     "id": "22",
                                     "name": "Oralet"
-                                },{
+                                } ]
+                                }]},{
                                     "dice_name": "Ne İçmeliyim (Yüksek Promil)?",
                                     "icon": "assets/icon/dice_icon/what_should_i_drink_high_promil_icon.svg",
                                     "id": "5",
@@ -541,6 +542,7 @@
                                                 {"id": "22", "name": "Espresso Martini"},
                                                 {"id": "23", "name": "Mai Tai"}
                                             ]
+                                        } ]
                                         },{
                                             "dice_name": "Kahve Zarı",
                                             "icon": "assets/icon/dice_icon/coffee_icon.svg",
@@ -591,18 +593,8 @@
                                         }
                                         
                                     ]
-                                }
-                                
-                            ]
-                        
-                        
+                                },
                             
-                        }
-                    ]
-                }
-                
-            ]
-        },
         {
             "categoryName": "Oyun Zarları",
             "categoryIcon": "assets/icon/category_icon/game_icon.svg",
@@ -3402,7 +3394,7 @@
                             }
                             ]
                             },{
-                                "dice_name": "Hangi DIY Projesini Deneyeceksin?",
+                                "dice_name": "Hangi DIY Projesini deneyeceksin?",
                                 "icon": "assets/icon/dice_icon/which_diy_project_will_you_try_icon.svg",
                                 "id": "7",
                                 "dice_image": "assets/image/dice_image/which_diy_project_will_you_try_image.jpg",

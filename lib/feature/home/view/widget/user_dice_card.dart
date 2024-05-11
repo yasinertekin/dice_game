@@ -12,13 +12,17 @@ final class _UserDiceCardState extends State<_UserDiceCard>
     with NavigationManager, AdmobMixin {
   @override
   Widget build(BuildContext context) {
+    final selectAdmobState = context.select((AdmobCubit cubit) => cubit.state);
     return SizedBox(
       width: context.dynamicWidth(0.8),
       height: context.dynamicHeight(0.2),
       child: InkWell(
         onTap: () async {
-          await context.read<AdmobCubit>().loadAds();
-          navigatePush(const UserDiceRoute());
+          await context.read<AdmobCubit>().showAds();
+          Future.delayed(
+            const Duration(seconds: 3),
+            () => navigatePush(const UserDiceRoute()),
+          );
         },
         child: Card(
           shape: _CardShape(context),
@@ -36,12 +40,18 @@ final class _CardTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: CustomText(
-        text: LocaleKeys.home_usersDice,
-        style: context.textTheme.titleLarge?.copyWith(
-          color: ProjectColor.black.toColor,
-          fontWeight: FontWeight.bold,
-        ),
+      child: BlocBuilder<AdmobCubit, AdmobState>(
+        builder: (context, state) {
+          return state.adLoadState == AdLoadState.loading
+              ? const CustomCircularProgressIndicator()
+              : CustomText(
+                  text: LocaleKeys.home_usersDice,
+                  style: context.textTheme.titleLarge?.copyWith(
+                    color: ProjectColor.black.toColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                );
+        },
       ),
     );
   }
