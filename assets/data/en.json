@@ -497,7 +497,7 @@
                 {
                   "id": "22",
                   "name": "Orallet (Turkish Drink)"
-                },
+                }]}]},
                 {
                   "dice_name": "What Should I Drink (High Promil)?",
                   "icon": "assets/icon/dice_icon/what_should_i_drink_high_promil_icon.svg",
@@ -603,7 +603,7 @@
                           "name": "Mai Tai"
                         }
                       ]
-                    },
+                    }]},
                     {
                       "dice_name": "Coffee Dice",
                       "icon": "assets/icon/dice_icon/coffee_icon.svg",
@@ -750,12 +750,7 @@
                     }
                   ]
                 }
-              ]
-            }
-          ]
-        }
-      ]
-    },
+             ,
     {
       "categoryName": "Game Dice",
       "categoryIcon": "assets/icon/category_icon/game_icon.svg",
@@ -6527,7 +6522,7 @@
           "dice_image": "assets/image/dice_image/tv_series_image.jpg",
           "isPremium": false,
           "isAdultContent": false,
-          "description": "Series Dice is a game that offers an enjoyable discovery experience. ",
+          "description": "Dizi Dice is a game that offers an enjoyable discovery experience. ",
           "sub_dices": [
             {
               "name": "Series Dice",
