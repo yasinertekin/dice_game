@@ -15,6 +15,7 @@ import 'package:dice_game/product/widget/button/custom_back_button.dart';
 import 'package:dice_game/product/widget/image/custom_svg.dart';
 import 'package:dice_game/product/widget/text/custom_text.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_refresh/easy_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
